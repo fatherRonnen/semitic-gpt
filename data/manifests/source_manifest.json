@@ -1,0 +1,130 @@
+{
+  "version": "1.0",
+  "description": "Data sources for SemiticGPT multilingual pretraining corpus",
+  "languages": {
+    "he": {
+      "name": "Hebrew",
+      "sources": [
+        {
+          "name": "Hebrew Wikipedia",
+          "url": "https://dumps.wikimedia.org/hewiki/",
+          "estimated_size_gb": 1.2,
+          "type": "encyclopedia",
+          "license": "CC-BY-SA"
+        },
+        {
+          "name": "OSCAR (Hebrew subset)",
+          "url": "https://oscar-project.org/",
+          "estimated_size_gb": 8.0,
+          "type": "web_crawl",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "name": "Hebrew News Corpus",
+          "url": "https://huggingface.co/datasets",
+          "estimated_size_gb": 2.5,
+          "type": "news",
+          "license": "research_only"
+        }
+      ],
+      "total_estimated_gb": 11.7
+    },
+    "ar": {
+      "name": "Arabic",
+      "sources": [
+        {
+          "name": "Arabic Wikipedia",
+          "url": "https://dumps.wikimedia.org/arwiki/",
+          "estimated_size_gb": 2.1,
+          "type": "encyclopedia",
+          "license": "CC-BY-SA"
+        },
+        {
+          "name": "OSCAR (Arabic subset)",
+          "url": "https://oscar-project.org/",
+          "estimated_size_gb": 12.0,
+          "type": "web_crawl",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "name": "Arabic News Corpus",
+          "url": "https://huggingface.co/datasets",
+          "estimated_size_gb": 3.0,
+          "type": "news",
+          "license": "research_only"
+        },
+        {
+          "name": "UN Parallel Corpus (Arabic)",
+          "url": "https://opus.nlpl.eu/UN.php",
+          "estimated_size_gb": 1.5,
+          "type": "parallel",
+          "license": "public_domain"
+        },
+        {
+          "name": "C4 (Arabic subset via mC4)",
+          "url": "https://huggingface.co/datasets/allenai/c4",
+          "estimated_size_gb": 5.0,
+          "type": "web_crawl",
+          "license": "ODC-BY"
+        }
+      ],
+      "total_estimated_gb": 23.6
+    },
+    "en": {
+      "name": "English",
+      "sources": [
+        {
+          "name": "English Wikipedia",
+          "url": "https://dumps.wikimedia.org/enwiki/",
+          "estimated_size_gb": 4.5,
+          "type": "encyclopedia",
+          "license": "CC-BY-SA"
+        },
+        {
+          "name": "OpenWebText (subset)",
+          "url": "https://huggingface.co/datasets/openwebtext",
+          "estimated_size_gb": 6.0,
+          "type": "web_crawl",
+          "license": "research_only"
+        },
+        {
+          "name": "Books Corpus (subset)",
+          "url": "https://huggingface.co/datasets/bookcorpus",
+          "estimated_size_gb": 2.0,
+          "type": "books",
+          "license": "research_only"
+        }
+      ],
+      "total_estimated_gb": 12.5
+    },
+    "fa": {
+      "name": "Farsi (Persian)",
+      "sources": [
+        {
+          "name": "Farsi Wikipedia",
+          "url": "https://dumps.wikimedia.org/fawiki/",
+          "estimated_size_gb": 1.0,
+          "type": "encyclopedia",
+          "license": "CC-BY-SA"
+        },
+        {
+          "name": "OSCAR (Farsi subset)",
+          "url": "https://oscar-project.org/",
+          "estimated_size_gb": 5.0,
+          "type": "web_crawl",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "name": "Farsi News Corpus",
+          "url": "https://huggingface.co/datasets",
+          "estimated_size_gb": 1.5,
+          "type": "news",
+          "license": "research_only"
+        }
+      ],
+      "total_estimated_gb": 7.5
+    }
+  },
+  "total_raw_data_gb": 55.3,
+  "notes": "Raw data is filtered, deduplicated, and tokenized before use. Final token counts reflect post-processing volumes."
+}

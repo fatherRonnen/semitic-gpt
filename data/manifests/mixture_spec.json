@@ -1,0 +1,41 @@
+{
+  "version": "2.0",
+  "description": "Training data mixture specification for SemiticGPT 3B pretraining",
+  "total_tokens": "~20B",
+  "total_tokens_exact": 19800000000,
+  "mixture": {
+    "he": {
+      "name": "Hebrew",
+      "proportion": 0.40,
+      "tokens": "~8B",
+      "tokens_exact": 7920000000,
+      "rationale": "Anchor language — intentionally overrepresented to build strong Hebrew representations that transfer to related Semitic languages (Arabic)"
+    },
+    "ar": {
+      "name": "Arabic",
+      "proportion": 0.25,
+      "tokens": "~5B",
+      "tokens_exact": 4950000000,
+      "rationale": "Second largest share as primary transfer target. Arabic-Hebrew cross-lingual transfer is a key research hypothesis."
+    },
+    "en": {
+      "name": "English",
+      "proportion": 0.20,
+      "tokens": "~4B",
+      "tokens_exact": 3960000000,
+      "rationale": "High-quality English data improves overall model quality and enables English-mediated transfer and benchmarking."
+    },
+    "fa": {
+      "name": "Farsi (Persian)",
+      "proportion": 0.15,
+      "tokens": "~3B",
+      "tokens_exact": 2970000000,
+      "rationale": "Control language — shares Arabic script but is Indo-European (not Semitic). Tests whether cross-lingual transfer depends on linguistic family vs. script similarity."
+    }
+  },
+  "sequence_length": 2048,
+  "tokenizer": "multilingual_32k (32768 BPE)",
+  "shuffling": "Document-level shuffle within each language, then interleave according to mixture proportions",
+  "deduplication": "MinHash-based deduplication within each language corpus",
+  "filtering": "Length filter (>50 chars), language ID verification, quality heuristics (perplexity-based)"
+}
