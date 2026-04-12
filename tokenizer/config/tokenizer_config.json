@@ -1,0 +1,20 @@
+{
+  "model_type": "bpe",
+  "vocab_size": 32768,
+  "algorithm": "SentencePiece",
+  "languages": ["he", "ar", "fa", "en"],
+  "sampling_strategy": "equal_25pct",
+  "sampling_description": "Balanced 25% per language during tokenizer training to ensure equitable subword representation",
+  "special_tokens": {
+    "pad_token": "<pad>",
+    "unk_token": "<unk>",
+    "bos_token": "<s>",
+    "eos_token": "</s>",
+    "user_token": "<|user|>",
+    "assistant_token": "<|assistant|>"
+  },
+  "normalization": "nfkc",
+  "byte_fallback": true,
+  "character_coverage": 0.9995,
+  "max_sentence_length": 4096
+}

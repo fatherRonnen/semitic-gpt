@@ -1,0 +1,55 @@
+{
+  "model": "multilingual_32k",
+  "vocab_size": 32000,
+  "bos_id": 1,
+  "eos_id": 2,
+  "config": {
+    "character_coverage": 0.9995,
+    "model_type": "bpe",
+    "byte_fallback": true,
+    "split_digits": true,
+    "max_sentence_length": 16384,
+    "input_sentence_size": 10000000
+  },
+  "data_sources": {
+    "en": "allenai/c4 (en)",
+    "ar": "wikimedia/wikipedia (20231101.ar)",
+    "he": "wikimedia/wikipedia (20231101.he)",
+    "fa": "wikimedia/wikipedia (20231101.fa)"
+  },
+  "languages": {
+    "en": {
+      "num_tokens": 131858,
+      "num_bytes": 502591,
+      "num_words": 85508,
+      "num_chars": 500000,
+      "bytes_per_token": 3.81,
+      "tokens_per_word": 1.54
+    },
+    "ar": {
+      "num_tokens": 138572,
+      "num_bytes": 900643,
+      "num_words": 81698,
+      "num_chars": 500000,
+      "bytes_per_token": 6.5,
+      "tokens_per_word": 1.7
+    },
+    "he": {
+      "num_tokens": 150214,
+      "num_bytes": 876334,
+      "num_words": 81962,
+      "num_chars": 500000,
+      "bytes_per_token": 5.83,
+      "tokens_per_word": 1.83
+    },
+    "fa": {
+      "num_tokens": 129491,
+      "num_bytes": 902876,
+      "num_words": 91425,
+      "num_chars": 500000,
+      "bytes_per_token": 6.97,
+      "tokens_per_word": 1.42
+    }
+  },
+  "timestamp": "2026-04-01T14:12:42Z"
+}

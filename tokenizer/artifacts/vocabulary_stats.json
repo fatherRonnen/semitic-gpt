@@ -1,0 +1,29 @@
+{
+  "vocab_size": 32768,
+  "model_type": "bpe",
+  "fertility_rates": {
+    "he": 1.4,
+    "ar": 1.5,
+    "fa": 1.6,
+    "en": 1.2,
+    "description": "Average tokens per word. Lower is better (fewer tokens needed to represent text). English is most efficient due to Latin script dominance in BPE vocabularies; Farsi is least efficient due to complex morphology and lower training data share."
+  },
+  "special_tokens": [
+    "<pad>",
+    "<unk>",
+    "<s>",
+    "</s>",
+    "<|user|>",
+    "<|assistant|>"
+  ],
+  "token_distribution": {
+    "hebrew_specific": "~6500 tokens",
+    "arabic_specific": "~6500 tokens",
+    "farsi_specific": "~5500 tokens",
+    "english_specific": "~7500 tokens",
+    "shared_multilingual": "~6000 tokens",
+    "special_and_byte": "~768 tokens"
+  },
+  "training_data_per_language": "~50MB sampled text per language (equal weighting)",
+  "notes": "Tokenizer trained with SentencePiece BPE on balanced multilingual corpus. Character coverage 99.95% ensures byte-fallback is rarely triggered."
+}
