@@ -1,0 +1,55 @@
+{
+  "model_name": "SemiticGPT-3B",
+  "parameters": "3.04B",
+  "architecture": {
+    "type": "decoder-only transformer",
+    "layers": 36,
+    "hidden_dim": 2560,
+    "attention_heads": 20,
+    "head_dim": 128,
+    "intermediate_dim": 6912,
+    "vocab_size": 32768,
+    "max_seq_len": 2048,
+    "positional_encoding": "RoPE",
+    "activation": "SwiGLU",
+    "normalization": "RMSNorm",
+    "norm_position": "pre-norm"
+  },
+  "optimizer": {
+    "type": "AdamW",
+    "learning_rate": 3e-4,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eps": 1e-8
+  },
+  "schedule": {
+    "type": "cosine_decay",
+    "warmup_steps": 2000,
+    "total_steps": 20000,
+    "min_lr_ratio": 0.1
+  },
+  "training": {
+    "batch_size_tokens": 524288,
+    "micro_batch_size": 8,
+    "gradient_accumulation_steps": 32,
+    "precision": "bf16",
+    "distributed": "FSDP",
+    "hardware": "8x NVIDIA A10G (g6e.48xlarge)"
+  },
+  "data": {
+    "total_tokens": "~20B",
+    "mixture": {
+      "he": 0.40,
+      "ar": 0.25,
+      "en": 0.20,
+      "fa": 0.15
+    },
+    "sequence_length": 2048
+  },
+  "regularization": {
+    "dropout": 0.0,
+    "label_smoothing": 0.0
+  }
+}

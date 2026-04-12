@@ -1,0 +1,153 @@
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0406 04:13:02.577000 3046 torch/distributed/run.py:766] 
+W0406 04:13:02.577000 3046 torch/distributed/run.py:766] *****************************************
+W0406 04:13:02.577000 3046 torch/distributed/run.py:766] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0406 04:13:02.577000 3046 torch/distributed/run.py:766] *****************************************
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[W406 04:13:34.563329765 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W406 04:13:34.681225889 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W406 04:13:34.735058400 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W406 04:13:34.800796202 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W406 04:13:34.808105129 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W406 04:13:34.818122029 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W406 04:13:34.850945313 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[W406 04:13:34.872713489 Utils.hpp:137] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[2026-04-06 04:13:34] === Multilingual 3.14B Training — FSDP (Arabic-Rebalanced) ===
+[2026-04-06 04:13:34] World size: 8, Batch/GPU: 4, Grad accum: 8
+[2026-04-06 04:13:34] Effective batch: 256 seqs = 524,288 tokens/step
+[2026-04-06 04:13:34] Total steps: 20000 = 10,485,760,000 tokens
+[2026-04-06 04:13:34] Schedule: WSD-LINEAR | warmup=600 | stable_end=14000 | total=20000
+[2026-04-06 04:13:34] AdamW LR=0.0003, betas=(0.9, 0.98), WD=0.02
+[2026-04-06 04:13:34] Label smoothing=0.06, min_lr=0.03, grad_clip=1.0
+[2026-04-06 04:13:34] SWA: start=8000, freq=40
+[2026-04-06 04:13:34] Model: dim=3072, depth=26, heads=24, dropout=0.05
+[2026-04-06 04:13:34] FSDP: FULL_SHARD, MixedPrecision(bf16/fp32), Block-level wrapping
+[2026-04-06 04:13:34] Loading training data...
+[2026-04-06 04:13:34] Train tokens: 4,479,984,561
+[2026-04-06 04:13:34] Loading validation data...
+[2026-04-06 04:13:34]   val_en: 20 batches
+[2026-04-06 04:13:34]   val_ar: 20 batches
+[2026-04-06 04:13:34]   val_he: 20 batches
+[2026-04-06 04:13:35]   val_fa: 20 batches
+[2026-04-06 04:13:35] Creating model...
+[2026-04-06 04:14:15] Model params: 3,042,868,224 (non-embedding: 2,944,564,224)
+[2026-04-06 04:14:15] Wrapping model with FSDP...
+[2026-04-06 04:14:19] FSDP wrapped. GPU memory: 1.5 GB
+[2026-04-06 04:14:19] Applied FSDP activation checkpointing to Block layers
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/opt/pytorch/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2026-04-06 04:14:27] Using 8-bit AdamW (bitsandbytes)
+[2026-04-06 04:14:27] Starting training from step 1...
+[2026-04-06 04:23:28] Step 50/20000 [warmup] | Loss: 7.9955 | BPB: 11.5350 | LR: 0.000025 | Tokens: 26,214,400 | TPS: 48,469 | SWA: 0 | Mem: 13.8GB | 9.0min
+[2026-04-06 04:32:02] Step 100/20000 [warmup] | Loss: 7.2014 | BPB: 10.3895 | LR: 0.000050 | Tokens: 52,428,800 | TPS: 49,668 | SWA: 0 | Mem: 13.8GB | 17.6min
+[2026-04-06 04:40:38] Step 150/20000 [warmup] | Loss: 6.3160 | BPB: 9.1121 | LR: 0.000075 | Tokens: 78,643,200 | TPS: 50,049 | SWA: 0 | Mem: 13.8GB | 26.2min
+[2026-04-06 04:49:14] Step 200/20000 [warmup] | Loss: 6.2201 | BPB: 8.9738 | LR: 0.000100 | Tokens: 104,857,600 | TPS: 50,236 | SWA: 0 | Mem: 13.8GB | 34.8min
+[2026-04-06 04:57:50] Step 250/20000 [warmup] | Loss: 5.3911 | BPB: 7.7778 | LR: 0.000125 | Tokens: 131,072,000 | TPS: 50,340 | SWA: 0 | Mem: 13.8GB | 43.4min
+[2026-04-06 05:06:27] Step 300/20000 [warmup] | Loss: 4.9607 | BPB: 7.1567 | LR: 0.000150 | Tokens: 157,286,400 | TPS: 50,406 | SWA: 0 | Mem: 13.8GB | 52.0min
+[2026-04-06 05:15:04] Step 350/20000 [warmup] | Loss: 4.9375 | BPB: 7.1233 | LR: 0.000175 | Tokens: 183,500,800 | TPS: 50,452 | SWA: 0 | Mem: 13.8GB | 60.6min
+[2026-04-06 05:23:41] Step 400/20000 [warmup] | Loss: 4.9945 | BPB: 7.2056 | LR: 0.000200 | Tokens: 209,715,200 | TPS: 50,486 | SWA: 0 | Mem: 13.8GB | 69.2min
+[2026-04-06 05:32:17] Step 450/20000 [warmup] | Loss: 4.8370 | BPB: 6.9783 | LR: 0.000225 | Tokens: 235,929,600 | TPS: 50,519 | SWA: 0 | Mem: 13.8GB | 77.8min
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+[2026-04-06 05:40:53] Step 500/20000 [warmup] | Loss: 4.8385 | BPB: 6.9805 | LR: 0.000250 | Tokens: 262,144,000 | TPS: 50,541 | SWA: 0 | Mem: 13.8GB | 86.4min
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+/opt/pytorch/lib/python3.12/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:680: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+[2026-04-06 05:41:22] Saved checkpoint at step 500
+
+The user-provided path /tmp/eval_results.json does not exist.
+[2026-04-06 05:41:34] --- Evaluation at step 500 ---
+[2026-04-06 05:41:34]   Combined val BPB: 5.8797
+[2026-04-06 05:41:46]   en val BPB: 6.4139
+[2026-04-06 05:41:58]   ar val BPB: 7.3293
+[2026-04-06 05:42:10]   he val BPB: 4.2252
+[2026-04-06 05:42:21]   fa val BPB: 6.1998
+[2026-04-06 05:42:21]   New best! BPB: 5.8797
+[2026-04-06 05:42:50] Saved model to /tmp/checkpoints/best_model.pt
+[2026-04-06 05:51:28] Step 550/20000 [warmup] | Loss: 4.4368 | BPB: 6.4010 | LR: 0.000275 | Tokens: 288,358,400 | TPS: 49,532 | SWA: 0 | Mem: 13.8GB | 97.0min
+[2026-04-06 06:00:06] Step 600/20000 [stable] | Loss: 4.2190 | BPB: 6.0868 | LR: 0.000300 | Tokens: 314,572,800 | TPS: 49,622 | SWA: 0 | Mem: 13.8GB | 105.7min
+[2026-04-06 06:08:44] Step 650/20000 [stable] | Loss: 4.4894 | BPB: 6.4769 | LR: 0.000300 | Tokens: 340,787,200 | TPS: 49,699 | SWA: 0 | Mem: 13.8GB | 114.3min
+[2026-04-06 06:17:21] Step 700/20000 [stable] | Loss: 4.4253 | BPB: 6.3844 | LR: 0.000300 | Tokens: 367,001,600 | TPS: 49,765 | SWA: 0 | Mem: 13.8GB | 122.9min
+[2026-04-06 06:25:59] Step 750/20000 [stable] | Loss: 3.9470 | BPB: 5.6943 | LR: 0.000300 | Tokens: 393,216,000 | TPS: 49,822 | SWA: 0 | Mem: 13.8GB | 131.5min
+[2026-04-06 06:34:37] Step 800/20000 [stable] | Loss: 4.3618 | BPB: 6.2928 | LR: 0.000300 | Tokens: 419,430,400 | TPS: 49,870 | SWA: 0 | Mem: 13.8GB | 140.2min
+[2026-04-06 06:43:15] Step 850/20000 [stable] | Loss: 4.1539 | BPB: 5.9928 | LR: 0.000300 | Tokens: 445,644,800 | TPS: 49,913 | SWA: 0 | Mem: 13.8GB | 148.8min
+[2026-04-06 06:51:53] Step 900/20000 [stable] | Loss: 3.9057 | BPB: 5.6348 | LR: 0.000300 | Tokens: 471,859,200 | TPS: 49,953 | SWA: 0 | Mem: 13.8GB | 157.4min
+[2026-04-06 07:00:31] Step 950/20000 [stable] | Loss: 3.7319 | BPB: 5.3839 | LR: 0.000300 | Tokens: 498,073,600 | TPS: 49,988 | SWA: 0 | Mem: 13.8GB | 166.1min
+W0406 07:05:33.136000 3046 torch/distributed/elastic/agent/server/api.py:719] Received 15 death signal, shutting down workers
+W0406 07:05:33.138000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3150 closing signal SIGTERM
+W0406 07:05:33.139000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3151 closing signal SIGTERM
+W0406 07:05:33.140000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3152 closing signal SIGTERM
+W0406 07:05:33.141000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3153 closing signal SIGTERM
+W0406 07:05:33.143000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3154 closing signal SIGTERM
+W0406 07:05:33.144000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3155 closing signal SIGTERM
+W0406 07:05:33.145000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3156 closing signal SIGTERM
+W0406 07:05:33.150000 3046 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 3157 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/opt/pytorch/bin/torchrun", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    result = agent.run()
+             ^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/elastic/agent/server/api.py", line 711, in run
+    result = self._invoke_run(role)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/elastic/agent/server/api.py", line 870, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/opt/pytorch/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 3046 got signal: 15
