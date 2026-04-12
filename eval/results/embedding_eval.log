@@ -1,0 +1,69 @@
+============================================================
+Embedding Quality Evaluation
+============================================================
+
+============================================================
+Model: base-pretrained
+============================================================
+
+  base-pretrained Cross-lingual Similarity:
+    Parallel (same meaning): 0.1120
+    Random (different meaning): 0.1911
+    Separation: -0.0791 ⚠️
+    Per-pair avg:
+      ar-fa: 0.2833
+      en-ar: 0.1132
+      en-fa: 0.1000
+      en-he: 0.1500
+      he-ar: 0.0114
+      he-fa: 0.0142
+
+  base-pretrained Retrieval Accuracy (10-way, chance=10%):
+    Average: 45.8%
+      ar→en: 70%
+      ar→fa: 10%
+      ar→he: 70%
+      en→ar: 50%
+      en→fa: 20%
+      en→he: 90%
+      fa→ar: 10%
+      fa→en: 10%
+      fa→he: 50%
+      he→ar: 40%
+      he→en: 90%
+      he→fa: 40%
+
+============================================================
+Model: D-sft
+============================================================
+
+  D-sft Cross-lingual Similarity:
+    Parallel (same meaning): 0.1173
+    Random (different meaning): 0.2288
+    Separation: -0.1115 ⚠️
+    Per-pair avg:
+      ar-fa: 0.2919
+      en-ar: 0.1487
+      en-fa: 0.1136
+      en-he: 0.1359
+      he-ar: 0.0165
+      he-fa: -0.0027
+
+  D-sft Retrieval Accuracy (10-way, chance=10%):
+    Average: 43.3%
+      ar→en: 50%
+      ar→fa: 10%
+      ar→he: 70%
+      en→ar: 60%
+      en→fa: 20%
+      en→he: 90%
+      fa→ar: 10%
+      fa→en: 10%
+      fa→he: 30%
+      he→ar: 60%
+      he→en: 80%
+      he→fa: 30%
+
+
+Results saved to /tmp/experiments/embedding_eval.json
+Uploaded to S3

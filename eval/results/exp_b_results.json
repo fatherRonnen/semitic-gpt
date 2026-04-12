@@ -1,0 +1,277 @@
+{
+  "base": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 173.52216958999634
+      },
+      "ar": {
+        "accuracy": 27.333333333333332,
+        "correct": 246,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.333333333333332,
+        "time_seconds": 186.37673807144165
+      },
+      "en": {
+        "accuracy": 31.11111111111111,
+        "correct": 280,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.111111111111111,
+        "time_seconds": 186.86567854881287
+      },
+      "fa": {
+        "accuracy": 29.22222222222222,
+        "correct": 263,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.222222222222221,
+        "time_seconds": 183.51588702201843
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8792,
+        "perplexity": 40.0,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7312,
+        "perplexity": 27.42,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9722,
+        "perplexity": 15.98,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6629,
+        "perplexity": 23.76,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "של אוייבים, של נוכלים, של אנשים שחיים בשקר, של אנשים שנלחמים על קיומם, של אנשים שמאמינים בהרס, של אנשים שחיים את מהותם. \"הטבח בהייד פארק\" הוא סרט תעודה על שורת התעללויות חוזרות ונשנות של פעילי זכויות אדם בהריסות בתים, בריונות ופגיעה",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". כל אחד יכול לייצר אווירה של בית. עם זאת, כל אחד יכול גם ליצור את האווירה הנכונה של הבית. להלן כמה רעיונות יצירתיים ואפקטיביים ליצירת אווירה של בית. 1. יש להתחיל עם תנור אפיה. אם תנור האפיה מלא, יש להתקין את תנור האפיה. זה יהיה מספיק כדי להכין את הבצ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "במחוז תל אביב. העיר שוכנים בה בתי קזינו רבים, מסעדות רבות, מוזיאונים, מוזיאונים, מועדוני ספורט, מוזיאונים לאמנות, מוזיאונים לאמנות, מוזיאונים לאמנות, מוזיאונים לתיאטרון ועוד. העיר ממוקמת בין תל אביב לתל אביב והוא מהווה מקור מדהים לארכיטקטורה, תרבות, אוכל, תרבות, דת",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة التي يتكلمها معظم المسلمين حول العالم، فالأديان السماوية الثلاث (الإسلام، المسيحية، اليهودية)، تتحدث عن الله في جميع أنحاء العالم. إن اللغة العربية هي اللغة الرسمية الوحيدة في مملكة البحرين، وهي اللغة الرسمية الوحيدة في مملكة البحرين. وهي اللغة الرسمية الوحيدة التي يتعلمها جميع المسلمين في الم",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": ". وقد أصبحت التكنولوجيا في هذه المرحلة أحد أهم العناصر الأساسية في تشكيل المجتمع، حيث أصبحت المؤسسات والمنظمات في حاجة إلى إيجاد طرق ووسائل جديدة للتعامل مع التكنولوجيا. إن التطور التكنولوجي له تأثير كبير على المجتمع، فعلى سبيل المثال، قد يكون لزيادة الإنتاجية تأثير كبير على المجتمع، وقد يساعد على ا",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "نصر, القاهرةالقطعة 31 - بلوك 23 - ,داخل سوبر ماركت كازيون مدينة نصر, القاهرة115 ش مصطفى النحاس,داخل الاهرام للمجمعات الاستهلاكية مدينة نصر, القاهرة4 ش الطيران,داخل الهيئة العامة لتنمية الثروة المعدنية مدينة نصر, القاهرة8 ش مكرم عبيد,داخل شركة شمس - النيل الهندسية والت",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "the core of all of our businesses and our products. We are now able to provide customers with the most advanced technology in the world. Learn more about how we’re doing business by visiting our website at www.crowdle.com. The newest trend in business is networking. The most important thing to do is",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "and Islamic history is one of the most fascinating subjects in which we can learn from the past and present. It’s hard to imagine how many people have been affected by the events that we have experienced on the ground. It has been a time of profound uncertainty and unease. It’s been a time of peace ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "and the new paradigm for the industry is rapidly evolving. The industry is also re-examining its core competencies in a new way. As a result, a new emphasis is being placed on the development of new industry standards and technology. The industry is now expected to move toward the development of a u",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زیر مجموعه از ادبیات شفاهی مردم ایران است. در دوران ناصرالدین شاه قاجار و به کوشش میرزاعلی اصغر اتابک، که با نام خانوادگی اتابکی شناخته می شد، مجموعه ای از داستان های شفاهی مردم ایران گردآوری شد. این مجموعه که شامل داستان هایی از شاهزادگان و بزرگ زادگان و اشراف و بزرگان دربار از جمله میرزا ظل السلطا",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در شهرستان رامهرمز واقع شده و یکی از مناطق خوش آب و هوا و دیدنی استان خوزستان می باشد. جمعیت این شهر بر اساس سرشماری عمومی نفوس و مسکن در سال ۱۳۹۵، با ۲٬۴۳۴ نفر (۷۲۲ خانوار) بوده است. در لغت نامه دهخدا آمده است که رامهرمز دهی از دهستان حومه ٔ بخش مرکزی شهرستان رامهرمز است که ۷۰",
+          "length_tokens": 76
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "به خدمت گرفت. در سال ۲۰۰۸ مؤسسه بین المللی فناوری تاکسی (ITTI) جایزه بین المللی فناوری تاکسی را به وی اعطا کرد. از سال ۱۹۸۵ تا ۱۹۸۵ رئیس انجمن بین المللی مهندسی راننده (ITRA) بود. از سال ۱۹۸۷ تا ۱۹۹۸ رئیس انجمن بین المللی مهندسی راننده (IENA) بود. از سال ۱۹۹۹ تا ۲۰۰۳ رئیس انجمن بین المللی",
+          "length_tokens": 76
+        }
+      ]
+    }
+  },
+  "sft": {
+    "belebele": {
+      "he": {
+        "accuracy": 27.77777777777778,
+        "correct": 250,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.7777777777777786,
+        "time_seconds": 161.14763569831848
+      },
+      "ar": {
+        "accuracy": 27.22222222222222,
+        "correct": 245,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.2222222222222214,
+        "time_seconds": 173.63690328598022
+      },
+      "en": {
+        "accuracy": 30.666666666666664,
+        "correct": 276,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 5.666666666666664,
+        "time_seconds": 174.30595660209656
+      },
+      "fa": {
+        "accuracy": 28.999999999999996,
+        "correct": 261,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.9999999999999964,
+        "time_seconds": 171.2036669254303
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.877,
+        "perplexity": 39.63,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7239,
+        "perplexity": 26.53,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9596,
+        "perplexity": 15.42,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6565,
+        "perplexity": 23.04,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "ערבית. ישראל היא מדינה דמוקרטית, עם רוב יהודי, עם רוב יהודי ושיעור גבוה מאוד של מוסלמים. יש לה גם את הדת המוסלמית, עם מיעוט קטן בלבד. הדת הנוצרית היא דת איסלמית, עם רוב יהודי, עם מיעוט קטן בלבד. יש לה גם את הדת המוסלמית עם רוב יהודי. יש לה גם את הדת האיסלמית, עם מיעוט קטן בלבד. יש לה גם את הדת המוסל",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". על פי מחקר חדש, 81% מהארגונים בעולם מכירים ב-2019 את הקמפיין שלכם, וב-34% מהפרסומים שלכם בפייסבוק. 82% מהאנשים מחפשים אתכם דרך הפייסבוק, 44% מהאנשים מחפשים אתכם דרך הרשת החברתית, ו-3",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "של אנשים חמים, רגישים, אוהבים אותנו, אוהבים אותנו, אוהבים אותנו, אוהבים אותנו, אוהבים אותנו, אוהבים אותנו, אוהבים אותנו. ### User: كم يبلغ عدد سكان اليابان؟ ### Assistant: اليابان هي دولة آسيوية تقع في منطقة شرق آسيا. في عام 201",
+          "length_tokens": 79
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة الأم لمعظم دول العالم. اللغة العربية هي اللغة الرسمية الوحيدة في 32 دولة عربية. اللغة الإنجليزية هي اللغة الثانية الأكثر شيوعًا في كل دولة عربية. في حين أن اللغة العربية هي اللغة الوحيدة في 28 دولة عربية فإن اللغة العربية هي اللغة الأكثر استخدامًا في 7 دول عربية. اللغات الأخرى هي اللغات الإفرن",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "من حولها، ويطلق على هذه التكنولوجيا اسم \"الذكاء الاصطناعي\" أو \"التعلم الآلي\". ### User: Classify each of the following as either \"a flying machine\" or \"a humanoid\". ### Assistant: Flying machines (FM): Flying machines (FL): ### User: تحديد فئة جديدة",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "6 أكتوبر. مواقع أثرية في مصر ### User: قم بتحويل النص المعطى الى سؤال. \"لماذا كنا نمرح؟\" ### Assistant: لماذا كنا نمرح؟ كان الناس يقضون وقتًا طويلاً في اللعب، مثل الأطفال في المدرسة. كان الناس يلعبون معًا، لكنهم كانوا يضح",
+          "length_tokens": 79
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "a technology that is used to analyze and understand data, and it has been used in various fields, such as in healthcare, medicine, aerospace, and many other industries. The technology has been used for many years to analyze large amounts of data, and this technology has contributed significantly to ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "can be traced to the 12th century, when the Babylonians conquered the region. The Persian Empire was established at the end of the 13th century and the Ottoman Empire was established around the 14th century. The Hinduism of the 15th century brought the Middle East into its own, and",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way humans interact with nature and how we think about our environment. ### User: ما هي عاصمة البحرين؟ ### Assistant: ### User: السؤال: إلى متى نعرف أن هناك شيئا غير معروف؟ ### Assistant: الإجابة: لا. ### User: س149- من هو الخليفة",
+          "length_tokens": 77
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان از شاخه زبانهای هندواروپایی، شاخه ای از زبانهای هندواروپایی است. زبان های ایرانی به چند شاخه تقسیم می شوند: ### User: السؤال: من هو أول من اخترع آلة الطباعة؟ ### Assistant: الإجابة: الخورجي ### User: Who was the first person to set foot in the",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در بخش مرکزی شهرستان شهریار استان تهران قرار دارد. این شهر در سال ۱۳۸۸ با تصویب هیئت وزیران به شهر ارتقاء یافت. #### User: اقترح فكرة مشروع إنشاء معهد للدراسات العليا في مجال العلوم. ### Assistant: فكرة إنشاء معهد للدراسات العليا في مجال العلوم هي فكرة مستوحاة من فكرة إنشاء معهد للدراسات العليا ف",
+          "length_tokens": 79
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "ایجاد کردند. شرکت های مختلف، از جمله فیس بوک، گوگل، آمازون، اپل و آمازون همگی در این زمینه فعال هستند. ### User: ما هو وزن الذبابة التي تقفز من السماء في الهواء؟ ### Assistant: هي أفعى تعيش في شرق آسيا، تعيش في الغابات المطيرة في آسيا. ##",
+          "length_tokens": 78
+        }
+      ]
+    }
+  },
+  "delta": {
+    "belebele_he": -0.5555555555555536,
+    "belebele_ar": -0.11111111111111072,
+    "belebele_en": -0.4444444444444464,
+    "belebele_fa": -0.22222222222222499,
+    "bpb_he": -0.0021999999999999797,
+    "bpb_ar": -0.007299999999999973,
+    "bpb_en": -0.012599999999999945,
+    "bpb_fa": -0.006400000000000072
+  },
+  "total_time_seconds": 1703.7397701740265
+}

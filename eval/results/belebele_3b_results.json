@@ -1,0 +1,31 @@
+{
+  "en": {
+    "accuracy": 31.77777777777778,
+    "correct": 286,
+    "total": 900,
+    "belebele_code": "eng_Latn"
+  },
+  "he": {
+    "accuracy": 27.0,
+    "correct": 243,
+    "total": 900,
+    "belebele_code": "heb_Hebr"
+  },
+  "ar": {
+    "accuracy": 28.444444444444443,
+    "correct": 256,
+    "total": 900,
+    "belebele_code": "arb_Arab"
+  },
+  "fa": {
+    "accuracy": 28.22222222222222,
+    "correct": 254,
+    "total": 900,
+    "belebele_code": "pes_Arab"
+  },
+  "overall": {
+    "accuracy": 28.86111111111111,
+    "correct": 1039,
+    "total": 3600
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "base": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 168.82130670547485
+      },
+      "ar": {
+        "accuracy": 27.333333333333332,
+        "correct": 246,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.333333333333332,
+        "time_seconds": 181.45401048660278
+      },
+      "en": {
+        "accuracy": 31.11111111111111,
+        "correct": 280,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.111111111111111,
+        "time_seconds": 180.85466814041138
+      },
+      "fa": {
+        "accuracy": 29.22222222222222,
+        "correct": 263,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.222222222222221,
+        "time_seconds": 180.52377271652222
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8792,
+        "perplexity": 40.0,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7312,
+        "perplexity": 27.42,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9722,
+        "perplexity": 15.98,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6629,
+        "perplexity": 23.76,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "רב תרבותית, עם תרבות עשירה, עם תרבות חברתית, עם תרבות של דיבור, עם תרבות של תרבות של משחק. תרבות של אמנות, של אמנות של אמנות, של אמנות של אמנות. זה תרבות של אמנות. זה תרבות של אמנות לא רק של אמנות אלא של אמנות של אמנות. זה אמנות של האמנות. זה אמנות של אמנות לא רק של אמנות אלא של אמנות של אמנות. זה א",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". לכן אני חושב שכדי להפוך אותו למוצר בעל משמעות עליו להיות חדשני, מקצועי, חדשני. אני לא חושב שהלקוחות של החברה הם אלה שמייצרים את המוצר, אלא הלקוחות של החברה הם אלה שמייצרים את המוצר. לכן אני חושב ש-SAP הוא בעצם \"מתחרה\" של החברה, ולכן אני חושב שהוא צריך להיות",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "גדולה, לא רק שהיא נמצאת במרכז אמריקה, אלא היא גם חלק מהעם האמריקאי המגיע אליה מכל העולם. היא לא רק עיירה יפה, אלא גם בעלת אופי היסטורי, למרות שהעיר הפכה לעיר של ממש. אם אתם לא אוהבים דברים חדשים, אתם מוזמנים ללכת לסיור באחד מהאזורים היותר מעניינים, כמו נהר הריין, נהר המיסיסיפי,",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة الرسمية للبلاد، ويَبلغ عدد سكانها حوالي 231,220 نسمة اعتبارًا من سنة 2020. اللغة العربية الفصحى هي اللغة الرسمية للبلاد واللغة العربية الفصحى هي اللغة الأم لعدد من اللغات الأخرى في البلاد. تكتب اللغة العربية الفصحى باستخدام الأبجدية اللاتينية، على الرغم من أن بعض اللهجات العربية قد تكتب بهذه ا",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": ": من هو غريمكي؟ غريمكي هو عالم من علماء الفيزياء وعلماء الرياضيات في جامعة مكغيل. وهو أحد مؤسسي معهد أبحاث الذكاء الاصطناعي، وشغل منصب رئيس الجمعية الأمريكية لتقدم العلوم من 1995 إلى 1998. كان غريمكي شخصية رائدة في تطوير نظرية الحقل الكمومي، والتي أصبحت رائدة في مجال علم الكون النظ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "6 أكتوبر وسط إجراءات أمنية مشددة. وأكد النائب أسامة سعد، خلال اجتماع مجلس الوزراء، أن الحكومة ستستمر في تنفيذ الإجراءات الأمنية في كافة أنحاء المدينة، مشددًا على ضرورة أن يكون هناك تواصل من كافة الجهات مع الوزارات والجهات المعنية في الدولة، للوقوف على أوضاع المدينة ومعالجة كافة الإحت",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "a great way to get started. We started with a 100% cloud based system and now we have more than 1,000 clients registered in 150 countries. Our 100% cloud based system was set up with a great user experience that is extremely efficient and our AI powered system allows us to run our business with real",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": ", and its people, is a matter of great interest to all who care about its history. The Middle East is riddled with pockets of corruption, mismanagement, and political corruption. The world’s wealthiest people, some of whom have earned billions of dollars from this miserable state, are being paid the",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the face of the world because we need more and more people to help us do more. But the truth is that we need more workers to give us more opportunity to grow. The United States has an unemployment rate of 28.9 percent, yet we are among the 23 countries with the highest unemployment rates of the worl",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان باستانی است که به دست ایرانیان هند و آسیای مرکزی به کارگرفته می شده است. این زبان در واقع یکی از شاخه های زبان هند و اروپایی است که با زبان های هندوآریایی نزدیکی بسیاری دارد. در ابتدا، زبان فارسی از میان رفته بود و تنها آثار ادبی به جا مانده از آن دوران در دسترس است. اما به تدریج، به دلیل تأثیر",
+          "length_tokens": 76
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در استان تهران واقع شده است. این شهر، مرکز شهرستان تهران است. در دی ماه ۱۴۰۰، بر اساس مصوبه جدید دولت، روستای وردیج به شهر تبدیل و به عنوان شهر وردیج شناخته شد. وردیج به دلیل قرارگیری در منطقه کوهستانی، دارای آب و هوای نیمه خشک می باشد. این شهر از شهرهای قدیمی ایران به شمار می",
+          "length_tokens": 74
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "به ارمغان می آورد. در سال ۲۰۲۳، این شرکت برای راه اندازی کسب وکار جدید خود با نام «استخراج و تصفیه فاضلاب» با هیئت مدیره جدید با شریک قدیمی اش قرارداد بست. این شرکت در سال ۲۰۲۱ از طریق سرمایه گذاری مشترک با شرکت «بی یونت» (BioNet) به ارزش تقریبی ۱۳ میلیارد دلار تأسیس",
+          "length_tokens": 76
+        }
+      ]
+    }
+  },
+  "sft": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.999999999999996,
+        "correct": 261,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.9999999999999964,
+        "time_seconds": 158.02564692497253
+      },
+      "ar": {
+        "accuracy": 27.88888888888889,
+        "correct": 251,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.8888888888888893,
+        "time_seconds": 167.69974899291992
+      },
+      "en": {
+        "accuracy": 31.222222222222225,
+        "correct": 281,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.222222222222225,
+        "time_seconds": 168.73520302772522
+      },
+      "fa": {
+        "accuracy": 28.999999999999996,
+        "correct": 261,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.9999999999999964,
+        "time_seconds": 169.54176545143127
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8759,
+        "perplexity": 39.45,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7264,
+        "perplexity": 26.83,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.964,
+        "perplexity": 15.61,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6578,
+        "perplexity": 23.19,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "עצמאית, אבל יש לה חוקים משלה. אם אתה מסתכל על הפרטים הקטנים, אז ישראל היא מדינה עצמאית. מדינת ישראל היא בית המשפט העליון של ארה\"ב. כל מי שרוצה לקבל זכויות חוקיות, צריך לקבל את הזכויות הללו. מי שרוצה להחליט בנושא זכויות אזרחיות, צריך לקבל את הזכות הזאת. מי שרוצה להחליט בנושא זכויות אזרחיות, צריך לקבל",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". בואו נביט, נוכל לראות את העולם דרך המכונית, אך לא תמיד כך יהיה. אנו נמדוד את האופן בו אנו צופים בנו ונחשף לסביבה בה אנו חיים. אם נתבונן על כל הדברים הללו, אנו יכולים לראות את הדרך בה אנו חיים בכל יום. \"ישראל לא תוכל לחייב את ארה\"ב לרכוש נשק גרעיני\"",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "עם היסטוריה מרתקת. גם לא מעט אנשים הגיעו אליה כדי לחקור את הארץ הזו, אם כי לא כולם יודעים מי הם ומה הם אוהבים. גם המבקרים וגם התיירים לא מחכים להכרזה על טיול זה. גם לא מעט מאוד אנשים כבר מבינים את חשיבותה של ירושלים, ואולי אפילו כבר יכולים. אז אנחנו מזמינים אתכם לקרוא את המאמר",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "لغة القرآن الكريم. كان أبو بكر يرددها في المسجد في الصلاة منذ صغره. كان أبو بكر يحفظ القرآن وكان يقرأ في الصلاة. كان أبو بكر يحب القراءة منذ صغره وكان يقرأ القرآن كل يوم. كان أبو بكر يحب القراءة منذ صغره وكان يقرأ القرآن كل يوم. كانت أمي تتحمس له وتضع له حذاءه. كانت",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "، وتصبح المليارات من الدولارات أرقاماً خيالية. 8. في عام 2017، حصلت شركة أبل على المرتبة الأولى من ناحية الإيرادات في أمريكا من حيث المبيعات. 9. في عام 2017، كانت شركة سامسونج هي الشركة الأسرع نموًا في عام 2017، حيث حققت ما مجموعه",
+          "length_tokens": 79
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "الجيزة, الجيزةش الجيزة,داخل مجلس الشورى جيزة, الجيزة42 ش ترعة الزمر,داخل محطة مترو فيصل القاهرة, الجيزةش الخليفة المأمون,داخل مستشفى جامعة عين شمس التخصصى القاهرة, الجيزةش التحرير,داخل محطة مترو البحوث القاهرة, الجيزة166 ش السودان,داخل فودافون مصر القاهرة, الجيزةش",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "transforming the way we think, feel, and act. This transformation will require a new mindset in the way we interact with technology. We must embrace the new technology, understand it, and use it to our best advantage. We must learn to change our habits, habits that are difficult to change, and habit",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "continues to be a subject of debate. The Middle East has seen remarkable advances in both its geopolitics and its human rights history, with a number of countries facing the prospect of war in their homelands. Despite the unpredictability of the international agenda, many of these countries have fou",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way we do business and the way we make money. - Alignment and collaboration are key to the success of any business. - Harnessing the power of data has enabled organizations to make critical decisions faster and more efficiently. - We can no longer rely on technology alone to perform our jobs. Te",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان هندواروپایی است که در جنوب شرقی اروپا صحبت می شود. این زبان دارای دو گویش است: گویش غربی که به صورت بومی در جنوب آلمان، بلژیک، فرانسه و اتریش تکلم می شود، و گویش شرقی که در مناطق شمالی تر در کشورهای آلمان، بلژیک، فرانسه، ایتالیا و اسپانیا رایج است. گویش شرقی که در شمال آلمان به وفور تکلم می شود",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در استان همدان واقع شده است. شهر سنقر با جمعیتی بالغ بر 135 هزار نفر در 26 کیلومتری همدان واقع شده است. این شهر با قدمتی 2500 ساله از قدیمی ترین شهرهای استان همدان محسوب می شود. با توجه به اینکه شهر سنقر در دامنه کوه الوند قرار گرفته است، دارای آب و هوای سرد و کوهستانی است. در این شهر",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "توسعه داد و همچنان در حال توسعه است. این فناوری از شبکه های عصبی مصنوعی برای دستیابی به بینش های عمیق در مورد داده های بزرگ استفاده می کند. این فناوری به شرکت ها کمک می کند تا عملکرد و کارایی خود را بهبود بخشند و از تصمیم گیری های سریع و مؤثر در کسب و کار پشتیبانی می کند. به طور کلی، فناوری واقعیت ا",
+          "length_tokens": 78
+        }
+      ]
+    }
+  },
+  "delta": {
+    "belebele_he": 0.6666666666666643,
+    "belebele_ar": 0.5555555555555571,
+    "belebele_en": 0.11111111111111427,
+    "belebele_fa": -0.22222222222222499,
+    "bpb_he": -0.0032999999999999696,
+    "bpb_ar": -0.0047999999999999154,
+    "bpb_en": -0.008199999999999985,
+    "bpb_fa": -0.005099999999999993
+  },
+  "total_time_seconds": 1665.231791973114
+}

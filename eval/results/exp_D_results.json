@@ -1,0 +1,277 @@
+{
+  "base": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 170.27332043647766
+      },
+      "ar": {
+        "accuracy": 27.333333333333332,
+        "correct": 246,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.333333333333332,
+        "time_seconds": 179.8589768409729
+      },
+      "en": {
+        "accuracy": 31.11111111111111,
+        "correct": 280,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.111111111111111,
+        "time_seconds": 181.22757172584534
+      },
+      "fa": {
+        "accuracy": 29.22222222222222,
+        "correct": 263,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.222222222222221,
+        "time_seconds": 183.86950969696045
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8792,
+        "perplexity": 40.0,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7312,
+        "perplexity": 27.42,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9722,
+        "perplexity": 15.98,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6629,
+        "perplexity": 23.76,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "מתקדמת מאוד, עם אווירת נופש ותרבות יוצאת דופן. התובע טוען כי אינו יודע את זהות הנתבעת, וכי לא יכול היה לדעת את זהות הנתבעת מאחר שהיא חברה בע\"מ. הנתבעת טוענת כי אין כיסוי ביטוחי לנזקי התובע. הנתבעת טוענת כי התובע מתגורר בדירת סבתו, וכי הוא אינו יודע את",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": "ופותחת בפנינו אופק חדש של טכנולוגיות חדשות. כמו כן, חשוב לזכור כי גם אם עד היום היה מדובר בתחום טכנולוגי מתקדם יחסית, הרי שכיום בו אנו חיים, ניתן למצוא כיום בעולם טכנולוגיות מתקדמות במיוחד, אשר מאפשרות לנו כיום לבחון לעומק את העולם המתפתח ולהתמקד בתחום אחד בלבד – טכנולוגיות מתקדמות. מי שמבקשם להישאר",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "הנמצאת בדרום הארץ ושוכנת בצפון הנגב. העיר נוסדה במאה ה-19 על ידי עולים מברית המועצות. העיר נוסדה על ידי עולים מארץ ישראל שתרמו את ידם לפעילות הציונית ולפיתוח הארץ. העיר נוסדה בשנת 1980, על ידי עולים חדשים שהתגוררו בערים אחרות. בשנת 1960 הוקמה בעיר העיר \"סביבה\" (סביבת ג",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "الترجمة الصحيحة للكتاب المقدس باللغة العربية. إنَّ ترجمة الكتاب المقدس هي ترجمة دقيقة، ومفهومة، ومفيدة في سياق الترجمة، وليس ترجمةً من لغةٍ أخرى، ولا ترجمةً مكتوبةً من لغةٍ أخرى. إنَّ ترجمة الكتاب المقدس، وإن كانت دقيقةً، فإنها ليست ترجمةً حرفيةً، فهي ترجمةً معقدةً، فهي ترجمةً حرفيةً غير مكت",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "، كما أنها تتيح الوصول إلى الإنترنت بسهولة. ويمكن للشركات الكبرى من جميع أنحاء العالم استخدام التكنولوجيا لتقديم خدماتها إلى عملائها في جميع أنحاء العالم. كما إن معظم الشركات الكبرى تقوم بتطوير منتجاتها الخاصة بها لتساعد العملاء على التواصل والتفاعل والتفاعل مع أجهزة الكمبيوتر. إن الشركات الكبرى قد ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "شبرا الخيمة سيتي لايف هي قناة تلفزيونية بريطانية مدفوعة. تم إطلاقها في 23 أغسطس 2000، وهي من أكثر القنوات مشاهدة على الإطلاق في أوروبا، حيث تبلغ نسبة مشاهدة القناة 97% من البالغين في المملكة المتحدة، في حين أن 62% من مشاهدي القناة البالغين في أوروبا هم من عمر",
+          "length_tokens": 77
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "the most important research field in the world, and its main challenge is to make use of it to improve humanity’s capabilities. In 2014, the European Commission awarded Erasmus+ an award for the first time to a European Research Council institution for the use of its research data. In 2016, the Euro",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": ": from the Arabian Peninsula to the Persian Gulf and the Gulf Crisis, with special reference to the Arabian Peninsula and the Palestine Liberation Organization. His book, which was published in 1993, is the definitive collection of his research and writings. He is the author of several books, includ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way we live. And with a new emphasis on how you live, how you live is key to living in a world that is constantly changing. And that’s why I believe that the new emphasis on how you live is really important, because it’s about how you live now. It’s about how you live now. It’s about how you liv",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان هند و اروپایی است که توسط مردم در جنوب شرق اروپا، غرب آسیا و شمال آفریقا گفتگو میشود و دارای لهجههای محلی است. این زبان به نام زبان مردم شمال شرق اروپا، زبان مردم خاورمیانه، و زبان مردم آسیای مرکزی و زبان مردم قفقاز نامیده میشود. این زبان به عنوان یک زبان مستقل از خانواده زبانهای هندواروپایی شن",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در بخش مرکزی شهرستان شهریار، استان تهران قرار دارد. این شهر در دامنه کوه های البرز و در دامنه شمالی رشته کوه های البرز و جاجرود قرار دارد. شهر شهریار در سال ۱۳۳۶ خورشیدی به عنوان یکی از بخش های شهرستان شهریار تأسیس شد و در سال ۱۳۴۲ به عنوان مرکز بخش شهریار به شهرستان ارتقا یافت. شهریار در سال ۱۴۰",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "دریافت کند. اگر در این زمینه سوالی برایتان ایجاد شده است، در قسمت نظرات با ما و سایر کاربران به اشتراک بگذارید. به گزارش خبرنگار مهر، امروز (شنبه) و در روز نخست نشست وزیران خارجه گروه- ۷۷ در وین، «محمد جواد ظریف» وزیر امور خارجه کشورمان در این نشست با «امانوئل ماکرون»",
+          "length_tokens": 76
+        }
+      ]
+    }
+  },
+  "sft": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.111111111111107,
+        "correct": 253,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.111111111111107,
+        "time_seconds": 161.2827296257019
+      },
+      "ar": {
+        "accuracy": 27.88888888888889,
+        "correct": 251,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.8888888888888893,
+        "time_seconds": 171.4008343219757
+      },
+      "en": {
+        "accuracy": 31.0,
+        "correct": 279,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.0,
+        "time_seconds": 172.61624598503113
+      },
+      "fa": {
+        "accuracy": 28.555555555555557,
+        "correct": 257,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.555555555555557,
+        "time_seconds": 168.69618582725525
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8757,
+        "perplexity": 39.41,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7255,
+        "perplexity": 26.72,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9637,
+        "perplexity": 15.6,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.657,
+        "perplexity": 23.11,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "קטנה, אבל אני חושב שהרבה יותר קל לממש את זה. יש הרבה יותר כלים, הרבה יותר אנרגיה, הרבה יותר אנשים, הרבה יותר אנשים יצירתיים. אני מבקש מהממשלה: שימי לב לעניין הזה. אני מתכוון גם למה שקרה בשנה שעברה: 400,000 יהודים נרצחו. היתה עלייה של 8% במספר ההרוגים",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". על פי מחקר חדש של חברת המחקר IDC, יותר מתשעה מיליון מכשירים בעולם מיוצרים כיום בסין, כשעוד 15 מיליון מהם הגיעו לשוק בסין בשנים האחרונות. בסין, על פי הערכות, ישנם 2.8 מיליון מכשירים המבוססים על מכשירים מבוססי מערכת ההפעלה אנדרואיד. \"תודה על כל העזרה וההכוונה.",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "שחוברה לה יחדיו. 10. לטענת העותרים, יש לקבוע כי לא ניתן היה להגביל את חופש הביטוי של תושבי הרשות הפלסטינית, גם אם יש לכך הצדקה, באמצעות הגבלת חופש הביטוי הפוליטי. לטענתם, יש להגביל את חופש הביטוי הפוליטי רק כאשר הוא פוגע בחופש הביטוי הפוליטי של הפרט. לטענתם, הגבלת חופש הביטוי הפוליטי של תושב הרשות",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "من أهم لغات العالم. وهي اللغة الرسمية الثانية في الأردن بعد اللغة العربية الفصحى، ويتحدث بها حوالي 2.5 مليون نسمة، وتستخدم في أكثر من 100 دولة حول العالم، وهي اللغة الأم لأكثر من 9 ملايين طالب وطالبة. في عام 2021، كانت اللغة العربية هي اللغة الثانية على مستوى العالم من حيث استخدامها في التعليم، حيث ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": ". من خلال التكنولوجيا يمكن للأشخاص الانتقال بسهولة وسرعة إلى العالم الحقيقي حيث يمكنهم قضاء وقت ممتع في التكنولوجيا. كما يمكن أن يكون من السهل على الأشخاص التفاعل مع العالم من حولهم، مما يمكنهم من التواصل في العالم الحقيقي دون تدخل بشري. يمكن للأشخاص الاستفادة من هذه التكنولوجيا من خلال الاستمتاع با",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر مدينة نصر الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مدينة الدقهلية مح",
+          "length_tokens": 78
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "in the foreground, and the artificial intelligence ecosystem is in the background. The Artificial Intelligence Community is a place for people to connect and share ideas, to collaborate and to create solutions to problems. It is our collective responsibility to collaborate and to communicate. 5. The",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "A summary of the history of the Middle East since its first appearance in print, the 1970s and 1980s. In particular, the period from 1960 until the present, the Middle East is being shaped by the growing influence of the Cold War and the rise of Islamist movements, with the rise of Islamist",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way the world works. It’s a way of thinking that has been disrupted by technology and society. It’s the result of our obsession with technology and our desire to control it. I’m a firm believer in the power of technology to change the world. The future of work is here and it’s a world of opportu",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "کتاب مرجع است که به بررسی و توصیف زبان فارسی می پردازد. این کتاب با عنوان «فرهنگ زبان فارسی» در سال ۱۳۳۵ منتشر گردید. در این کتاب، برای نخستین بار واژه ها و عبارت های فارسی به کار رفته است. این کتاب نخستین اثر در این زمینه است که به معرفی واژه های فارسی به زبان انگلیسی می پردازد و در آن از اصطلاحات ",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در استان تهران و در نزدیکی شهر تهران قرار دارد. جمعیت این شهر در سال ۱۳۹۵، برابر با ۴۷٬۴۹۷ تن بوده است. این شهر از دیرباز به نام شهر ری یا ری شهر نیز خوانده می شده است. این شهر در ۶۵ کیلومتری جنوب غرب تهران و در دامنهٔ رشته کوه البرز قرار گرفته است و از شمال به رشته کوه البرز، از غرب به کوه",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "با هم ترکیب کرده و به این ترتیب در سال ۲۰۱۸، با رشد ۵ درصدی تولید ناخالص داخلی (GDP) کشور، با توجه به پیشرفت صنایع و فناوری های پیشرفته و به منظور ایجاد فرصت های شغلی جدید، تاسیس کارخانه های بزرگ در کشورهای اروپایی و آمریکا مورد توجه قرار گرفت. به عنوان مثال، در سال گذشته میلادی، با توجه به بهبود وض",
+          "length_tokens": 80
+        }
+      ]
+    }
+  },
+  "delta": {
+    "belebele_he": -0.22222222222222499,
+    "belebele_ar": 0.5555555555555571,
+    "belebele_en": -0.11111111111111072,
+    "belebele_fa": -0.6666666666666643,
+    "bpb_he": -0.0034999999999999476,
+    "bpb_ar": -0.005699999999999927,
+    "bpb_en": -0.008499999999999952,
+    "bpb_fa": -0.005900000000000016
+  },
+  "total_time_seconds": 1682.0080800056458
+}

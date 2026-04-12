@@ -1,0 +1,130 @@
+{
+  "our_tokenizer": {
+    "he": {
+      "fertility": 1.772,
+      "bytes_per_token": 6.056,
+      "chars_per_token": 3.376,
+      "total_tokens": 5898,
+      "total_words": 3329,
+      "total_bytes": 35721,
+      "avg_token_length_chars": 3.39,
+      "single_char_token_pct": 16.4
+    },
+    "ar": {
+      "fertility": 1.66,
+      "bytes_per_token": 6.536,
+      "chars_per_token": 3.607,
+      "total_tokens": 6307,
+      "total_words": 3799,
+      "total_bytes": 41221,
+      "avg_token_length_chars": 3.62,
+      "single_char_token_pct": 15.6
+    },
+    "en": {
+      "fertility": 1.463,
+      "bytes_per_token": 4.211,
+      "chars_per_token": 4.2,
+      "total_tokens": 6184,
+      "total_words": 4226,
+      "total_bytes": 26039,
+      "avg_token_length_chars": 4.21,
+      "single_char_token_pct": 14.7
+    },
+    "fa": {
+      "fertility": 1.398,
+      "bytes_per_token": 7.01,
+      "chars_per_token": 3.864,
+      "total_tokens": 6204,
+      "total_words": 4439,
+      "total_bytes": 43493,
+      "avg_token_length_chars": 3.88,
+      "single_char_token_pct": 11.8
+    }
+  },
+  "baseline_tokenizer": {},
+  "comparison": {},
+  "vocab_analysis": {
+    "ours": {
+      "name": "multilingual_32k",
+      "vocab_size": 32000,
+      "script_distribution": {
+        "hebrew": 8888,
+        "arabic": 14945,
+        "latin": 7740,
+        "other": 426
+      },
+      "script_pct": {
+        "hebrew": 27.8,
+        "arabic": 46.7,
+        "latin": 24.2,
+        "other": 1.3
+      }
+    }
+  },
+  "examples": {
+    "he": [
+      {
+        "text": "ירושלים היא בירת ישראל ואחת הערים העתיקות בעולם. היא ממוקמת בהרי יהודה, בין הים התיכון לים המלח.",
+        "ours_tokens": 24,
+        "ours_pieces": "▁ירושלים ▁היא ▁בירת ▁ישראל ▁וא חת ▁הערים ▁העת יקות ▁בעולם . ▁היא ▁ממוק מת ▁בה רי ▁יהודה , ▁בין ▁הים...",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      },
+      {
+        "text": "הטכנולוגיה המודרנית משנה את פני החברה הישראלית בקצב מהיר. חברות הייטק רבות פועלות בתל אביב ובהרצליה.",
+        "ours_tokens": 24,
+        "ours_pieces": "▁הט כנולוגיה ▁המודרנית ▁משנה ▁את ▁פני ▁החברה ▁הישראלית ▁בקצב ▁מהיר . ▁חברות ▁הי יט ק ▁רבות ▁פוע לות ▁בתל ▁אביב...",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      }
+    ],
+    "ar": [
+      {
+        "text": "القاهرة هي عاصمة جمهورية مصر العربية وأكبر مدينة في العالم العربي. تقع على ضفاف نهر النيل.",
+        "ours_tokens": 19,
+        "ours_pieces": "▁القاهرة ▁هي ▁عاصمة ▁جمهورية ▁مصر ▁العربية ▁وأكبر ▁مدينة ▁في ▁العالم ▁العربي . ▁تقع ▁على ▁ض فاف ▁نهر ▁النيل .",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      },
+      {
+        "text": "التعليم في الوطن العربي يواجه تحديات كثيرة تتعلق بالجودة والوصول والتمويل.",
+        "ours_tokens": 18,
+        "ours_pieces": "▁التعليم ▁في ▁الوطن ▁العربي ▁ي واجه ▁تحد يات ▁كثيرة ▁تتعلق ▁بالج ودة ▁وال وصول ▁وال تم ويل .",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      }
+    ],
+    "en": [
+      {
+        "text": "Jerusalem is one of the oldest cities in the world and holds significance for three major religions.",
+        "ours_tokens": 23,
+        "ours_pieces": "▁Jer usal em ▁is ▁one ▁of ▁the ▁old est ▁cities ▁in ▁the ▁world ▁and ▁holds ▁signific ance ▁for ▁three ▁major...",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      },
+      {
+        "text": "Modern technology is transforming societies across the Middle East at an unprecedented pace.",
+        "ours_tokens": 20,
+        "ours_pieces": "▁Modern ▁technology ▁is ▁transform ing ▁soc iet ies ▁across ▁the ▁Middle ▁East ▁at ▁an ▁un pre ced ented ▁pace .",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      }
+    ],
+    "fa": [
+      {
+        "text": "تهران پایتخت ایران و بزرگترین شهر این کشور است. این شهر در دامنه رشته‌کوه البرز قرار دارد.",
+        "ours_tokens": 20,
+        "ours_pieces": "▁تهران ▁پایتخت ▁ایران ▁و ▁بزرگترین ▁شهر ▁این ▁کشور ▁است . ▁این ▁شهر ▁در ▁دامنه ▁رشته ▁کوه ▁البرز ▁قرار ▁دارد .",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      },
+      {
+        "text": "ادبیات فارسی یکی از غنی‌ترین ادبیات جهان است و شاعرانی مانند حافظ و فردوسی را به جهان معرفی کرده.",
+        "ours_tokens": 22,
+        "ours_pieces": "▁ادبیات ▁فارسی ▁یکی ▁از ▁غنی ▁ترین ▁ادبیات ▁جهان ▁است ▁و ▁شاعر انی ▁مانند ▁حافظ ▁و ▁فردوسی ▁را ▁به ▁جهان ▁معرفی...",
+        "baseline_tokens": 1,
+        "baseline_pieces": "N/A"
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+Loading test data...
+Test directions: [('ar-en', 51), ('ar-fa', 89), ('ar-he', 100), ('en-ar', 45), ('en-fa', 42), ('en-he', 63), ('fa-ar', 111), ('fa-en', 54), ('he-ar', 101), ('he-en', 44)]
+
+=== D-baseline ===
+  D-baseline fa-ar: chrF=7.6% (50 pairs)
+  D-baseline ar-fa: chrF=6.2% (50 pairs)
+  D-baseline he-ar: chrF=1.4% (50 pairs)
+  D-baseline ar-he: chrF=0.0% (50 pairs)
+  D-baseline he-en: chrF=1.4% (44 pairs)
+  D-baseline en-fa: chrF=0.1% (42 pairs)
+  D-baseline en-he: chrF=0.9% (50 pairs)
+  D-baseline fa-en: chrF=0.3% (50 pairs)
+  D-baseline ar-en: chrF=0.9% (50 pairs)
+  D-baseline en-ar: chrF=0.6% (45 pairs)
+
+=== G-trans ===
+  G-trans fa-ar: chrF=4.2% (50 pairs)
+  G-trans ar-fa: chrF=5.4% (50 pairs)
+  G-trans he-ar: chrF=0.0% (50 pairs)
+  G-trans ar-he: chrF=0.0% (50 pairs)
+  G-trans he-en: chrF=10.5% (44 pairs)
+  G-trans en-fa: chrF=3.8% (42 pairs)
+  G-trans en-he: chrF=9.1% (50 pairs)
+  G-trans fa-en: chrF=6.0% (50 pairs)
+  G-trans ar-en: chrF=7.3% (50 pairs)
+  G-trans en-ar: chrF=5.1% (45 pairs)
+
+=== G-mixed ===
+  G-mixed fa-ar: chrF=6.0% (50 pairs)
+  G-mixed ar-fa: chrF=5.8% (50 pairs)
+  G-mixed he-ar: chrF=0.0% (50 pairs)
+  G-mixed ar-he: chrF=0.0% (50 pairs)
+  G-mixed he-en: chrF=5.7% (44 pairs)
+  G-mixed en-fa: chrF=2.5% (42 pairs)
+  G-mixed en-he: chrF=5.3% (50 pairs)
+  G-mixed fa-en: chrF=6.3% (50 pairs)
+  G-mixed ar-en: chrF=4.6% (50 pairs)
+  G-mixed en-ar: chrF=3.3% (45 pairs)
+
+=== G2-trans ===
+  G2-trans fa-ar: chrF=13.7% (50 pairs)
+  G2-trans ar-fa: chrF=16.7% (50 pairs)
+  G2-trans he-ar: chrF=1.8% (50 pairs)
+  G2-trans ar-he: chrF=5.9% (50 pairs)
+  G2-trans he-en: chrF=7.1% (44 pairs)
+  G2-trans en-fa: chrF=3.2% (42 pairs)
+  G2-trans en-he: chrF=5.7% (50 pairs)
+  G2-trans fa-en: chrF=5.2% (50 pairs)
+  G2-trans ar-en: chrF=6.0% (50 pairs)
+  G2-trans en-ar: chrF=4.3% (45 pairs)
+
+=== G2-direct ===
+  G2-direct fa-ar: chrF=15.3% (50 pairs)
+  G2-direct ar-fa: chrF=18.7% (50 pairs)
+  G2-direct he-ar: chrF=4.8% (50 pairs)
+  G2-direct ar-he: chrF=3.4% (50 pairs)
+  G2-direct he-en: chrF=0.4% (44 pairs)
+  G2-direct en-fa: chrF=2.7% (42 pairs)
+  G2-direct en-he: chrF=2.2% (50 pairs)
+  G2-direct fa-en: chrF=0.4% (50 pairs)
+  G2-direct ar-en: chrF=0.4% (50 pairs)
+  G2-direct en-ar: chrF=3.7% (45 pairs)
+
+================================================================================
+Direction   D-baseline     G-trans        G-mixed        G2-trans       G2-direct      
+ar-en       0.9            7.3            4.6            6.0            0.4            
+ar-fa       6.2            5.4            5.8            16.7           18.7           
+ar-he       0.0            0.0            0.0            5.9            3.4            
+en-ar       0.6            5.1            3.3            4.3            3.7            
+en-fa       0.1            3.8            2.5            3.2            2.7            
+en-he       0.9            9.1            5.3            5.7            2.2            
+fa-ar       7.6            4.2            6.0            13.7           15.3           
+fa-en       0.3            6.0            6.3            5.2            0.4            
+he-ar       1.4            0.0            0.0            1.8            4.8            
+he-en       1.4            10.5           5.7            7.1            0.4            

@@ -1,0 +1,277 @@
+{
+  "base": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 174.5806384086609
+      },
+      "ar": {
+        "accuracy": 27.333333333333332,
+        "correct": 246,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.333333333333332,
+        "time_seconds": 178.5483639240265
+      },
+      "en": {
+        "accuracy": 31.11111111111111,
+        "correct": 280,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.111111111111111,
+        "time_seconds": 181.36631417274475
+      },
+      "fa": {
+        "accuracy": 29.22222222222222,
+        "correct": 263,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.222222222222221,
+        "time_seconds": 179.3462905883789
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8792,
+        "perplexity": 40.0,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7312,
+        "perplexity": 27.42,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9722,
+        "perplexity": 15.98,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6629,
+        "perplexity": 23.76,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "המנוהלת על ידי מדינת ישראל, והמדינה היא זו שאחראית על יישום החלטה זו (ראו גם: בג\"ץ 7154/06 עמותת \"תנו לחיות לחיות\" נ' שר החקלאות ופיתוח הכפר (טרם פורסם, 12.9.2007), פסקה 12 לפסק הדין; בג\"ץ 8",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". כדי להבין את התופעה, צריך לשים לב לאיך התופעה גורמת לאנשים לעבור על החוק. 1. האם זה קשור למה? 2. האם זה משהו שתלוי במערכת היחסים שלנו עם עצמנו? 3. האם זה אומר שמשהו טוב קורה? 4. האם זה אומר שאנו מחפשים פתרונות יצירתיים ויעילים? 1. מה זה",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "במחוז ירושלים, הנמצאת בקצה הדרומי של העיר ירושלים. העיר ממוקמת על ציר תנועה ראשי, העובר בציר המחבר בין כביש מס' 1 (ירושלים) לבין כביש מס' 40, העובר בציר המחבר בין כביש מס' 40 לבין כביש מס' 11. בעיר מתגוררים כ-130,000 תושבים, מהם כ-25,0",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "لغة أدبية. مراجع انظر أيضا اللغة العربية لغة عربية أبو بكر بن عبد الرحيم بن أبي بكر بن محمد بن عبد الرحمن بن عبد الله بن جعفر بن عبد الكريم بن أبي بكر بن أحمد بن عبد الرحمن بن محمد بن عثمان بن يوسف بن محمد بن العباس بن عبد المطلب بن هاشم بن عبد مناف بن قُصَي بن كلاب بن مرة بن كعب بن لؤي بن غالب",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "من حولنا، و هذا ما حدث بالفعل. ولكن هذا ليس هو الحال، فالحكومات التي تعاني من نقص في الموارد المالية، هي التي تعاني من الصعوبة أو التعقيد، لأن الحكومة يمكن أن تفشل لأن الموارد المالية لم تعد متوفرة. و عندما يتم إلقاء اللوم على الحكومات في فشلها، فإنها ستكون عاجزة عن التكيف، لأنها لن",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "نصر - القاهرة مصر تحميل العاب مجانا تحميل العاب مجانية للتحميل من موقع تحميل العاب كمبيوتر مجانا تحميل العاب كمبيوتر مجانا كاملة, وتحميل العاب كمبيوتر مجانا كاملة, تحميل العاب كمبيوتر مجانا 2014, تحميل العاب كمبيوتر مجانا",
+          "length_tokens": 78
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "a new and exciting field of research. It has been argued that as a function of the human brain, the human brain is able to develop neurons. The theory of neuronal evolution has been studied extensively throughout history. Human fetal development is the first experimentally determined in a cell of hu",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": ", as it has evolved in the last 30 years, is complex. The story is that the West was a colonial power, but the United Nations was a racist, sexist, racist colonial power that was built on the backs of black Africans. This was the period in the history of the United Nations where the United N",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way we live, work and play. It’s called the new paradigm of “Everything is Possible.” It’s an idea that, if implemented in a meaningful way, can make a difference. It’s called the “Perfect Implementation Paradigm.” It is a paradigm of the future. It’",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "اثر فاخر به زبان فارسی است که توسط محمد کریم پیرنیا تألیف شده است. وی همچنین در تیم ملی فوتبال زنان برزیل بازی کرده است. «دوستت دارم» تک آهنگی از هنرمند اهل ترینیداد و توباگو نیکی میناژ است که در سال ۲۰۱۳ میلادی منتشر شد. این تک آهنگ در آلبوم جمعه صورتی: نسخه جدید رومن قرار داشت",
+          "length_tokens": 76
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "در استان کرمان، که در مرکز ایران و در فاصله ۳۰ کیلومتری از شهر کرمان واقع شده است. شهرستان بافت از شمال با شهرستان بافت، از جنوب با شهرستان بافت، از شرق با شهرستان کوهبنان و از غرب با شهرستان زرند و شهرستان بم همسایه است. جمعیت این شهرستان بر طبق سرشماری سال ۱۳۹۵، برابر با ۴٬۷۵۰ تن بوده است. شهرستان",
+          "length_tokens": 76
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "دارد. شرکت اینتل، پردازندههای نسل نهم و دهم سری Core i3 و Core i5 و Core i7 را در کنار پردازندههای Core i3، Core i5 و Core i7 سری G6 برای استفاده در لپ تاپهای ویندوزی به تولید رسانده است. رمها و حافظههای هارددیسک این",
+          "length_tokens": 76
+        }
+      ]
+    }
+  },
+  "sft": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.77777777777778,
+        "correct": 259,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.7777777777777786,
+        "time_seconds": 159.11836767196655
+      },
+      "ar": {
+        "accuracy": 27.555555555555557,
+        "correct": 248,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.555555555555557,
+        "time_seconds": 167.8069920539856
+      },
+      "en": {
+        "accuracy": 31.0,
+        "correct": 279,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.0,
+        "time_seconds": 171.85199213027954
+      },
+      "fa": {
+        "accuracy": 28.999999999999996,
+        "correct": 261,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.9999999999999964,
+        "time_seconds": 172.1246600151062
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8771,
+        "perplexity": 39.64,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7277,
+        "perplexity": 26.99,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9653,
+        "perplexity": 15.67,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.66,
+        "perplexity": 23.43,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "יהודית דמוקרטית, השלטת את החוק הבינלאומי. כל מדינה דמוקרטית, באשר היא, מחויבת לקיומה, לקיומן ולשימורן של נורמות חוקיות המקיימות את זכויות האדם המקובלות בה. כמדינה יהודית, מחויבת המדינה לקבוע את ערכי היסוד המאירים את דרכנו. ערכים אלה הם אשר קובעים את \"האני מאמין\" של המדינה ואת \"החברה",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". אבל האם ניתן לתמצת את הדברים הללו רק במטאפורה? האם ניתן לומר כי העולם המודרני מתבסס על טכנולוגיות מתקדמות, או שמא מדובר רק במטאפורה? האם ניתן לומר כי העולם שלנו בנוי על טכנולוגיות מתקדמות, או שמא מדובר רק במטאפורה? האם ניתן לומר כי העולם המודרני בנוי על טכנולוגיות מתקדמות, או שמא מדובר רק במטא",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "מודרנית. \"תמיד יש התרגשות לראות את העיר מתעוררת לחיים\", אמר לביא. \"זה מרגיש כאילו כל העולם כולו נחרב. וזה מרגיש לי כמו לראות את העולם כמו חדש\". אם אתם חושבים על חתונה, אתם בוודאי יודעים כי מדובר על חגיגה שלא רק תיפתח בפניכם אלא גם תהפוך את האירוע",
+          "length_tokens": 78
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة العربية. و قد تفاقمت الأزمة، حيث ظهرت العديد من الكلمات العربية الشائعة في اللغة العربية في العديد من اللغات الأخرى، ولا سيما في الهند وباكستان وتايلاند وسلطنة عمان. من الاستخدامات الحديثة للعربية في الدول الأخرى على سبيل المثال: اللغة العربية في الإمارات العربية المتحدة: في عام 2013، تم إصدار",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "، ونتشر في كل مكان. في عام 2015، في 100 عام، أصبحنا مليون شخص، و100 مليون شخص سوف يكونون في المستقبل. 2020: 100.000-1.000.000.000.000.000.000",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "نصر, القاهرة3 ش مكرم عبيد,داخل سيتى ستارز مول - المرحلة الاولى - الدور الثانى مدينة نصر, القاهرة36 ش مكرم عبيد,داخل الاهلى للصرافة مدينة نصر, القاهرةش عمر بن الخطاب,داخل سيتى ستارز مول - المرحلة الاولى - الدور الثانى مدينة نصر, القاهرةش نجاتى سراج,داخل سوبر ماركت الرا",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "not yet completely accepted. This means that the most intelligent computer systems can handle a large variety of tasks with ease. However, it is essential to understand that the technology does not yet possess the power to perform a variety of tasks. This means that the tools needed for the task can",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "is filled with events that are both historic and current. The history of the world’s largest economy, the Middle East, is rich with historic events, and it’s the basis of the most recent history of our times. The Middle East is also a place where history is the primary focus, and history is the prim",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way we think about the future. This is because the role of government in addressing global issues is becoming increasingly complex and technological. The use of artificial intelligence, machine learning, and cloud computing have become the norm in many areas of life. This is where artificial int",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "عنوان برای یک گروه یا شاخه از مردم است که به عنوان «کودک» یا «نوجوان» شناخته می شود و می تواند به افراد زیر اشاره کند: «کودکان» (Carnivores) یا بچه های آدم که گاهی ممکن است به صورت یک واژه برای کودکان به کار رود. «کودکان» (Puppets) یا",
+          "length_tokens": 76
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "در جنوب غربی استان تهران. این شهر در دامنه های شمالی البرز جای گرفته است و آب و هوای آن گرم و خشک است. این شهر از شمال به بزرگراه شهید بابایی، از جنوب به بزرگراه شهید زین الدین، از شرق به بزرگراه شهید باقری و از غرب به بزرگراه شهید همت محدود است. این شهر در استان تهران واقع شده و جزء شهرداری منطقه ۴",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "از طریق بازارهای محلی، ملی و بین المللی به دست آورد. گروه علی بابا به عنوان یک شرکت چندملیتی، به عنوان یک شرکت صادراتی، فعالیت های خود را در کشورهای مختلف جهان ادامه می دهد. در سال ۲۰۱۲، این گروه به عنوان بزرگ ترین شرکت صادراتی، در فهرست فورچون جهانی ۵۰۰، پس از علی بابا و شرکت های وابسته، در رتبه شش",
+          "length_tokens": 80
+        }
+      ]
+    }
+  },
+  "delta": {
+    "belebele_he": 0.4444444444444464,
+    "belebele_ar": 0.22222222222222499,
+    "belebele_en": -0.11111111111111072,
+    "belebele_fa": -0.22222222222222499,
+    "bpb_he": -0.0020999999999999908,
+    "bpb_ar": -0.0034999999999999476,
+    "bpb_en": -0.006899999999999906,
+    "bpb_fa": -0.0029000000000000137
+  },
+  "total_time_seconds": 1671.5899415016174
+}

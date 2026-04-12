@@ -1,0 +1,277 @@
+{
+  "base": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 170.040025472641
+      },
+      "ar": {
+        "accuracy": 27.333333333333332,
+        "correct": 246,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.333333333333332,
+        "time_seconds": 185.35797762870789
+      },
+      "en": {
+        "accuracy": 31.11111111111111,
+        "correct": 280,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.111111111111111,
+        "time_seconds": 186.10290217399597
+      },
+      "fa": {
+        "accuracy": 29.22222222222222,
+        "correct": 263,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.222222222222221,
+        "time_seconds": 184.9650137424469
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8792,
+        "perplexity": 40.0,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7312,
+        "perplexity": 27.42,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9722,
+        "perplexity": 15.98,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6629,
+        "perplexity": 23.76,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "קטנה. היא אינה מדינה קטנה, אלא מדינה קטנה, אם כי קטנה מאוד. יש לה עוד הרבה מה ללמוד. בית המשפט המחוזי בבאר שבע גזר היום (ה') עונש מאסר עולם על אדם שהורשע בהריגת שתי נערות בנות 15, תושבות השטחים, בגין שוד, לאחר שהודה בהתפרצויות לבנין מגוריו. השופטת רז-לוי",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". היא מאפשרת לכל אחד לפתח את עצמו ואת היכולות שלו. היא מאפשרת לכל אחד לפתח את עצמו, את היכולות שלו, להיות עצמאי, להיות איש עסקים. היא מאפשרת לכל אחד לפתח את היכולות שלו, את היכולות שלו, להיות עצמאי, להיות עצמאי. היא מאפשרת לכל אחד לפתח את היכולות שלו, את היכולות שלו, להיות עצמאי, להיות איש עסקים. הי",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "נמל חשובה ועתירת תיירות. ביום 17.3.2014 החליטה ועדת השרים לענייני פנים ושירותים, בהשתתפות שר הפנים, על מינויה של חברת סיטון קפיטל בע\"מ (להלן: סיטון קפיטל ) כמפיצה בלעדית בישראל של מוצרי החברה. 1. סיטון קפיטל היא",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة الرسمية، ولكن اللغة الإنجليزية ليست رسمية. في عام 2011، تم إنشاء كلية طب الأسنان في جامعة الأزهر. تم تأسيس المدرسة في عام 2012. في عام 2009، تم تعيين الدكتور محمد حلمي عبد الباقي كأول رئيس لقسم طب الأسنان في جامعة الأزهر. في عام 2011، تم إنشاء كلية الدراسات العليا. في",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "من حولنا. ◄ الــــــكــــ(GBPUSD)يـــــــبـــــل ► - الصفحة 2571 منتدى العملات العام Forex لمتابعة كل ما يتعلق بتجارة العملات الاجنبية – الفوركس والذهب والنفط من اخبار وطرق المتاجرة",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "الشروق, القاهرة37 ش عبد الحميد بدوي,امام مستشفى الشروق العام, القاهرة40 ش قصر العينى,امام قصر العينى, القاهرة33 ش قصر العينى,امام مستشفى قصر العينى العام, القاهرة26 ش احمد عرابى,امام عمر افندى, القاهرة51 ش عثمان بن عفان,امام سينما جالا",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "rapidly changing the way that we work. In fact, we are already at the stage where we can apply AI to all our problems. The AI-powered future will be driven by the ability to drive and control everything, including the way we treat and interact with our customers. In the future, all our systems be co",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "in the 21st century may have been a history of the Middle-East for centuries. But the Middle Eastern nations have been largely forgotten. In 1967, Napoleon Bonaparte of France was declared the winner of the Battle of the Atlantic. Today, the Middle Eastern nations are home to",
+          "length_tokens": 79
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "and a new market is emerging. In this digital world, the old way of doing business is no longer attractive. When you start a business, you need to get your business online. The old way of doing business is no longer relevant. You need to work on your business online. You can still get your business ",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان در حال رشد است. در سال های اخیر، به دلیل روند رو به رشد استفاده از تلفن همراه در بسیاری از کشورها، برنامه های تلفن همراه به شدت افزایش یافته است. این روند باعث شده که توسعه دهندگان برنامه ها را به زبان های مختلف برنامه نویسی ترجمه کنند. در زیر چندین نمونه از نرم افزارها و اپلیکیشن های تلفن همرا",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در استان البرز قرار دارد. این شهرک در گذشته با نام شهرک گلستان شناخته می شد که از سال ۱۳۹۲ با تصویب هیئت وزیران، به شهرک گلستان تغییر نام داد. به گفته رئیس سازمان مدیریت پسماند شهرداری تهران، شهرک گلستان در گذشته به «شهرک گلستان» شهرت داشت و یک پارک و یک بوستان دارد و «این محله از قدیم به خاطر آب",
+          "length_tokens": 76
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "به دست آورد. این شرکت در سال 1973 برای اولین بار در ایالات متحده آمریکا شروع به کار کرد و از آن زمان به بعد، شرکت به طور مداوم در حال توسعه و به روز رسانی فناوری های خود با نوآوری های جدید است. این شرکت به طور مداوم در حال توسعه نوآوری ها و بهبود محصولات خود با استفاده از فناوری های پیشرفته است. شرک",
+          "length_tokens": 78
+        }
+      ]
+    }
+  },
+  "sft": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.666666666666668,
+        "correct": 258,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.666666666666668,
+        "time_seconds": 159.5366234779358
+      },
+      "ar": {
+        "accuracy": 26.88888888888889,
+        "correct": 242,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 1.8888888888888893,
+        "time_seconds": 172.87163043022156
+      },
+      "en": {
+        "accuracy": 31.666666666666664,
+        "correct": 285,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.666666666666664,
+        "time_seconds": 175.4533200263977
+      },
+      "fa": {
+        "accuracy": 28.999999999999996,
+        "correct": 261,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.9999999999999964,
+        "time_seconds": 173.58820581436157
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8785,
+        "perplexity": 39.88,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7334,
+        "perplexity": 27.69,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9682,
+        "perplexity": 15.8,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.669,
+        "perplexity": 24.46,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "שבה יש לא מעט גישות סותרות. לא תמיד זה קל, אבל כשהמדינה היא כזאת, זה בהחלט אפשרי, והרבה פעמים זה באמת עניין של העדפה מתקנת או צדק חברתי. \"המדינה שלנו היא עדיין מדינה שיש בה אנשים עם דעות דומות מאוד לאלו שלך, אבל לא תמיד זה כך. כשיש קבוצות חברתיות חזקות, הן לא מעטות. אני",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". \"אני חושב ש-Google Cloud היא הדרך הטובה ביותר לחדש את הקשר בין בני אדם, כמו גם את האינטרנט, לעסקים. אני מאמין ש-Google Cloud, שהיא פלטפורמת הבניה שלנו, היא הדרך הטובה ביותר לחדש את הקשרים האלה בין בני אדם, כמו גם את האינטרנט. היא גם מעניקה פתרון מלא לניהול קשרים בין בני אדם, כמו גם",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "של ערים גדולות. בעיר יש הרבה מקדשים, כנסיות, מקדשים, תרבויות עתיקות, מקדשים היסטוריים. העיר העתיקה היא עיר עתיקה ועתיקה, והעיר העתיקה היא עיר עתיקה, עמוסה, שופעת אבנים וצעצועים. מקדשים, כנסיות, תרבויות עתיקות, מקדשים, כנסיות, מקדשים. העיר העתיקה היא עיר של ערים גדולות,",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة الرسمية في الجمهورية اليمنية، بينما اللغة العربية الفصحى هي اللغة الرسمية في الجمهورية اليمنية. 2012 - بدء مباحثات سلام في السويد برعاية الولايات المتحدة. 2015 - فوز حزب العمال الكردستاني بأغلبية في الانتخابات البرلمانية في تركيا، لكن أحزاب المعارضة رفضت نتائج الانتخابات. 2018 - مقتل 34 شخصًا ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "، وتوفر أحدث التكنولوجيا، ووسائل التواصل الاجتماعي، والسينما، وتكنولوجيا الاتصالات، وتكنولوجيا المعلومات. وكتبت صحيفة سان فرانسيسكو كرونيكل، أن «التكنولوجيا تلعب دورا في تغيير العالم»، مشيرة إلى أن «التكنولوجيا، التي تتخذ من الأرض والهواء والماء، هي المسؤولة عن 90 في المائة من تغير المناخ العالمي»، ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "نصر 1947 (سيرة ذاتية) من المسرح العالمي إلى المسرح العالمي - تأليف: أرنولد شوارزنيجر، ترجمة: فتحي حافظ، مراجعة: عبد الحميد يونس، الناشر: الهيئة المصرية العامة للكتاب، القاهرة. مسرحية: مدينة السلام (سيرة ذاتية) - مسرحية من المسرح العالمي إلى المسرح العالمي - تأليف: ارنولد ش",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "the use of artificial intelligence to create and use computer systems in a way that enables them to perform tasks that are often beyond the capabilities of human intelligence. We can’t stop using artificial intelligence. There is a lot of work to be done before it becomes mainstream. We need to work",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "is filled with fascinating stories and mysteries. There is a palpable feeling of wonder at the grandeur of the majestic spaces in which the people of the Middle East live and work. There is a sense of wonder and fondness for the places they call home that can only come from a truly global community ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": ", but it is not without its own challenges. Around the year 2026, the world will be facing the most severe health crisis since the onset of the COVID-19 pandemic. It is estimated that 100 million people will be infected with COVID-19. In the United States alone, there are as many",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان مستقل است. این زبان بیشتر در کشورهای ایران، افغانستان و تاجیکستان صحبت می شود و از نظر واژگان، دستور زبان و واژگان بسیار به هم نزدیک اند. در این زبان، برخی از واژه های دشوار به طور کامل فهمیده می شوند. در ایران، زبان فارسی زبانی رسمی است و در نهادهای رسمی و غیردولتی استفاده می شود. همچنین، زبان",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در استان البرز قرار دارد. این شهر در سرشماری سال ۱۳۹۵، جمعیتی برابر با ۴۳,۸۷۸ نفر داشته است. این شهر در کنارهٔ جنوبی دریاچه نمک و در دامنه های جنوبی رشته کوه البرز قرار دارد. این شهر مرکز بخش دهفری از توابع شهرستان اسلام آباد غرب است. بنابر سرشماری مرکز آمار ایران، جمعیت شهر دهفری در سال ۱۳۸۵ برا",
+          "length_tokens": 74
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "به سمت خود می کشد. درواقع ما باید در حوزه فناوری های نوظهور پیشرفت داشته باشیم. در این مسیر ممکن است فناوری های جدیدی وارد بازار شود که ما آنها را به عنوان فناوری های «در حال ظهور» می شناسیم. این فناوری ها ممکن است در حوزه هایی مانند هوش مصنوعی، واقعیت مجازی و رباتیک مورداستفاده قرار بگیرند. در این ",
+          "length_tokens": 78
+        }
+      ]
+    }
+  },
+  "delta": {
+    "belebele_he": 0.3333333333333357,
+    "belebele_ar": -0.44444444444444287,
+    "belebele_en": 0.5555555555555536,
+    "belebele_fa": -0.22222222222222499,
+    "bpb_he": -0.0007000000000000339,
+    "bpb_ar": 0.0022000000000000908,
+    "bpb_en": -0.0040000000000000036,
+    "bpb_fa": 0.006099999999999994
+  },
+  "total_time_seconds": 1697.2221751213074
+}

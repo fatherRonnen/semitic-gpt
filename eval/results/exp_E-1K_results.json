@@ -1,0 +1,277 @@
+{
+  "base": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 171.06346940994263
+      },
+      "ar": {
+        "accuracy": 27.333333333333332,
+        "correct": 246,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.333333333333332,
+        "time_seconds": 177.33350539207458
+      },
+      "en": {
+        "accuracy": 31.11111111111111,
+        "correct": 280,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.111111111111111,
+        "time_seconds": 180.43734979629517
+      },
+      "fa": {
+        "accuracy": 29.22222222222222,
+        "correct": 263,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.222222222222221,
+        "time_seconds": 181.94645261764526
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8792,
+        "perplexity": 40.0,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7312,
+        "perplexity": 27.42,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9722,
+        "perplexity": 15.98,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6629,
+        "perplexity": 23.76,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "מתוקנת, שאינה דורשת השקעת משאבים עצומים בתשתיות, בשכונות חדשות ובשכונות חדשות, וכן אינה דורשת השקעה בתשתיות של תשתיות חיוניות. היא אינה דורשת השקעה בתשתיות ציבוריות או עלויות תקציביות נוספות. 11. המדינה לא הציגה נתונים על היקף ההשקעה בתשתיות הציבוריות ועל עלויות התקציב של רשויות",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". זה לא דבר חדש בעולם האינטרנט בכלל. עד כה, זה לא קרה. אם אתם חושבים שמחר, יום שני, אולי יום אחד, תראו את הדמו-עשן של הטלוויזיה, את הדלק ואת הטלוויזיה, זה לא אומר שגם היום זה לא קרה. זה גם לא אומר שהיא לא תביא אתכם ליום חמישי או ליום ראשון, או ליום שבת,",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "הבירה של מדינת ישראל, העיר האטרקטיבית ביותר בה ניתן למצוא מקומות לינה במחירים סבירים. העיר ממוקמת בתוך עמק רפאים, בין עמק החולה לנחל שורק, במרחק של 55 ק\"מ, והיא עיר קטנה יחסית, עם מגוון גדול של מלונות, בתי הארחה, מסעדות, בתי קפה, חנויות, בתי קפה שונים, מסעדות",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة الرسمية الوحيدة في الإمارات العربية المتحدة، وهي اللغة الأم لدولة الإمارات العربية المتحدة، وهي اللغة الرسمية الوحيدة في البلاد. تنحدر اللغة العربية من اللغة الفصحى، ويتحدث بها ما يفوق 80 مليون نسمة، أي ما يعادل 5% من سكان الأرض، وتعتبر اللغة العربية من اللغات السامية التي تضم أكثر من 160 مليو",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "اليوم، فكلما زادت التكنولوجيا، زادت ثقتنا بالإنسان. فكلما زادت المعرفة، زادت ثقتنا بأنفسنا. نحن الآن في عصر التكنولوجيا، فكلما زادت المعرفة، زادت ثقتنا بأنفسنا. فالتكنولوجيا تُعزز الوعي، وتحمينا من المخاطر، وتساعدنا على التعامل",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "جراجية لايوجد بها محلات تجارية حيث انها مدينة صغيرة في شارع رئيسي يفصل بين طريق المطار وحتى مدينة جراجية. 49,651 مشاهدة, الثلاثاء ٥ نيسان ٢٠١٩ 11:43النشرة أخبار لبنان والشرق الأوسطسياسة https://files.elnashra.",
+          "length_tokens": 78
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "a fascinating subject. It is not about smart phones, but about the future of humanity. We are at the beginning of a new era of computing, and it is about the future of society. A future that is socially just, and that is inclusive. The future of humanity is in a more just and inclusive way. We can c",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": ", and the role of the Arab world in it, is a subject that is still taboo. Ahmed Jaber, a professor at the Middle East Institute in Washington, said that the issue of the Arab Spring will resonate with the Arab world, because in parts of the world the West has been able to influence the way the world",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way the world thinks about how we live. MANCHESTER, England -- The Manchester United midfielder has signed a new contract with the club. United signed the 26-year-old midfielder in a £1.5million deal on Tuesday, 10th January. The 26-year-",
+          "length_tokens": 78
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان بسیار رایج در میان ایرانیان است و به نظر می رسد به دلیل نزدیکی جغرافیایی و فرهنگی به زبان فارسی، در ایران نیز تا حدودی مورد استفاده قرار می گیرد. با این حال، فارسی زبان رسمی کشور نیست و در برخی از مناطق، زبان های دیگری مانند کردی، گیلکی، تالشی، بلوچی و زبان های دیگر نیز رواج دارد. فارسی زبان رس",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در بخش مرکزی شهرستان رشت قرار دارد. بر اساس سرشماری سال 1395، جمعیت شهر رشت 21475 نفر می باشد. شهر رشت که در مجاورت شهر صنعتی رشت است، از شهرهای مهم استان گیلان محسوب می گردد. این شهر از شمال به دریای خزر، از غرب به رودسر، از شرق به آستانه اشرفیه و از جنوب",
+          "length_tokens": 74
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "نشان میدهد. شرکت بازرگانی علی قانعی، یکی از شرکتهای برتر صادرات و واردات کالاهای مختلف مانند کاشی و سرامیک، الکترونیکی، پوشاک و خودرو می باشد. این شرکت با تلاش و تجربه خود در زمینه بازرگانی بین المللی، به عنوان یکی از عاملین بزرگ تجارت در کشورهای جهان شناخته شده است. شرکت بازرگانی علی قانعی در زمینه",
+          "length_tokens": 76
+        }
+      ]
+    }
+  },
+  "sft": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.444444444444443,
+        "correct": 256,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.444444444444443,
+        "time_seconds": 164.64991235733032
+      },
+      "ar": {
+        "accuracy": 27.0,
+        "correct": 243,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.0,
+        "time_seconds": 169.4626533985138
+      },
+      "en": {
+        "accuracy": 31.77777777777778,
+        "correct": 286,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.777777777777779,
+        "time_seconds": 170.53293681144714
+      },
+      "fa": {
+        "accuracy": 29.333333333333332,
+        "correct": 264,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.333333333333332,
+        "time_seconds": 169.13735103607178
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.878,
+        "perplexity": 39.79,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7294,
+        "perplexity": 27.19,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9669,
+        "perplexity": 15.74,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6631,
+        "perplexity": 23.79,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "שבה חיים באופן יציב. היא מכילה בתוכה את כלכלתה, את משאביה ואת תושביה, ואת אזרחיה ואזרחיה\". \"במקום שבו יש חיים משותפים, יש חיים משותפים של מי שמתעלמים מאותם חיים, ומעניקים להם חיים משותפים, אין חיים משותפים\". \"אתה לא יכול, אבל אתה יכול להיהפך לאזרח\".",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". יש לנו את היכולת שלנו לעשות זאת, אבל אנחנו עדיין יכולים לעשות זאת. אנחנו יכולים לעשות זאת. יש לנו את היכולת שלנו לעשות זאת. וכשאנו נוכל לעשות זאת, אנחנו יכולים גם לתרום לחברה שלנו. אנחנו יכולים לעשות זאת. אנחנו יכולים לעשות זאת. אנחנו יכולים לעשות זאת. אנחנו יכולים להשתמש בטכנולוגיה שלנו. אנחנו יכ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "הבירה של מדינת ישראל, והיא נחשבת לעיר המרכזית של המדינה. אם אתם מחפשים את הסביבה היפה ביותר, העיר הדרומית ביותר בישראל היא תל אביב. העיר תל אביב היא אחת הערים הנחשבות ביותר בישראל, וזאת בשל מיקומה במטרופולין תל אביב וחשיבותה לתרבות, לתרבות יהודית ולבירה. תל אביב היא עיר בעלת צביון לאומי, בה חיים כיו",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "لغة القرآن. وهي لغة قديمة ترجع إلى سنة 400 هجري/1010 م. وهي اللغة الرسمية للمملكة العربية السعودية، وهي إحدى اللغات السامية. وتكتب بأحرف عربية، أي أنها اللغة المستخدمة في كتابة اللغة العربية، وهي مشتقة من اللغات السامية القديمة. بعض الكلمات المشتقة من اللغة العربية: من الكلمات المشتقة من العربية: . ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": ". يمكن للتكنولوجيا أن تؤثر على السكان المحليين، أو تخلق مشاكل، أو تغير المناخ. يمكن أن يؤثر التكنولوجيا على الصحة العامة، مثل تغير المناخ أو التغير المناخي، ويمكن أن يؤثر على المجتمع، مثل الفقر. يمكن أن تؤثر التكنولوجيا على الناس، مثل تغير المناخ أو تغير المناخ. يمكن أن تؤثر التكنولوجيا على الأجيال ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "نصر, القاهرة41 ش مصطفى النحاس,داخل اتصالات مدينة نصر, القاهرة7 ش محمد مهدى عرفة,داخل سوبر ماركت عرفة اخوان مدينة نصر, القاهرةش يوسف عباس متفرع من طريق النصر,داخل مستشفى مدينة نصر للتأمين الصحى مدينة نصر, القاهرة21 عمارات الجبل الاخضر - طريق النصر,داخل شركة النصر للخدمات والصيانة - كوين",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "currently one of the most powerful technologies in the world. It is able to solve problems in a range of engineering fields, including medicine, robotics, and artificial intelligence, making it a promising technology for tackling some of the most challenging problems in the world. The most advanced ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": ", including its geography, politics, economics, economy, and political structure is complex and multifaceted. This book examines the development of various institutions, the spread of ideas and ideals, and the cultural and political transformation of the region. It examines the political, cultural, ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way we think about the economy. \"While this is good news, it's also a bit of a bummer,\" says David Cohen, a partner at the law firm of Nelson and Cohen. \"It means that the world is going to be much more polarized in the next few years. I don't think this is a good thing, especially",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "بازی بسیار جذاب و سرگرم کننده است. در این بازی، شما باید ابتدا یک کارت از یک دسته پیدا کنید و آن را به دلخواه از دسته خارج کنید. سپس به هر بازیکن یک کارت داده و به دلخواه، آن را از دسته خارج کنید. باید کارت ها را با هم جابجا کنید و سپس کارت های جدید بازی را از دسته خارج کنید. این بازی به سرعت و دقت",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "در استان کردستان. این شهر در سال ۱۳۸۶ با تصویب هیئت وزیران از شهرستان کامیاران جدا و به شهرستان دهگلان پیوست. جمعیت این شهر در سال ۱۳۸۵، برابر با ۵٬۸۹۳ نفر بوده است. سیارک ۹۷۲۵ نه هزار و هفتصد و بیست و پنجمین سیارک کشف شده است که در ۱۷ اکتبر ۱۹۶۰ کشف شد. فرودگاه بین المللی",
+          "length_tokens": 74
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "تشکیل می دهند. 4. **توسعه بازارهای جهانی**: شرکت های بین المللی می توانند با ایجاد فرصت های جدید در بازار، به رقابت با دیگر شرکت ها بپردازند. 5. **تأمین سرمایه و فناوری**: شرکت های دارای فناوری می توانند از طریق تأمین سرمایه، شرکت های نوپا را تأسیس کنند که به رشد و توسعه",
+          "length_tokens": 76
+        }
+      ]
+    }
+  },
+  "delta": {
+    "belebele_he": 0.11111111111111072,
+    "belebele_ar": -0.33333333333333215,
+    "belebele_en": 0.6666666666666679,
+    "belebele_fa": 0.11111111111111072,
+    "bpb_he": -0.0011999999999999789,
+    "bpb_ar": -0.0017999999999999128,
+    "bpb_en": -0.005299999999999971,
+    "bpb_fa": 0.00019999999999997797
+  },
+  "total_time_seconds": 1672.926991224289
+}

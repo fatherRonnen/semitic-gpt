@@ -1,0 +1,277 @@
+{
+  "base": {
+    "belebele": {
+      "he": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 171.64997744560242
+      },
+      "ar": {
+        "accuracy": 27.333333333333332,
+        "correct": 246,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.333333333333332,
+        "time_seconds": 183.57612943649292
+      },
+      "en": {
+        "accuracy": 31.11111111111111,
+        "correct": 280,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 6.111111111111111,
+        "time_seconds": 184.13485765457153
+      },
+      "fa": {
+        "accuracy": 29.22222222222222,
+        "correct": 263,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 4.222222222222221,
+        "time_seconds": 179.5277841091156
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8792,
+        "perplexity": 40.0,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.7312,
+        "perplexity": 27.42,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.9722,
+        "perplexity": 15.98,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6629,
+        "perplexity": 23.76,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "יהודית ודמוקרטית, אשר השעה צריכה להיות מוקדשת לכינון חוקה עתידית. לדעת חברי, \"תיקון חוקה שאינו חוקתי אינו צולח את הבחינה החוקתית, ואין הוא צולח את הביקורת החוקתית, כי אם את הביקורת החוקתית, המעוגנת חוק-יסוד: כבוד האדם וחירותו\" (פסקה 73 לחוות דעתו).",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": "ואת העולם כולו, וככל שנרחיב את האפשרויות ונעמיק את דרכי התקשורת, כך נוכל לגדל את העולם שלנו ולעשות יותר ויותר כסף בעולם האינטרנט. ב- 21 למרץ 2016, ערב לפני יום העצמאות ה-65 למדינת ישראל, התקיים טקס הסרת הלוט מעל כל הטילים. יום הזיכרון לשואה ולגבורה",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "מקלט ליהודים, ועדיין קיים מצב של דלות ורעב, וקשה מאוד למצוא בה אנשים שיוכלו להתפרנס בכבוד. אנחנו לא יכולים לעשות כאן פשרה, כי אנחנו יודעים שאנחנו צריכים למצוא עבודה, ולא נוכל להצדיק את המצב הזה.\" 1. אין כל ספק כי כל הליך של פינוי דירה צריך להיות הלי",
+          "length_tokens": 78
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "اللغة الأم لأبناء المجتمعات المتنوعة، في الوقت الذي لم يعد هناك لغة رسمية في البلاد، حيث أن اللغة العربية هي اللغة الأم لحوالي 20 مليون شخص في البلاد. المراجع ثقافة عربية جواو بابتيستا دي أوليفيرا جواو بابتيستا دي أوليفيرا ( في ليريا )، هو لاعب كرة قدم برازيلي سابق كان يلعب كلاعب",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "وتغير البشرية. في 11 أكتوبر 2018، في الذكرى السنوية لـ 80 عامًا على تأسيس مركز أبحاث حول التكنولوجيا الحيوية، أطلق مركز أبحاث في جامعة جنوب كاليفورنيا مشروعًا على الإنترنت، بعنوان التكنولوجيا الحيوية للتحديات: دليل للناس حول كيفية تغيير العالم، لإجراء أبحاث حول التكنولوجيا الحيوية والابتكار. يهدف ال",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "نصر, القاهرة2 ش يوسف عباس متفرع من طريق النصر,داخل مستشفى دار الفؤاد مدينة نصر, القاهرةش عمر بن الخطاب,داخل سيتى ستارز مول - المرحلة الاولى - الدور الاول - منطقة المطاعم مدينة نصر, القاهرةش عمر بن الخطاب,داخل سيتى ستارز مول - المرحلة الاولى - الدور الاول - منطقة المطاعم مدينة نصر, القاهرةش يوسف",
+          "length_tokens": 80
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "the future of business and is already in use in the medical industry. The technology is also being applied to the manufacturing industry where automated production processes can be applied. The process is already being used to create automated processes which are more efficient. AI can also help in ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "is that of the Arab world. The Arab world was divided into 3 classes. The first group were the Arab nations. The second group were the Muslim nations. The third group were the Christians, who were called the ‘Islamic Christians’. Many of the Christians were Christians. The third group were the Chris",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "so quickly that it’s easy to forget that the technology that’s been in place for the last 100 years can be applied today. A good example of this is the $400,000 project to improve the way in which food is packaged and distributed in the United States. The goal is to make a food system more efficient",
+          "length_tokens": 80
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زبان هندواروپایی است که توسط مردم ایرانی تبار افغانستان صحبت می شود. زبان فارسی زبان مادری حدود ۱۲ هزار نفر است که عمدتاً فارسی دری و پشتو را می دانند. فارسی زبان مادری نزدیک به صد و پنجاه هزار نفر است که عمدتاً در کابل، هرات و قندهار زندگی می کنند. فارسی زبانان افغانستان بیشتر در ولایت های کابل، هر",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در استان خوزستان واقع شده است. شهر جیانگژو در استان گوانگ دونگ در کشور چین واقع شده است. جمعیت این شهر ۱۰٬۷۲۱ نفر است. در سال ۲۰۱۴، شهر جیانگژو به عنوان یک شهر درجه یک در سطح بالایی شناخته شد و به عنوان شهر برتر برای زندگی انتخاب شد. با این حال، این شهر بر",
+          "length_tokens": 76
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "ایجاد کردند. در این بین، این شرکت با همکاری شرکتهای بزرگ تولیدکنندهی خودروهای الکتریکی، تلاش میکند تا با ارائهی خدمات استثنایی و باکیفیت، تجربهی رانندگی را برای کاربران بهبود بخشد. در این بین، شرکت BYD با راهاندازی شرکت خودروسازی BYD SE، یک گام مثبت بزرگ در جهت ارتق",
+          "length_tokens": 76
+        }
+      ]
+    }
+  },
+  "sft": {
+    "belebele": {
+      "he": {
+        "accuracy": 27.88888888888889,
+        "correct": 251,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.8888888888888893,
+        "time_seconds": 165.639830827713
+      },
+      "ar": {
+        "accuracy": 27.666666666666668,
+        "correct": 249,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 2.666666666666668,
+        "time_seconds": 171.90945053100586
+      },
+      "en": {
+        "accuracy": 30.88888888888889,
+        "correct": 278,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 5.888888888888889,
+        "time_seconds": 172.21637773513794
+      },
+      "fa": {
+        "accuracy": 28.333333333333332,
+        "correct": 255,
+        "total": 900,
+        "random_baseline": 25.0,
+        "above_random": 3.333333333333332,
+        "time_seconds": 170.8374490737915
+      }
+    },
+    "bpb": {
+      "he": {
+        "bpb": 0.8798,
+        "perplexity": 40.1,
+        "total_tokens": 23904,
+        "total_bytes": 144689
+      },
+      "ar": {
+        "bpb": 0.727,
+        "perplexity": 26.9,
+        "total_tokens": 24733,
+        "total_bytes": 161587
+      },
+      "en": {
+        "bpb": 0.968,
+        "perplexity": 15.79,
+        "total_tokens": 25044,
+        "total_bytes": 102999
+      },
+      "fa": {
+        "bpb": 0.6577,
+        "perplexity": 23.18,
+        "total_tokens": 24827,
+        "total_bytes": 171179
+      }
+    },
+    "generation": {
+      "he": [
+        {
+          "prompt": "ישראל היא מדינה",
+          "generated": "יהודית, גם אם מדובר ביהודי או נוצרי. אבל אני לא מציע לכם לספוג את הלגיטימציה של מדינת ישראל, כי זה לא מעניין אותכם. אני לא חושב שיש קשר בין מדינה יהודית למדינה יהודית, וזה לא מעניין אותי. אני לא חושב שיש קשר בין מדינה יהודית למדינה יהודית. זה לא מעניין אותי. \"אני לא מצ",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "הטכנולוגיה משנה את העולם",
+          "generated": ". כאשר אנו בוחרים חברת הובלות, חשוב לוודא כי מדובר בחברה אמינה, שאינה נופלת מאלו המוכרות בשוק. 1.תביעה על סכום קצוב בגין נזקי רכוש. 2.תביעה כספית ע\"ס 80,000 ₪. 3.תביעה כספית ע\"ס 15",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "ירושלים היא עיר",
+          "generated": "ללא הפסקה. אני רוצה להודות לאבי, סגן ראש העיר, ולמועצת השכונות על התרומה החשובה והמקצועית. אני רוצה להודות גם למשרד השיכון, משרד האוצר, משרד הפנים, משרד הרווחה, עיריית ירושלים, עיריית תל אביב, עיריית פתח תקווה, המועצה האזורית שומרון, המועצה האזורית בני שמעון, המועצה המקומית עוספיא,",
+          "length_tokens": 80
+        }
+      ],
+      "ar": [
+        {
+          "prompt": "اللغة العربية هي",
+          "generated": "من أهم اللغات التي يتداولها العرب اليوم، إذ تُعد اللغة العربية ثاني أكثر اللغات انتشارًا في العالم بعد الإنجليزية، فهي لغة عالمية يُستخدمها أكثر من 1.5 مليار إنسان حول العالم. اللغة العربية أيضاً هي اللغة الرسمية والشعبية في قطر، وتُستخدم في التعليم والإدارة والتدريس. اللغة العربية هي لغة رسمية لدول",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "التكنولوجيا تغير العالم",
+          "generated": "، وخلق فرص عمل جديدة، وخلق فرص عمل جديدة مع تغير المناخ. وقال \"إذا لم يكن هناك تغيير في الطريقة التي نعمل بها، فإننا سنكون قد خسرنا جميعاً\". ويشير إلى أن التكنولوجيا يمكن أن تغير العالم، وكيفية عملنا. ويقول \"إنها أداة يمكن استخدامها لتغيير العالم، لكننا نقوم بتكرار البيانات ونستخدم",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "القاهرة مدينة",
+          "generated": "الشروق. اخبار مصر اليوم - القاهرة : \"خالد الغندور\" يوقع بروتوكول تعاون مع \"العربية للاتصالات\" اخبار مصر اليوم - القاهرة : \"خالد الغندور\" يوقع بروتوكول تعاون مع \"العربية للاتصالات\" مصدر الخبر - مصر -مصر مع تفاصيل الخبر \"خالد الغندور\" ي",
+          "length_tokens": 78
+        }
+      ],
+      "en": [
+        {
+          "prompt": "Artificial intelligence is",
+          "generated": "a great thing, but the next generation of AI is going to have a huge impact on the world. It’s going to have massive consequences. The implications are massive. It is going to take billions and billions of dollars to bring about the new generation of AI. It is going to be a huge impact on the world.",
+          "length_tokens": 80
+        },
+        {
+          "prompt": "The history of the Middle East",
+          "generated": "and the West, from the first empires to the present day. This is a collection of 1,250 pages of historical and cultural information, as well as a brief biography of the author and his family. Here’s a quick, easy way to start the new year off with a healthy dose of inspiration. If you’re not in the ",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "Technology is changing",
+          "generated": "the way people communicate and communicate with each other. Our team can help you with any aspect of your communications needs. We have more than 15 years of experience in the field of communications. Our goal is to help you find the right solution to meet your needs. Contact us today to learn how t",
+          "length_tokens": 78
+        }
+      ],
+      "fa": [
+        {
+          "prompt": "زبان فارسی یک",
+          "generated": "زیر مجموعه از زبان فرانسوی است. با این وجود، این واژه به عنوان یک زیرمجموعهٔ مستقل، از سال ۱۸۳۲ میلادی در آثار زبان انگلیسی زبانان به کار رفته است. نمونه ای از آن در این مورد، این شعر از چارلز دیکنز است: در این شعر، دیکنز به استفاده از واژگانی چون \"crazy\" و \"crazy\"",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "تهران شهری است",
+          "generated": "که در بخش مرکزی شهرستان کرمان در استان کرمان در جنوب شرقی ایران واقع شده است. این شهر در مسیر بزرگراه کرمان-بم قرار دارد. شهر کرمان در سال ۱۳۹۵، تعداد ۶٬۴۰۲ نفر جمعیت داشته است. اهالی شهر کرمان از ایل قشقایی ، طایفه فارسیمدان هستند و به گویش فارسی کرمانجی سخن می گویند. شهر کرمان با قدمتی 5500 ساله",
+          "length_tokens": 78
+        },
+        {
+          "prompt": "فناوری جهان را",
+          "generated": "به دست آورده و به توسعه تکنولوژی های پیشرفته در این حوزه کمک می کند. - در سال های اخیر، با افزایش دسترسی به اینترنت و تکنولوژی های جدید، فرصت های شغلی در زمینه های مرتبط با تکنولوژی افزایش یافته است. - با پیشرفت فناوری، بازار کار برای افرادی که به دنبال فرصت های شغلی در حوزه های مرتبط با تکنولوژی هس",
+          "length_tokens": 75
+        }
+      ]
+    }
+  },
+  "delta": {
+    "belebele_he": -0.44444444444444287,
+    "belebele_ar": 0.3333333333333357,
+    "belebele_en": -0.22222222222222143,
+    "belebele_fa": -0.8888888888888893,
+    "bpb_he": 0.0006000000000000449,
+    "bpb_ar": -0.0041999999999999815,
+    "bpb_en": -0.0041999999999999815,
+    "bpb_fa": -0.0052000000000000934
+  },
+  "total_time_seconds": 1688.3260991573334
+}
