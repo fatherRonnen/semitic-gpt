@@ -1,0 +1,42 @@
+# Model weights
+*.pt
+*.bin
+*.safetensors
+
+# Tokenizer binary (available on HuggingFace/S3)
+tokenizer/artifacts/*.model
+
+# Large data files
+*.jsonl
+*.csv
+!data/manifests/*.csv
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.eggs/
+
+# LaTeX build artifacts
+paper/tex/*.aux
+paper/tex/*.log
+paper/tex/*.out
+paper/tex/*.synctex.gz
+paper/tex/*.fls
+paper/tex/*.fdb_latexmk
+paper/tex/*.bbl
+paper/tex/*.blg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environments
+.env
+.venv/
+node_modules/
