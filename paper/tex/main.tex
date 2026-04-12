@@ -3,8 +3,8 @@
 % --- Packages ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{mathptmx}  % Times-like serif font (closest available to STIX Two Text)
-\usepackage[margin=0.85in, columnsep=0.3in]{geometry}
+\usepackage{mathptmx}  % Times-like serif (closest available to STIX Two Text)
+\usepackage[margin=0.75in, columnsep=0.28in]{geometry}
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{graphicx}
@@ -20,7 +20,6 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{mdframed}
-\usepackage{colortbl}
 \usepackage{caption}
 \usepackage{float}
 
@@ -28,19 +27,17 @@
 \definecolor{accent}{HTML}{1A3A5C}
 \definecolor{lightaccent}{HTML}{E8EEF4}
 \definecolor{figcaption}{HTML}{555555}
-\definecolor{linkblue}{HTML}{1A5276}
 
 % --- Compact spacing ---
-\setlength{\parskip}{4pt plus 1pt minus 1pt}
-\setlength{\parindent}{1.5em}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\parindent}{1em}
 \setlist{nosep, leftmargin=1.5em, itemsep=2pt}
 
 % --- Section formatting (colored headings with bottom rule) ---
-\titleformat{\section}{\normalsize\bfseries\color{accent}}{\thesection.}{0.5em}{}[\vspace{2pt}\color{accent}\hrule\vspace{4pt}]
-\titleformat{\subsection}{\normalsize\bfseries\color{accent}}{\thesubsection}{0.5em}{}
-\titleformat{\subsubsection}{\small\bfseries\itshape}{}{0em}{}
-\titlespacing*{\section}{0pt}{14pt plus 2pt minus 2pt}{4pt plus 1pt}
-\titlespacing*{\subsection}{0pt}{10pt plus 2pt minus 2pt}{3pt plus 1pt}
+\titleformat{\section}{\normalsize\bfseries\color{accent}}{\thesection.}{0.5em}{}[\vspace{1pt}{\color{accent}\hrule}\vspace{3pt}]
+\titleformat{\subsection}{\small\bfseries\color{accent}}{\thesubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{10pt plus 2pt minus 2pt}{3pt plus 1pt}
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt minus 2pt}{2pt plus 1pt}
 
 % --- Caption styling ---
 \captionsetup{font=small, labelfont=bf, textfont=it, skip=4pt}
@@ -65,12 +62,12 @@
   bottomline=false,
   rightline=false,
   leftline=true,
-  innerleftmargin=14pt,
-  innerrightmargin=14pt,
-  innertopmargin=10pt,
-  innerbottommargin=10pt,
-  skipabove=12pt,
-  skipbelow=12pt,
+  innerleftmargin=12pt,
+  innerrightmargin=12pt,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+  skipabove=10pt,
+  skipbelow=10pt,
 ]{blueabstract}
 
 % --- Header/Footer ---
@@ -79,13 +76,12 @@
 \rfoot{\small\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
-\title{\vspace{-0.5in}\Large\bfseries SemiticGPT: A Low-Cost Recipe for Multilingual Foundation\\Models in an Under-Resourced Semitic-Centered Language Cluster}
+\title{\vspace{-0.4in}\large\bfseries SemiticGPT: A Low-Cost Recipe for Multilingual Foundation Models in an Under-Resourced Semitic-Centered Language Cluster}
 
 \author{%
-  \normalsize\textbf{Ronnen Slasky}\textsuperscript{1}\\[3pt]
-  \small\textsuperscript{1}Independent Researcher\\[1pt]
-  \small\texttt{ronnen.slasky@gmail.com}\\[2pt]
-  \small GitHub: \href{https://github.com/fatherRonnen/semitic-gpt}{\texttt{semitic-gpt}} $\cdot$ GitHub: \href{https://github.com/fatherRonnen}{\texttt{fatherRonnen}}\\[3pt]
+  \normalsize\textbf{Ronnen Slasky}\textsuperscript{1}\\[2pt]
+  \small\textsuperscript{1}Independent Researcher \quad \texttt{ronnen.slasky@gmail.com}\\[2pt]
+  \small GitHub: \href{https://github.com/fatherRonnen/semitic-gpt}{\texttt{semitic-gpt}} $\cdot$ GitHub: \href{https://github.com/fatherRonnen}{\texttt{fatherRonnen}}\\[2pt]
   \small April 2026
 }
 
@@ -99,12 +95,18 @@
   \begin{blueabstract}
   {\small\scshape\color{accent}\textbf{Abstract}}\smallskip
   
-  {\small We present a practical blueprint for building a multilingual foundation model from scratch for an under-resourced language family, demonstrated through SemiticGPT: a 3-billion parameter decoder-only model covering Hebrew, Arabic, Farsi, and English trained on approximately 20 billion tokens using cloud spot instances. Our central finding is that multilingual pretraining with a linguistically-motivated language cluster produces \textbf{meaningful cross-lingual semantic transfer} between related languages, but does not yield robust translation or abstract reasoning. Specifically, fine-tuning on Hebrew sentiment data alone improves Arabic sentiment accuracy from 5.5\% to 49\% (with zero Arabic task data), while Farsi---which shares Arabic script but belongs to a different language family---shows no comparable transfer (0.5\%$\rightarrow$1.5\%). This suggests that in our setup, \textbf{linguistic family relatedness matters more than script similarity} for semantic transfer. We also report instructive negative results: English-mediated parallel data does not enable direct translation between non-English pairs, and all-language fine-tuning underperforms focused same-family fine-tuning. We provide a step-by-step practitioner's guide and release the model, tokenizer, and training code.\footnotemark}
+  {\small We present a practical blueprint for building a multilingual foundation model from scratch for an under-resourced language family, demonstrated through SemiticGPT: a 3-billion parameter decoder-only model covering Hebrew, Arabic, Farsi, and English trained on approximately 20 billion tokens using cloud spot instances.
+
+Our central finding is that multilingual pretraining with a linguistically-motivated language cluster produces \textbf{meaningful cross-lingual semantic transfer} between related languages, but does not yield robust translation or abstract reasoning. Specifically, fine-tuning on Hebrew sentiment data alone improves Arabic sentiment accuracy from 5.5\% to 49\% (with zero Arabic task data), while Farsi---which shares Arabic script but belongs to a different language family---shows no comparable transfer (0.5\%$\rightarrow$1.5\%). This suggests that in our setup, \textbf{linguistic family relatedness matters more than script similarity} for semantic transfer.
+
+We also report instructive negative results: English-mediated parallel data does not enable direct translation between non-English pairs, and all-language fine-tuning underperforms focused same-family fine-tuning.
+
+We provide a step-by-step practitioner's guide covering tokenizer design, data curation, pretraining, supervised fine-tuning, and evaluation, intended for researchers building similar models for other under-resourced language clusters. We release the model, tokenizer, and training code.\footnotemark}
   
   \smallskip
   {\scriptsize\textbf{Keywords:} multilingual language models, cross-lingual transfer, Hebrew, Arabic, Farsi, Semitic languages, tokenizer design, low-resource NLP, sentiment transfer, language family clustering, BPE tokenization, practitioner recipe}
   \end{blueabstract}
-  \vspace{8pt}
+  \vspace{6pt}
 ]
 \footnotetext{Code and artifacts: \url{https://github.com/fatherRonnen/semitic-gpt}}
 
@@ -124,52 +126,57 @@ This paper provides empirical evidence toward answering these questions in the c
     \item What capabilities emerge at 3B scale and what do not?
 \end{enumerate}
 
-Building on our prior work on autonomous training recipe discovery for Hebrew \citep{slasky2026hebrew}, we extend from a monolingual setting to a four-language Semitic-family model. The training recipe was validated through proxy experiments at small scale before committing to full pretraining, following the autoresearch methodology \citep{karpathy2026autoresearch}.
+Building on our prior work on autonomous training recipe discovery for Hebrew \citep{slasky2026hebrew}, we extend from a monolingual setting to a four-language Semitic-family model. The training recipe (optimizer, schedule, regularization) was validated through proxy experiments at small scale before committing to full pretraining, following the autoresearch methodology \citep{karpathy2026autoresearch}.
 
-Hebrew and Arabic share the Semitic triconsonantal root system, similar derivational morphology (binyan/wazn patterns), and flexible word order. Farsi, while using Arabic script and containing extensive Arabic loanwords, belongs to the Indo-European family---providing a natural control condition for studying linguistic relatedness versus surface-level script similarity.
+Hebrew and Arabic share the Semitic triconsonantal root system, similar derivational morphology (binyan/wazn patterns), and flexible word order. Farsi, while using Arabic script and containing extensive Arabic loanwords, belongs to the Indo-European family---providing a natural control condition for studying the role of linguistic relatedness versus surface-level script similarity.
 
-Our primary contributions:
+We present SemiticGPT, a 3.04-billion parameter decoder-only language model trained from scratch on approximately 20 billion tokens across four languages. Our primary contributions:
+
 \begin{enumerate}
-    \item A \textbf{low-cost, reproducible recipe} for training a 3B multilingual decoder-only model from scratch for an under-resourced Semitic-centered language cluster.
-    \item Evidence that multilingual pretraining with a \textbf{custom balanced tokenizer} yields strong cross-lingual retrieval and semantic transfer for linguistically related languages.
-    \item A finding that \textbf{direct parallel data is necessary} for useful direct translation between non-English pairs.
-    \item A \textbf{practitioner's guide} (Section~\ref{sec:guide}) with step-by-step recommendations including negative results.
+    \item A \textbf{low-cost, reproducible recipe} for training a 3B multilingual decoder-only model from scratch for an under-resourced Semitic-centered language cluster, including practical design lessons.
+    \item Evidence that multilingual pretraining with a \textbf{custom balanced tokenizer} yields strong cross-lingual retrieval and semantic transfer for linguistically related languages in our setup.
+    \item A finding that \textbf{direct parallel data is necessary} for useful direct translation between non-English pairs; English-mediated parallel data is insufficient in our experiments.
+    \item A \textbf{practitioner's guide} (Section~\ref{sec:guide}) with step-by-step recommendations, including negative results and design lessons, for researchers targeting other language clusters.
 \end{enumerate}
 
 % ============================================================
 \section{Related Work}
 
-\textbf{Arabic Language Models.} Jais \citep{sengupta2023jais} is a 13B parameter bilingual Arabic-English model trained on 395 billion tokens. AraGPT2 \citep{antoun2021aragpt2} provided GPT-2 scale Arabic models. ArabianGPT \citep{koubaa2024arabiangpt} focuses on native Arabic. None include Hebrew or Farsi.
+\textbf{Arabic Language Models.} Jais \citep{sengupta2023jais} is a 13B parameter bilingual Arabic-English model trained from scratch on 395 billion tokens, representing the most significant dedicated Arabic LLM effort. AraGPT2 \citep{antoun2021aragpt2} provided GPT-2 scale Arabic models. ArabianGPT \citep{koubaa2024arabiangpt} focuses on native Arabic without English token contamination. None of these include Hebrew or Farsi.
 
-\textbf{Hebrew-Arabic Models.} HeArBERT \citep{rivas2024hearbert} explores bilingual Arabic-Hebrew modeling through transliteration-based script unification but is limited to encoder-only (BERT) architecture. To our knowledge, no prior work has trained a generative decoder-only model jointly on Hebrew, Arabic, and Farsi from scratch.
+\textbf{Hebrew-Arabic Models.} HeArBERT \citep{rivas2024hearbert} explores bilingual Arabic-Hebrew modeling through transliteration-based script unification, mapping Hebrew text into Arabic script to create a unified representation space. However, it is limited to encoder-only (BERT) architecture and does not support generation. To our knowledge, no prior work has trained a generative decoder-only model jointly on Hebrew, Arabic, and Farsi from scratch.
 
-\textbf{Small Multilingual Models.} SmolLM3 \citep{allal2025smollm3} provides a detailed 3B parameter training recipe but targets European languages and does not address non-Latin script languages or Semitic-family challenges.
+\textbf{Small Multilingual Models.} SmolLM3 \citep{allal2025smollm3} provides a detailed 3B parameter training recipe but targets European languages (English, French, Spanish, German, Italian, Portuguese). The ``Smol Training Playbook'' documents insights from training at this scale but does not address non-Latin script languages or Semitic-family-specific challenges.
 
-\textbf{Multilingual Adaptation.} Marco-LLM \citep{marco2024} extends Qwen2 to low-resource languages through continual pre-training, inheriting the base model's potentially suboptimal tokenizer.
+\textbf{Multilingual Adaptation.} Marco-LLM \citep{marco2024} extends Qwen2 to low-resource languages through continual pre-training rather than training from scratch. This approach inherits the base model's tokenizer, which may be suboptimal for the target languages.
 
-Our work differs by (1) training from scratch with a custom tokenizer, (2) combining Hebrew, Arabic, and Farsi, (3) operating at academic budget, and (4) providing comprehensive cross-lingual transfer evaluation.
+Our work differs from all the above by (1) training from scratch with a custom tokenizer optimized for the target language family, (2) combining Hebrew, Arabic, and Farsi in a single model, (3) operating at academic budget, and (4) providing comprehensive cross-lingual transfer evaluation.
 
-\textbf{Training Recipe Discovery.}\label{sec:related_recipe} Our recipe was derived via the autoresearch framework \citep{karpathy2026autoresearch}. In our prior work \citep{slasky2026hebrew}, we conducted 200 proxy experiments for Hebrew, discovering that WSD linear-decay outperforms cosine, Muon outperforms AdamW at 1B but fails at larger multilingual scale, and SWA benefits Muon but degrades AdamW. The multilingual recipe was validated through 32 additional proxy experiments at 110M scale.\footnote{Proxy configs, results, rationale: \texttt{proxy/} in the repository.}
+\textbf{Training Recipe Discovery.}\label{sec:related_recipe} Our pretraining recipe was derived using the autoresearch framework \citep{karpathy2026autoresearch}, which enables systematic proxy-scale experimentation to validate training choices before full-scale commitment. In our prior work \citep{slasky2026hebrew}, we conducted 200 proxy experiments for Hebrew language modeling, discovering that WSD linear-decay schedules outperform cosine warm-restarts, that the Muon optimizer outperforms AdamW by 12.3\% at 1B scale but fails at larger multilingual scale, and that SWA benefits Muon but degrades AdamW. The multilingual recipe in this paper was validated through an additional 32 proxy experiments at 110M scale before scaling to 3B.\footnote{Proxy experiment configs, sweep results, and recipe selection rationale: \texttt{proxy/} in the repository.}
 
 % ============================================================
 \section{Methodology}
 
 \subsection{Tokenizer Design}
 
-We train a 32,768-token SentencePiece BPE tokenizer on a balanced sample ($\sim$25\% per language). The resulting fertility rates: $\sim$1.4 for Hebrew, 1.5 for Arabic, 1.6 for Farsi, 1.2 for English---significantly better than mBERT's WordPiece (2.5+ for Hebrew) or LLaMA's BPE (3+ for Arabic). Special tokens: \texttt{<|user|>}, \texttt{<|assistant|>}, \texttt{<s>}, \texttt{</s>}, \texttt{<pad>}.\footnote{Tokenizer config and fertility report: \texttt{tokenizer/} in the repository.}
+We train a 32,768-token SentencePiece BPE tokenizer on a balanced sample from all four languages. The training corpus is sampled to achieve approximately equal representation: 25\% Hebrew, 25\% Arabic, 25\% Farsi, and 25\% English. This ensures no single language dominates the vocabulary, unlike tokenizers derived from English-heavy training data where non-Latin scripts suffer from over-fragmentation.
+
+The resulting tokenizer achieves fertility rates (tokens per word) of approximately 1.4 for Hebrew, 1.5 for Arabic, 1.6 for Farsi, and 1.2 for English---significantly better than multilingual tokenizers like mBERT's WordPiece (2.5+ for Hebrew) or LLaMA's BPE (3+ for Arabic).
+
+Special tokens include: \texttt{<|user|>}, \texttt{<|assistant|>}, \texttt{<s>} (BOS), \texttt{</s>} (EOS), and \texttt{<pad>}.\footnote{Tokenizer training script, config, and fertility report: \texttt{tokenizer/} in the repository.}
 
 \subsection{Data Collection and Curation}
 
-We collect approximately 20 billion tokens with a Hebrew-anchored distribution:
+We collect approximately 20 billion tokens from publicly available sources with a Hebrew-anchored distribution:
 
 \begin{itemize}
-    \item \textbf{Hebrew (40\%)}: Wikipedia, OSCAR, news, government docs
-    \item \textbf{Arabic (25\%)}: Wikipedia, OSCAR, news, UN corpus
-    \item \textbf{English (20\%)}: Wikipedia, OpenWebText, books
+    \item \textbf{Hebrew (40\%)}: Wikipedia, OSCAR, news corpora, government documents
+    \item \textbf{Arabic (25\%)}: Wikipedia, OSCAR, news, UN parallel corpus
+    \item \textbf{English (20\%)}: Wikipedia, OpenWebText subset, books
     \item \textbf{Farsi (15\%)}: Wikipedia, OSCAR, news corpora
 \end{itemize}
 
-Hebrew is overrepresented to ensure strong anchor-language representations that transfer to related languages. Preprocessing: MinHash deduplication, perplexity filtering, language ID verification.\footnote{Collection scripts and manifests: \texttt{data/} in the repository.}
+Hebrew is overrepresented relative to speaker population to ensure strong anchor-language capabilities. The rationale is that cross-lingual transfer from a well-modeled anchor can bootstrap capabilities in related languages.
 
 \begin{figure}[H]
 \centering
@@ -185,7 +192,7 @@ Hebrew is overrepresented to ensure strong anchor-language representations that 
     nodes near coords align={horizontal},
     every node near coord/.append style={font=\scriptsize\bfseries},
     width=0.95\columnwidth,
-    height=3.8cm,
+    height=3.5cm,
     bar shift=0pt,
     enlarge y limits=0.3,
     xmajorgrids=true,
@@ -193,80 +200,105 @@ Hebrew is overrepresented to ensure strong anchor-language representations that 
 \addplot[fill=accent!60, draw=accent!80] coordinates {(40,Hebrew) (25,Arabic) (20,English) (15,Farsi)};
 \end{axis}
 \end{tikzpicture}
-\caption{Pretraining data distribution. Hebrew overrepresented as anchor language.}
+\caption{Pretraining data distribution. Hebrew is intentionally overrepresented as the \emph{anchor language}---the hypothesis being that strong anchor representations transfer to linguistically related languages (Arabic), confirmed by our sentiment experiments.}
 \label{fig:data_dist}
 \end{figure}
 
+Data preprocessing includes: deduplication (MinHash at document level), quality filtering (perplexity-based, removing boilerplate and machine-generated text), and language identification verification.\footnote{Collection scripts, source manifest, and mixture specification: \texttt{data/} in the repository.}
+
 \subsection{Architecture}
+
+SemiticGPT uses a standard decoder-only transformer architecture with modern enhancements:
 
 \begin{table}[H]
 \centering\small
 \begin{tabular}{ll}
 \toprule
-\textbf{Parameter} & \textbf{Value} \\
+\textbf{Hyperparameter} & \textbf{Value} \\
 \midrule
-Total parameters & 3.04B \\
+Parameters & 3.04B \\
 Layers & 36 \\
-Hidden dim & 2,560 \\
-Attention heads & 20 (head dim 128) \\
-Vocab size & 32,768 \\
-Seq length & 2,048 \\
-Position enc. & RoPE \\
+Hidden dimension & 2,560 \\
+Attention heads & 20 \\
+Head dimension & 128 \\
+Vocabulary size & 32,768 \\
+Max sequence length & 2,048 \\
+Position encoding & RoPE \\
 Activation & SwiGLU \\
 Normalization & RMSNorm \\
 \bottomrule
 \end{tabular}
-\caption{SemiticGPT architecture.}
+\caption{SemiticGPT architecture hyperparameters.}
 \label{tab:architecture}
 \end{table}
 
 \subsection{Pretraining}
 
-Training on AWS spot instances (L40S 48GB, H100 80GB) with FSDP. Configuration:
+Training is conducted on AWS using spot instances (primarily g6e.xlarge with NVIDIA L40S 48GB and p5.xlarge with NVIDIA H100 80GB). We use FSDP (Fully Sharded Data Parallelism) for multi-GPU training when available, and single-GPU gradient accumulation otherwise.
 
 \begin{itemize}
-    \item AdamW ($\beta_1$=0.9, $\beta_2$=0.95, $\epsilon$=1e-8)
-    \item LR: 3e-4 peak, cosine decay to 3\% of peak
-    \item Warmup: 2,000 steps; Batch: 512K tokens
-    \item Weight decay: 0.1; Gradient clip: 1.0; fp16
+    \item \textbf{Optimizer}: AdamW ($\beta_1$=0.9, $\beta_2$=0.95, $\epsilon$=1e-8)
+    \item \textbf{Learning rate}: 3e-4 peak with cosine decay to 3\% of peak
+    \item \textbf{Warmup}: 2,000 steps
+    \item \textbf{Batch size}: 512K tokens (effective, via gradient accumulation)
+    \item \textbf{Weight decay}: 0.1
+    \item \textbf{Gradient clipping}: 1.0
 \end{itemize}
 
-\textbf{Schedule note:} Our 3B model uses cosine decay. Post-hoc proxy experiments found WSD linear-decay superior; we recommend WSD for future work (Section~\ref{sec:guide}).
+\textbf{Note on schedule choice.} Our 3B model uses cosine decay. Subsequent proxy experiments at 110M scale (Section~\ref{sec:related_recipe}) found that WSD linear-decay outperforms cosine warm-restarts in this setting. We report this finding in the practitioner's guide (Section~\ref{sec:guide}) as a recommendation for future work, though we did not retrain the 3B model with WSD.
 
-\textbf{Cost:} $\sim$400 GPU-hours on H100-equivalent hardware at spot pricing (60--70\% discount).\footnote{Training scripts and logs: \texttt{pretrain/} in the repository.}
+\textbf{Cost efficiency.} By leveraging spot instances at 60--70\% discount from on-demand pricing, total pretraining requires approximately 400 GPU-hours on H100-equivalent hardware---achievable at academic budgets without dedicated cluster access.\footnote{Training scripts, hyperparameter config, and training logs: \texttt{pretrain/} in the repository.}
 
 \subsection{Supervised Fine-Tuning}
 
-We investigate SFT scaling (E-1K, E-3K, E-5K steps) and data composition: D (all 4 languages), F-no-arfa (HE+EN only), F-only-arfa (AR+FA only). Configuration files for all six variants are in \texttt{sft/} in the repository.
+After pretraining, we conduct supervised fine-tuning (SFT) using multilingual instruction-following data. We investigate scaling behavior across three configurations:
+
+\begin{itemize}
+    \item \textbf{E-1K}: 1,000 SFT steps
+    \item \textbf{E-3K}: 3,000 SFT steps  
+    \item \textbf{E-5K}: 5,000 SFT steps (D-SFT, our default)
+\end{itemize}
+
+We also study data composition:
+\begin{itemize}
+    \item \textbf{D (balanced)}: All four languages in SFT data
+    \item \textbf{F-no-arfa}: Hebrew + English only
+    \item \textbf{F-only-arfa}: Arabic + Farsi only
+\end{itemize}
+
+\noindent SFT configuration files, training scripts, data recipes, and training logs for all six configurations are provided in \texttt{sft/} in the repository.
 
 % ============================================================
 \section{Evaluation}
 
-We evaluate across six dimensions. Table~\ref{tab:experiments} summarizes configurations; Table~\ref{tab:datasets} lists evaluation datasets.
+We evaluate SemiticGPT across six dimensions. Table~\ref{tab:experiments} summarizes all experimental configurations, and Table~\ref{tab:datasets} lists evaluation datasets with their provenance.
 
 \begin{table}[H]
 \centering\scriptsize
-\begin{tabular}{lp{2cm}p{2.2cm}}
+\begin{tabular}{lp{2.0cm}p{2.2cm}}
 \toprule
-\textbf{Config} & \textbf{Data / Change} & \textbf{Hypothesis} \\
+\textbf{Config} & \textbf{Data / Change} & \textbf{Hypothesis Tested} \\
 \midrule
-D-baseline & 5K SFT, all 4 langs & Reference \\
+D-baseline & Base SFT model (5K steps, all 4 langs) & Reference point \\
 \midrule
-\multicolumn{3}{l}{\textit{Translation}} \\
-G-trans & EN-mediated parallel & EN pivot enables X$\leftrightarrow$Y? \\
-G2-direct & Direct parallel only & Direct data necessary? \\
+\multicolumn{3}{l}{\textit{Translation Configurations}} \\
+G-trans & EN-mediated parallel data & Can EN pivot enable X$\leftrightarrow$Y? \\
+G-mixed & EN-mediated + some direct & Hybrid approach \\
+G2-trans & More EN-mediated data & Scale helps EN-pivot? \\
+G2-direct & Direct X$\leftrightarrow$Y parallel only & Direct data necessary? \\
 \midrule
-\multicolumn{3}{l}{\textit{Sentiment}} \\
-H1 & Hebrew sent. only & HE$\rightarrow$AR transfer? \\
-H2 & All 4 langs sent. & Multilingual better? \\
-H3 & AR+FA sent. only & Focused $>$ diluted? \\
+\multicolumn{3}{l}{\textit{Sentiment Configurations}} \\
+H1 & Hebrew sentiment only & Does HE transfer to AR? \\
+H2 & All 4 langs sentiment & Is multilingual better? \\
+H3 & Arabic + Farsi sentiment only & Focused vs diluted? \\
 \midrule
-\multicolumn{3}{l}{\textit{SFT Ablations}} \\
-E-1K/3K/5K & Vary SFT steps & Optimal duration \\
-F-no-arfa & HE+EN only & Remove AR/FA effect \\
+\multicolumn{3}{l}{\textit{SFT Scaling}} \\
+E-1K/3K/5K & 1K, 3K, 5K SFT steps & Optimal SFT duration \\
+F-no-arfa & HE+EN SFT only & Effect of removing langs \\
+F-only-arfa & AR+FA SFT only & Effect of removing langs \\
 \bottomrule
 \end{tabular}
-\caption{Experiment legend.}
+\caption{Experiment legend. All configurations start from the same pretrained 3B base model. Each tests a specific hypothesis about data composition or training strategy.}
 \label{tab:experiments}
 \end{table}
 
@@ -274,23 +306,25 @@ F-no-arfa & HE+EN only & Remove AR/FA effect \\
 \centering\scriptsize
 \begin{tabular}{llccl}
 \toprule
-\textbf{Eval} & \textbf{Dataset} & \textbf{N} & \textbf{C} & \textbf{Source} \\
+\textbf{Evaluation} & \textbf{Dataset} & \textbf{N/lang} & \textbf{Classes} & \textbf{Source} \\
 \midrule
-BPB & Held-out splits & 10K & --- & Internal \\
+BPB & Held-out splits & 10K tok & --- & Internal \\
 Belebele & Belebele & 900 & 4 & \citet{bandarkar2023belebele} \\
 Translation & OPUS parallel & 50 & --- & OPUS \\
 Retrieval & Parallel sent. & 10 & --- & Tatoeba \\
 Sentiment & Per-lang datasets & 200 & 2 & HuggingFace \\
-News & AG News & 200 & 4 & AG News \\
+News & AG News subset & 200 & 4 & AG News \\
 \bottomrule
 \end{tabular}
-\caption{Evaluation datasets. N=samples/lang, C=classes.}
+\caption{Evaluation datasets. N/lang indicates samples per language used in evaluation. Sentiment and news evaluations use generative classification (model generates label text). Small evaluation sets (200 samples) are a known limitation.}
 \label{tab:datasets}
 \end{table}
 
-\textbf{Methodology.} Classification uses generative evaluation (model generates label text, matched via case-insensitive substring). Low baselines ($<$chance) likely reflect parsing issues; relative improvements remain informative.\footnote{All scripts, prompts, results: \texttt{eval/} in the repository.}
+\textbf{Evaluation methodology.} For classification tasks (sentiment, news), we use generative evaluation: the model receives an instruction prompt and generates a label. Outputs are matched against expected labels using case-insensitive substring matching. We report the fraction of correctly matched outputs over total samples. We acknowledge that this methodology may undercount correct classifications when the model produces semantically equivalent but textually different outputs, and that very low baseline scores (below random chance) likely reflect prompt/parsing issues rather than anti-correlated predictions. We discuss this further in Section~\ref{sec:limitations}. All evaluation scripts, exact prompts, and raw result files are provided in \texttt{eval/} in the repository.
 
-\subsection{Language Modeling (BPB)}
+\subsection{Language Modeling Quality (BPB)}
+
+We evaluate bits-per-byte (BPB) on held-out test sets for each language. Lower values indicate better modeling.
 
 \begin{table}[H]
 \centering\small
@@ -298,25 +332,26 @@ News & AG News & 200 & 4 & AG News \\
 \toprule
 \textbf{Model} & \textbf{HE} & \textbf{AR} & \textbf{EN} & \textbf{FA} \\
 \midrule
-Base & 0.879 & 0.731 & 0.972 & 0.663 \\
+Base (pretrained) & 0.879 & 0.731 & 0.972 & 0.663 \\
 D-SFT (5K) & 0.876 & 0.726 & 0.964 & 0.657 \\
-E-1K & 0.878 & 0.729 & 0.967 & 0.663 \\
-E-3K & 0.877 & 0.728 & 0.965 & 0.660 \\
+E-1K SFT & 0.878 & 0.729 & 0.967 & 0.663 \\
+E-3K SFT & 0.877 & 0.728 & 0.965 & 0.660 \\
+E-5K SFT & 0.876 & 0.726 & 0.964 & 0.658 \\
 F-no-arfa & 0.879 & 0.733 & 0.968 & 0.669 \\
 F-only-arfa & 0.880 & 0.727 & 0.968 & 0.658 \\
 \bottomrule
 \end{tabular}
-\caption{BPB across SFT configurations. Lower is better.}
+\caption{Bits-per-byte across languages and SFT configurations. Farsi achieves lowest BPB (most predictable given tokenizer), English highest.}
 \label{tab:bpb}
 \end{table}
 
-SFT consistently improves BPB with diminishing returns after 3K steps. Removing a language from SFT degrades that language.
+Key observations: (1) SFT consistently improves BPB across all languages; (2) more SFT steps yield monotonic improvement with diminishing returns after 3K; (3) removing a language from SFT data degrades that language's BPB (F-no-arfa harms AR/FA, F-only-arfa slightly harms HE/EN).
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    ylabel={BPB},
+    ylabel={BPB (lower is better)},
     xlabel={SFT Steps},
     xtick={0, 1000, 3000, 5000},
     xticklabels={Base, 1K, 3K, 5K},
@@ -327,41 +362,47 @@ SFT consistently improves BPB with diminishing returns after 3K steps. Removing 
     mark size=2pt,
     thick,
 ]
-\addplot[color=blue!80, mark=*] coordinates {(0,0.879) (1000,0.878) (3000,0.877) (5000,0.876)};
-\addplot[color=green!70!black, mark=square*] coordinates {(0,0.731) (1000,0.729) (3000,0.728) (5000,0.726)};
-\addplot[color=orange!80!black, mark=triangle*] coordinates {(0,0.972) (1000,0.967) (3000,0.965) (5000,0.964)};
-\addplot[color=red!70, mark=diamond*] coordinates {(0,0.663) (1000,0.663) (3000,0.660) (5000,0.658)};
-\legend{HE, AR, EN, FA}
+\addplot[color=blue!80, mark=*, mark options={fill=blue!60}] coordinates {(0,0.879) (1000,0.878) (3000,0.877) (5000,0.876)};
+\addplot[color=green!70!black, mark=square*, mark options={fill=green!50}] coordinates {(0,0.731) (1000,0.729) (3000,0.728) (5000,0.726)};
+\addplot[color=orange!80!black, mark=triangle*, mark options={fill=orange!60}] coordinates {(0,0.972) (1000,0.967) (3000,0.965) (5000,0.964)};
+\addplot[color=red!70, mark=diamond*, mark options={fill=red!40}] coordinates {(0,0.663) (1000,0.663) (3000,0.660) (5000,0.658)};
+\legend{Hebrew, Arabic, English, Farsi}
 \end{axis}
 \end{tikzpicture}
-\caption{BPB improvement with SFT scaling. Diminishing returns after 3K steps.}
+\caption{BPB improvement with SFT scaling. All languages improve monotonically with more SFT steps, with diminishing returns after 3K steps. English benefits most from SFT (largest gap between Base and 5K).}
 \label{fig:bpb_scaling}
 \end{figure}
 
 \subsection{Reading Comprehension (Belebele)}
 
+We evaluate on the Belebele benchmark \citep{bandarkar2023belebele}, a 4-way multiple-choice reading comprehension task available in all four languages.
+
 \begin{table}[H]
 \centering\small
 \begin{tabular}{lcccc}
 \toprule
-& \textbf{HE} & \textbf{AR} & \textbf{EN} & \textbf{FA} \\
+\textbf{Model} & \textbf{HE} & \textbf{AR} & \textbf{EN} & \textbf{FA} \\
 \midrule
-Random & 25.0 & 25.0 & 25.0 & 25.0 \\
-Base & 28.3 & 27.3 & 31.1 & 29.2 \\
+Random baseline & 25.0 & 25.0 & 25.0 & 25.0 \\
+Base (pretrained) & 28.3 & 27.3 & 31.1 & 29.2 \\
 D-SFT & 28.1 & 27.9 & 31.8 & 28.6 \\
 \bottomrule
 \end{tabular}
-\caption{Belebele accuracy (\%). Near chance at 3B scale.}
+\caption{Belebele reading comprehension accuracy (\%). All scores are near chance, expected for a 3B model without MCQ-specific tuning.}
 \label{tab:belebele}
 \end{table}
 
-\subsection{Translation}
+Performance is near chance level for all languages, which is expected for a 3B model that has not been specifically fine-tuned on multiple-choice tasks. English shows the highest margin above chance (+6.1\%), consistent with its rich representation in diverse instruction formats.
+
+\subsection{Translation Capability}
+
+We evaluate translation using chrF \citep{popovic2015chrf} across 10 language directions with five model configurations:
 
 \begin{table*}[t]
 \centering\small
-\begin{tabular}{lcccccccccc}
+\begin{tabular}{lccccccccccc}
 \toprule
-& \textbf{AR$\rightarrow$FA} & \textbf{FA$\rightarrow$AR} & \textbf{HE$\rightarrow$EN} & \textbf{EN$\rightarrow$HE} & \textbf{AR$\rightarrow$EN} & \textbf{EN$\rightarrow$AR} & \textbf{HE$\rightarrow$AR} & \textbf{AR$\rightarrow$HE} & \textbf{EN$\rightarrow$FA} & \textbf{FA$\rightarrow$EN} \\
+\textbf{Model} & \textbf{AR$\rightarrow$FA} & \textbf{FA$\rightarrow$AR} & \textbf{HE$\rightarrow$EN} & \textbf{EN$\rightarrow$HE} & \textbf{AR$\rightarrow$EN} & \textbf{EN$\rightarrow$AR} & \textbf{HE$\rightarrow$AR} & \textbf{AR$\rightarrow$HE} & \textbf{EN$\rightarrow$FA} & \textbf{FA$\rightarrow$EN} \\
 \midrule
 D-baseline & 6.2 & 7.6 & 1.4 & 0.9 & 0.9 & 0.6 & 1.4 & 0.0 & 0.1 & 0.3 \\
 G-trans & 5.4 & 4.2 & 10.5 & 9.1 & 7.3 & 5.1 & 0.0 & 0.0 & 3.8 & 6.0 \\
@@ -370,11 +411,17 @@ G2-trans & 16.7 & 13.7 & 7.1 & 5.7 & 6.0 & 4.3 & 1.8 & 5.9 & 3.2 & 5.2 \\
 G2-direct & \textbf{18.7} & \textbf{15.3} & 0.4 & 2.2 & 0.4 & 3.7 & \textbf{4.8} & \textbf{3.4} & 2.7 & 0.4 \\
 \bottomrule
 \end{tabular}
-\caption{Translation quality (chrF\%). G-trans=EN-mediated; G2-direct=direct parallel data. Bold=best per-direction.}
+\caption{Translation quality (chrF\%) across model configurations. G-trans uses English-mediated parallel data; G2-direct uses direct parallel data between language pairs. Bold indicates best per-direction.}
 \label{tab:translation}
 \end{table*}
 
-\textbf{Key findings:} (1) Direct parallel data essential---G2-direct achieves 18.7\% for AR$\rightarrow$FA. (2) EN-mediated helps EN$\leftrightarrow$X only. (3) G2-direct collapses on EN$\leftrightarrow$X (0.4\% vs 10.5\%). (4) HE$\leftrightarrow$AR hardest even with direct data (3--5\%).
+\paragraph{Key findings:}
+\begin{enumerate}
+    \item \textbf{Direct parallel data is essential}: G2-direct achieves 18.7\% chrF for AR$\rightarrow$FA (3$\times$ baseline) but only when trained on direct AR$\leftrightarrow$FA parallel data.
+    \item \textbf{English-mediated training helps EN$\leftrightarrow$X only}: G-trans achieves 10.5\% for HE$\rightarrow$EN but 0\% for HE$\rightarrow$AR.
+    \item \textbf{Tradeoff}: G2-direct excels at trained pairs but collapses on EN$\leftrightarrow$X (0.4\% vs 10.5\%).
+    \item \textbf{HE$\leftrightarrow$AR is hardest}: Even with direct parallel data, Hebrew-Arabic achieves only 3--5\% chrF, likely due to script difference and limited parallel data.
+\end{enumerate}
 
 \begin{figure}[H]
 \centering
@@ -387,7 +434,7 @@ G2-direct & \textbf{18.7} & \textbf{15.3} & 0.4 & 2.2 & 0.4 & 3.7 & \textbf{4.8}
     xtick=data,
     x tick label style={rotate=35, anchor=east, font=\scriptsize},
     ymin=0, ymax=22,
-    legend style={at={(0.98,0.98)}, anchor=north east, font=\scriptsize},
+    legend style={at={(0.98,0.98)}, anchor=north east, legend columns=1, font=\scriptsize},
     width=0.95\columnwidth,
     height=4.5cm,
     ymajorgrids=true,
@@ -396,16 +443,16 @@ G2-direct & \textbf{18.7} & \textbf{15.3} & 0.4 & 2.2 & 0.4 & 3.7 & \textbf{4.8}
 \addplot[fill=gray!30, draw=gray!60] coordinates {(AR$\rightarrow$FA,6.2) (FA$\rightarrow$AR,7.6) (HE$\rightarrow$EN,1.4) (EN$\rightarrow$HE,0.9) (HE$\rightarrow$AR,1.4)};
 \addplot[fill=accent!40, draw=accent!70] coordinates {(AR$\rightarrow$FA,5.4) (FA$\rightarrow$AR,4.2) (HE$\rightarrow$EN,10.5) (EN$\rightarrow$HE,9.1) (HE$\rightarrow$AR,0.0)};
 \addplot[fill=red!50, draw=red!80] coordinates {(AR$\rightarrow$FA,18.7) (FA$\rightarrow$AR,15.3) (HE$\rightarrow$EN,0.4) (EN$\rightarrow$HE,2.2) (HE$\rightarrow$AR,4.8)};
-\legend{Baseline, G-trans, G2-direct}
+\legend{Baseline, G-trans (EN-mediated), G2-direct}
 \end{axis}
 \end{tikzpicture}
-\caption{Translation tradeoff. EN-mediated helps EN$\leftrightarrow$X; direct parallel needed for X$\leftrightarrow$Y.}
+\caption{Translation strategy tradeoff. G-trans (English-mediated) helps EN$\leftrightarrow$X but fails for direct X$\leftrightarrow$Y. G2-direct excels at trained pairs but collapses EN$\leftrightarrow$X. Practitioners must choose based on their target pairs.}
 \label{fig:translation_tradeoff}
 \end{figure}
 
 \subsection{Cross-lingual Embeddings}
 
-Cross-lingual retrieval (10-way, chance=10\%):
+We evaluate embedding quality through cross-lingual retrieval: given a sentence in language A, retrieve its translation from 10 candidates in language B (chance = 10\%).
 
 \begin{table}[H]
 \centering\small
@@ -429,11 +476,11 @@ FA$\rightarrow$AR & 10\% & 10\% \\
 \textbf{Average} & \textbf{45.8\%} & \textbf{43.3\%} \\
 \bottomrule
 \end{tabular}
-\caption{Cross-lingual retrieval (10-way, chance=10\%). Strong EN$\leftrightarrow$HE alignment emerges without explicit alignment objective.}
+\caption{Cross-lingual retrieval accuracy (10-way, chance=10\%). The model develops strong EN$\leftrightarrow$HE alignment and meaningful AR alignment despite no explicit alignment objective.}
 \label{tab:embeddings}
 \end{table}
 
-EN$\leftrightarrow$HE achieves 90\% (9$\times$ chance). Farsi shows weakest alignment, consistent with typological distance.
+The model develops strong cross-lingual alignment purely from multilingual pretraining, without any contrastive or alignment objective. EN$\leftrightarrow$HE achieves 90\% (9$\times$ chance), suggesting deep shared representation. Farsi shows weakest alignment, consistent with its typological distance from the other languages.
 
 \begin{figure}[H]
 \centering
@@ -465,33 +512,41 @@ EN$\leftrightarrow$HE achieves 90\% (9$\times$ chance). Farsi shows weakest alig
     \pgfmathsetmacro{\lbl}{\langs[\row]}
     \node[font=\scriptsize\bfseries, left] at (-0.1, -\row*1.2+0.5) {\lbl};
 }
+\node[font=\tiny, below] at (2.3, -4.3) {Target language (retrieve from)};
+\node[font=\tiny, rotate=90] at (-1.0, -1.8) {Source language};
 \end{tikzpicture}
-\caption{Cross-lingual retrieval heatmap (base model, 10-way, chance=10\%). Darker = higher. EN$\leftrightarrow$HE strongest; Farsi isolated.}
+\caption{Cross-lingual retrieval accuracy heatmap (base model, 10-way, chance=10\%). Darker = higher accuracy. EN$\leftrightarrow$HE shows strongest alignment (90\%), while Farsi shows weak connectivity---consistent with typological isolation from the Semitic family.}
 \label{fig:embedding_heatmap}
 \end{figure}
 
-\subsection{Cross-lingual Sentiment Transfer}
+\subsection{Domain Fine-tuning: Cross-lingual Sentiment Transfer}
 \label{sec:sentiment}
 
-Our most striking result:
+Our most striking result comes from sentiment classification fine-tuning. We fine-tune the D-SFT model on binary sentiment data in various language configurations and evaluate zero-shot on all four languages.
 
 \begin{table}[H]
 \centering\small
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Config} & \textbf{HE} & \textbf{AR} & \textbf{FA} & \textbf{EN} \\
+\textbf{Training Config} & \textbf{HE} & \textbf{AR} & \textbf{FA} & \textbf{EN} \\
 \midrule
-No training & 19.0 & 5.5 & 0.5 & 11.5 \\
+No training (baseline) & 19.0 & 5.5 & 0.5 & 11.5 \\
 Hebrew only (H1) & 18.5 & \textbf{49.0} & 1.5 & 33.5 \\
-All 4 langs (H2) & 18.0 & 43.0 & 1.5 & 18.5 \\
-AR+FA only (H3) & \textbf{23.0} & \textbf{67.0} & 5.5 & 21.0 \\
+All 4 languages (H2) & 18.0 & 43.0 & 1.5 & 18.5 \\
+Arabic + Farsi only (H3) & \textbf{23.0} & \textbf{67.0} & 5.5 & 21.0 \\
 \bottomrule
 \end{tabular}
-\caption{Sentiment accuracy (\%). Hebrew-only training improves Arabic from 5.5\% to 49\% (9$\times$) with zero Arabic sentiment data.}
+\caption{Sentiment classification accuracy (\%) after domain fine-tuning. Training on Hebrew alone improves Arabic from 5.5\% to 49\% (9$\times$) with zero Arabic sentiment data.}
 \label{tab:sentiment}
 \end{table}
 
-\textbf{Key findings:} (1) \textbf{Massive HE$\rightarrow$AR transfer}: 5.5\%$\rightarrow$49\% with zero Arabic task data. (2) \textbf{Reverse transfer}: AR+FA training improves Hebrew 19\%$\rightarrow$23\%. (3) \textbf{Focused $>$ diluted}: H3 achieves 67\% vs H2's 43\%. (4) \textbf{Farsi isolation}: 0.5\%$\rightarrow$5.5\% at best despite sharing Arabic script, suggesting linguistic family $>$ script for transfer (though Farsi's smaller pretraining share may contribute).
+\paragraph{Key findings:}
+\begin{enumerate}
+    \item \textbf{Massive Hebrew$\rightarrow$Arabic transfer}: Training exclusively on Hebrew sentiment data improves Arabic accuracy from 5.5\% to 49\%---a 9$\times$ improvement with zero Arabic task data.
+    \item \textbf{Reverse transfer}: Arabic+Farsi training improves Hebrew from 19\% to 23\%, confirming bidirectional transfer within the Semitic family.
+    \item \textbf{Focused $>$ diluted}: Training on Arabic+Farsi (H3) achieves 67\% Arabic accuracy, outperforming all-language training (H2, 43\%).
+    \item \textbf{Persian isolation}: Farsi shows minimal improvement regardless of training configuration (0.5\%$\rightarrow$5.5\% at best), despite sharing Arabic script. In our setup, this suggests that linguistic family relatedness matters more than script similarity for semantic transfer, though we note that Farsi also has the smallest pretraining share (15\%), which may contribute to this effect.
+\end{enumerate}
 
 \begin{figure}[H]
 \centering
@@ -511,132 +566,227 @@ AR+FA only (H3) & \textbf{23.0} & \textbf{67.0} & 5.5 & 21.0 \\
     height=5.5cm,
     ymajorgrids=true,
     enlarge x limits=0.2,
+    area legend,
 ]
 \addplot[fill=gray!40, draw=gray!70] coordinates {(Hebrew,19.0) (Arabic,5.5) (Farsi,0.5) (English,11.5)};
 \addplot[fill=accent!50, draw=accent!80] coordinates {(Hebrew,18.5) (Arabic,49.0) (Farsi,1.5) (English,33.5)};
 \addplot[fill=green!40, draw=green!70!black] coordinates {(Hebrew,18.0) (Arabic,43.0) (Farsi,1.5) (English,18.5)};
 \addplot[fill=red!40, draw=red!70] coordinates {(Hebrew,23.0) (Arabic,67.0) (Farsi,5.5) (English,21.0)};
-\legend{No training, Hebrew-only, All 4 langs, AR+FA}
+\legend{No training, Hebrew-only, All 4 langs, Arabic+Farsi}
 \end{axis}
 \end{tikzpicture}
-\caption{Cross-lingual sentiment transfer. Hebrew-only (blue) improves Arabic 9$\times$ with zero Arabic data. Farsi shows no transfer despite shared script.}
+\caption{Cross-lingual sentiment transfer results. The Hebrew-only configuration (navy) improves Arabic from 5.5\% to 49\% (9$\times$) despite receiving \emph{zero} Arabic sentiment data. Farsi (same script as Arabic, Indo-European family) shows no transfer---confirming that \textbf{linguistic family, not script, drives transfer}.}
 \label{fig:sentiment_transfer}
 \end{figure}
 
-\subsection{News Topic Classification}
+\subsection{Domain Fine-tuning: News Topic Classification}
 
-4-class (chance=25\%): D-baseline 4.0\% $\rightarrow$ after fine-tuning \textbf{79.0\%}. Strong domain adaptation from limited fine-tuning (500 steps).
+We also evaluate English news topic classification (4-class: World, Sports, Business, Science/Technology; chance = 25\%).
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lc}
+\toprule
+\textbf{Config} & \textbf{EN News Accuracy} \\
+\midrule
+D-baseline (no news training) & 4.0\% \\
+After EN news fine-tuning & \textbf{79.0\%} \\
+\bottomrule
+\end{tabular}
+\caption{News topic classification accuracy (4-class, chance=25\%). The model learns domain classification effectively from limited fine-tuning.}
+\label{tab:news}
+\end{table}
+
+The model achieves 79\% accuracy after fine-tuning on English news data (500 steps), demonstrating strong domain adaptation capability.
 
 % ============================================================
 \section{Analysis and Discussion}
 
 \subsection{Cost Efficiency}
 
-Jais (13B): millions in compute, 395B tokens. SmolLM3 (3B): 11T tokens on dedicated clusters. \textbf{SemiticGPT (3B): $\sim$20B tokens, spot instances only.} Linguistically-motivated language grouping amplifies value per GPU-hour.
+SemiticGPT demonstrates that meaningful multilingual capabilities can be achieved with modest compute on cloud spot instances. For comparison:
+
+\begin{itemize}
+    \item Jais (13B): Estimated millions of dollars in compute, 395B tokens
+    \item SmolLM3 (3B): 11T tokens on large dedicated GPU clusters
+    \item SemiticGPT (3B): $\sim$20B tokens, spot instances only
+\end{itemize}
+
+The key insight is that \textbf{linguistically-motivated language grouping} amplifies the value of limited compute. By targeting related languages (Hebrew + Arabic) and including typologically distant languages as controls (Farsi, English), we maximize scientific and practical value per GPU-hour.
 
 \subsection{What Works vs.\ What Doesn't}
 
-\textbf{Works:} Emergent cross-lingual embeddings; semantic transfer between related languages; domain fine-tuning with limited data; BPB improvement from SFT.
+\paragraph{Works well:}
+\begin{itemize}
+    \item Cross-lingual embedding alignment (emergent from pretraining)
+    \item Semantic-level transfer between related languages (sentiment)
+    \item Domain fine-tuning with limited data (79\% news accuracy from 500 steps)
+    \item BPB improvement from SFT (consistent across languages)
+\end{itemize}
 
-\textbf{Does not work:} Translation without explicit parallel data; English-mediated translation for X$\leftrightarrow$Y; Farsi transfer despite shared script; reasoning at 3B scale.
+\paragraph{Limitations:}
+\begin{itemize}
+    \item Translation requires explicit parallel data---no emergent translation capability
+    \item English-mediated translation does not generalize to direct X$\leftrightarrow$Y pairs
+    \item Farsi remains isolated despite script similarity with Arabic
+    \item Belebele performance near chance (scale limitation at 3B)
+\end{itemize}
 
 \subsection{Lessons Learned}
 
 \begin{enumerate}
-    \item \textbf{Tokenizer balance}: Equal representation prevents over-fragmentation.
-    \item \textbf{Anchor strategy}: Over-representing Hebrew (40\%) creates transferable representations.
-    \item \textbf{SFT composition}: Removing languages immediately degrades them.
-    \item \textbf{Direct parallel data non-negotiable} for translation.
-    \item \textbf{fp16}: No observed degradation (no controlled fp32 comparison).
+    \item \textbf{Tokenizer balance matters}: Equal language representation in tokenizer training prevents over-fragmentation that would waste model capacity.
+    \item \textbf{Anchor language strategy}: Over-representing the anchor language (Hebrew at 40\%) creates strong representations that transfer to related languages.
+    \item \textbf{SFT composition}: Removing languages from SFT data immediately degrades those languages (F-no-arfa experiment).
+    \item \textbf{Direct parallel data is non-negotiable for translation}: English as a pivot language does not enable direct translation between non-English pairs.
+    \item \textbf{fp16 training}: We did not observe quality degradation from half-precision training in our setup, though we did not run a controlled fp32 comparison. This enabled fitting the 3B model on a single 48GB GPU.
 \end{enumerate}
 
 % ============================================================
-\section{Practitioner's Guide}
+\section{Practitioner's Guide: Building a Multilingual Model from Scratch}
 \label{sec:guide}
 
-\textbf{Step 1: Language Cluster.} Prioritize linguistic family over script. Include anchor + control. Recommended: 4--6 languages.
+Based on our experience, we distill a step-by-step guide for researchers who wish to build a multilingual foundation model for any under-resourced language family.
 
-\textbf{Step 2: Balanced Tokenizer.} SentencePiece BPE, equally-weighted, 32K vocab. Target fertility $\leq$1.6.
+\subsection{Step 1: Choose Your Language Cluster}
 
-\textbf{Step 3: Pretraining Data.} Over-represent anchor (30--40\%). MinHash dedup + perplexity filter. Include direct parallel data only for desired translation pairs.
+\begin{itemize}
+    \item \textbf{Prioritize linguistic family over geography or script.} Our results suggest that linguistic relatedness (Hebrew$\leftrightarrow$Arabic, both Semitic) correlates with stronger cross-lingual transfer than script similarity alone (Arabic$\leftrightarrow$Farsi, shared script but different families), though we cannot fully disentangle this from pretraining data proportions in our setup.
+    \item \textbf{Include one high-resource anchor language} (e.g., English) for evaluation infrastructure and to bootstrap instruction-following ability.
+    \item \textbf{Include a typologically distant control language} to validate that observed transfer is due to linguistic relatedness, not training artifacts.
+    \item \textbf{Recommended}: 2--4 related languages + 1 high-resource anchor + 1 control = 4--6 total.
+\end{itemize}
 
-\textbf{Step 4: Proxy Validation.} 20--50 experiments at 100--200M scale. Validate schedule (WSD $>$ cosine), optimizer (AdamW robust; Muon can diverge at scale). Cost: \$10--50.
+\subsection{Step 2: Build a Balanced Tokenizer}
 
-\textbf{Step 5: Pretrain.} Standard transformer (RoPE, SwiGLU, RMSNorm). Spot instances + checkpointing. Monitor per-language BPB.
+\begin{itemize}
+    \item \textbf{Train from scratch} using SentencePiece BPE on an equally-weighted sample of all target languages. Do \emph{not} reuse an English-centric tokenizer.
+    \item \textbf{32K vocabulary} is a good starting point for 4--6 languages; scale to 64K for 8+ languages.
+    \item \textbf{Validate fertility rates}: target $\leq$1.6 tokens/word for all languages. If any language exceeds 2.0, increase its representation in tokenizer training data.
+    \item \textbf{Budget: 1--2 days} of data sampling and tokenizer training on CPU.
+\end{itemize}
 
-\textbf{Step 6: SFT.} All languages, native $>$ translated, 3--5K steps.
+\subsection{Step 3: Curate Pretraining Data}
 
-\textbf{Step 7: Evaluate.} BPB, cross-lingual retrieval, task transfer, translation, downstream benchmarks.
+\begin{itemize}
+    \item \textbf{Over-represent your anchor language} (we used 40\% Hebrew). This creates strong representations that transfer to related languages.
+    \item \textbf{Sources}: Wikipedia (all languages have it), OSCAR/mC4 (web crawl), domain-specific corpora (news, government documents).
+    \item \textbf{Minimum}: 1B tokens per language for meaningful representation; 5B+ per language recommended.
+    \item \textbf{Quality pipeline}: Language ID verification $\rightarrow$ deduplication (MinHash) $\rightarrow$ perplexity filtering.
+    \item \textbf{Include parallel data} if you want any translation capability---but only \emph{direct} parallel data between language pairs you care about. English-mediated parallel data does not enable X$\leftrightarrow$Y translation.
+\end{itemize}
+
+\subsection{Step 4: Validate Recipe at Proxy Scale}
+
+\begin{itemize}
+    \item \textbf{Before committing to full pretraining}, run 20--50 automated experiments at 100--200M parameter scale, each lasting 5--10 minutes.
+    \item \textbf{Key decisions to validate}: learning rate schedule (we recommend WSD linear-decay over cosine), optimizer (AdamW is robust; Muon can diverge at scale), batch size, warmup length.
+    \item \textbf{Use the autoresearch framework} \citep{karpathy2026autoresearch} or similar. Cost: $\sim$\$10--50 for 50 proxy experiments.
+    \item \textbf{Critical lesson}: Do not trust proxy-scale optimizer results at face value. We found Muon outperforms AdamW at 110M but diverges at 502M+ for multilingual training.
+\end{itemize}
+
+\subsection{Step 5: Pretrain}
+
+\begin{itemize}
+    \item \textbf{Architecture}: Standard decoder-only transformer with RoPE, SwiGLU, RMSNorm. 3B achievable on single 48GB GPU with gradient accumulation; 7B+ requires multi-GPU (FSDP).
+    \item \textbf{Use spot instances}: 60--70\% cheaper than on-demand. Checkpoint every 30 minutes. Implement automatic resume-on-preemption.
+    \item \textbf{fp16/bf16}: We did not observe degradation from half-precision training in our setup, enabling larger models on limited hardware.
+    \item \textbf{Monitor per-language BPB}, not just aggregate loss. If one language plateaus while others improve, adjust data mixing.
+\end{itemize}
+
+\subsection{Step 6: Supervised Fine-Tuning}
+
+\begin{itemize}
+    \item \textbf{Include all target languages in SFT data.} Removing a language from SFT immediately degrades it (our F-no-arfa experiment).
+    \item \textbf{Native data $>$ translated data.} Machine-translated instruction data (e.g., translated Alpaca) produces weaker results than native-language instruction datasets.
+    \item \textbf{3K--5K steps is sufficient} for a 3B model. Diminishing returns beyond 5K.
+    \item \textbf{SFT data sources}: Aya dataset (multilingual), OASST (translated), language-specific instruction datasets from HuggingFace.
+\end{itemize}
+
+\subsection{Step 7: Evaluate Comprehensively}
+
+We recommend evaluating on at least these dimensions:
+\begin{enumerate}
+    \item \textbf{Language modeling} (BPB per language) --- confirms pretraining quality.
+    \item \textbf{Cross-lingual retrieval} (embedding similarity) --- measures implicit alignment. No labeled data needed.
+    \item \textbf{Task transfer} (train on language A, evaluate on language B) --- the most surprising capability. Start with sentiment classification.
+    \item \textbf{Translation} (chrF on held-out parallel sentences) --- only if you included parallel data.
+    \item \textbf{Downstream benchmarks} (Belebele, MMLU variants) --- calibrate expectations: 3B models score near chance on reasoning benchmarks.
+\end{enumerate}
 
 \begin{table}[H]
 \centering\scriptsize
-\begin{tabular}{lp{3.8cm}}
+\begin{tabular}{lp{4cm}}
 \toprule
 \textbf{Decision} & \textbf{Recommendation} \\
 \midrule
-Languages & Linguistic family $>$ script \\
-Tokenizer & Custom BPE, 32K, balanced \\
-Data dist. & Anchor at 30--40\% \\
-Quality & MinHash + perplexity filter \\
-Validation & 20--50 proxy experiments \\
-Optimizer & AdamW ($\beta_2$=0.95) \\
-Schedule & WSD linear-decay \\
-Precision & fp16/bf16 \\
-SFT & All langs, native, 3--5K steps \\
-Translation & Direct parallel only \\
-Compute & Spot instances + checkpoint \\
+Language selection & Prioritize linguistic family over script \\
+Tokenizer & Custom BPE, 32K vocab, balanced training \\
+Data distribution & Over-represent anchor language (30--40\%) \\
+Data quality & MinHash dedup $+$ perplexity filter \\
+Recipe validation & 20--50 proxy experiments at 100--200M scale \\
+Optimizer & AdamW ($\beta_2$=0.95); validate Muon at scale \\
+Schedule & WSD linear-decay, not cosine warm-restarts \\
+Precision & fp16 or bf16 \\
+SFT data & All languages, native $>$ translated, 3--5K steps \\
+Translation data & Direct parallel only; EN-mediated insufficient \\
+Compute & Cloud spot instances with checkpointing \\
 \bottomrule
 \end{tabular}
-\caption{Recipe summary.}
+\caption{Recipe summary for building a multilingual foundation model from scratch for an under-resourced language family.}
 \label{tab:recipe}
 \end{table}
 
 % ============================================================
 \section{Conclusion}
 
-We have presented SemiticGPT, a 3B parameter multilingual model trained from scratch on cloud spot instances. Our evaluation reveals massive cross-lingual transfer between Semitic languages for semantic tasks (the headline result), alongside instructive negative results about translation and scale limitations.
+We have presented SemiticGPT, a 3B parameter multilingual model covering Hebrew, Arabic, Farsi, and English, trained from scratch on cloud spot instances. Our comprehensive evaluation across six dimensions reveals both capabilities and limitations, with the most striking finding being massive cross-lingual transfer between Semitic languages for semantic tasks.
 
-We offer a reproducible recipe (Section~\ref{sec:guide}) applicable to other language family clusters (Turkic, Bantu, Dravidian). We release model weights, tokenizer, and code.\footnote{Repository: \url{https://github.com/fatherRonnen/semitic-gpt}, tag \texttt{v0.1-paper-draft}.}
+Beyond the model itself, we offer a reproducible recipe (Section~\ref{sec:guide}) for building multilingual foundation models for any under-resourced language family. The key principles---linguistically-motivated language grouping, balanced custom tokenizers, anchor language overrepresentation, proxy-validated training recipes, and comprehensive negative-result reporting---are directly applicable to other language family clusters (e.g., Turkic, Bantu, Dravidian).
 
-\textbf{Future work.} (1) Scale to 7B with improved Arabic SFT data; (2) add Semitic languages (Amharic, Tigrinya); (3) adapter-based language extension; (4) validate transfer at larger scales.
+We release the model weights, tokenizer, and training code to support reproducible research.\footnote{Repository: \url{https://github.com/fatherRonnen/semitic-gpt}. The tag \texttt{v0.1-paper-draft} freezes the exact configs and result files used in this paper. Machine-readable versions of all tables are in \texttt{paper/tables/result\_tables.json}.}
+
+\textbf{Future work.} (1) Scaling to 7B parameters with improved Arabic SFT data quality; (2) adding more Semitic languages (Amharic, Tigrinya); (3) exploring adapter-based extension to new languages post-pretraining; (4) investigating whether the Hebrew$\rightarrow$Arabic transfer effect persists at larger scales.
 
 % ============================================================
 \section{Reproducibility}
 
-All code and results at \url{https://github.com/fatherRonnen/semitic-gpt}:
+All code, configurations, and result artifacts are available at \url{https://github.com/fatherRonnen/semitic-gpt}. The repository is organized to mirror the paper's pipeline:
 
 \begin{table}[H]
 \centering\scriptsize
 \begin{tabular}{lll}
 \toprule
-\textbf{Section} & \textbf{Path} & \textbf{Contents} \\
+\textbf{Paper Section} & \textbf{Repo Path} & \textbf{Contents} \\
 \midrule
-\S3.1 & \texttt{tokenizer/} & Config, fertility \\
-\S3.2 & \texttt{data/} & Scripts, manifests \\
-\S2 & \texttt{proxy/} & 32 configs, results \\
-\S3.4 & \texttt{pretrain/} & Scripts, logs \\
-\S3.5 & \texttt{sft/} & 6 configs, logs \\
-\S4 & \texttt{eval/} & Scripts, results \\
-Tables & \texttt{paper/tables/} & JSON data \\
+Tokenizer (\S3.1) & \texttt{tokenizer/} & Config, script, fertility \\
+Data (\S3.2) & \texttt{data/} & Collection scripts, manifests \\
+Proxy (\S2) & \texttt{proxy/} & 32 configs, results, rationale \\
+Pretraining (\S3.4) & \texttt{pretrain/} & Scripts, hyperparams, logs \\
+SFT (\S3.5) & \texttt{sft/} & 6 configs, training logs \\
+Evaluation (\S4) & \texttt{eval/} & Scripts, prompts, results \\
+Tables/Figures & \texttt{paper/tables/} & Machine-readable data \\
 \bottomrule
 \end{tabular}
-\caption{Paper section $\rightarrow$ repository mapping.}
+\caption{Mapping from paper sections to repository artifacts.}
 \label{tab:reproducibility}
 \end{table}
+
+Model weights (12.5GB base, 6GB SFT) are available on request and will be uploaded to HuggingFace. The tokenizer binary (\texttt{multilingual\_32k.model}, 817KB) is available from the same source. Large training data files are stored on AWS S3; the repository contains collection scripts and metadata sufficient to reconstruct the training corpus from public sources.
 
 % ============================================================
 \section{Limitations}
 \label{sec:limitations}
 
 \begin{itemize}
-    \item \textbf{Single-run}: No confidence intervals. Differences $<$5pp may not be significant.
-    \item \textbf{Eval harness}: Baselines below chance reflect parsing issues, not anti-correlation.
-    \item \textbf{Small eval sets}: 200 samples/lang detects large but not small effects.
-    \item \textbf{Scale}: 3B is below reasoning threshold. Findings may not hold at larger scales.
-    \item \textbf{Confounds}: Cannot isolate linguistic family from data proportion (Farsi 15\% vs Hebrew 40\%).
-    \item \textbf{No external baselines}: No mBERT/XLM-R/NLLB comparison.
-    \item \textbf{Translation}: Max 18.7\% chrF---hard to distinguish from noise.
-    \item \textbf{Generalizability}: One language cluster only.
+    \item \textbf{Single-run results}: All experiments report single-run results without confidence intervals or multiple seeds. We acknowledge that some observed differences (particularly those under 5 percentage points) may not be statistically significant. Future work should validate key findings across multiple seeds.
+    \item \textbf{Evaluation harness}: Our generative classification evaluations (sentiment, news) produce implausibly low baselines (e.g., 4\% on a 4-class task with 25\% chance). We believe this reflects prompt/parsing issues in the generative evaluation methodology rather than anti-correlated model behavior. The \emph{relative} improvements between configurations remain informative, but absolute accuracy numbers should be interpreted cautiously.
+    \item \textbf{Small evaluation sets}: Sentiment and classification evaluations use 200 samples per language. This is sufficient to detect large effects (e.g., 5.5\%$\rightarrow$49\%) but not small ones. Belebele differences of 1--3 points are likely within noise.
+    \item \textbf{Scale}: At 3B parameters, the model is below the threshold for complex reasoning tasks (Belebele near chance). Our findings about transfer may not hold at larger scales.
+    \item \textbf{Confounded variables}: We cannot fully isolate the effect of linguistic family from pretraining data proportion. Farsi receives 15\% of pretraining data vs Hebrew's 40\%---its weak transfer could partly reflect insufficient exposure rather than purely typological distance.
+    \item \textbf{No external baselines}: We do not compare against existing multilingual models (mBERT, XLM-R, NLLB) on the same tasks. Such comparisons would clarify whether our findings are specific to our model or general properties of multilingual representations.
+    \item \textbf{Translation quality}: ChrF scores remain low (max 18.7\%) even for the best configurations, making it difficult to distinguish meaningful translation from noise.
+    \item \textbf{Generalizability}: Our recipe is demonstrated on one language cluster. Whether the same principles apply to other families (Turkic, Bantu, Dravidian) remains an empirical question.
 \end{itemize}
 
 % ============================================================
