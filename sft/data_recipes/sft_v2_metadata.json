@@ -1,0 +1,40 @@
+{
+  "total_samples": 38512,
+  "train_samples": 36587,
+  "val_samples": 1925,
+  "total_tokens": 6329257,
+  "source_counts": {
+    "alpaca_arabic": 4991,
+    "aya": 10522,
+    "alpaca_gpt4_arabic": 5000,
+    "hebrew_sentiment_instruction": 3963,
+    "hebrew_heq_instruction": 1217,
+    "dolly": 3000,
+    "hebrew_sft_v3_combined": 1484,
+    "hebrew_hesum_instruction": 565,
+    "hebrew_translation_instruction": 2171,
+    "alpaca_en": 4999,
+    "hebrew_alpaca_hebrew": 261,
+    "hebrew_hebnli_instruction": 136,
+    "hebrew_dolly_hebrew": 123,
+    "hebrew_chat_hebrew": 56,
+    "hebrew_winograd_instruction": 14,
+    "hebrew_hebnli_extra_instruction": 10
+  },
+  "lang_counts": {
+    "ar": 14991,
+    "fa": 1578,
+    "he": 10000,
+    "en": 11943
+  },
+  "format": "USER_PREFIX + instruction + ASSISTANT_PREFIX + response",
+  "tokenizer": "multilingual_32k.model",
+  "data_sources": [
+    "CohereForAI/aya_dataset (en, ar dialects, fa)",
+    "arbml/alpaca_arabic",
+    "FreedomIntelligence/alpaca-gpt4-arabic",
+    "tatsu-lab/alpaca (en)",
+    "databricks/databricks-dolly-15k (en)"
+  ],
+  "notes": "Hebrew data from HebrewGPT project (S3). Arabic from Aya + alpaca. Farsi from Aya. English from Aya + alpaca + dolly."
+}

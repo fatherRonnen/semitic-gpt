@@ -1,0 +1,10 @@
+{
+  "name": "E-3K",
+  "description": "SFT scaling experiment: 3K steps on all 4 languages",
+  "steps": 3000,
+  "languages": ["he", "ar", "fa", "en"],
+  "learning_rate": 1e-5,
+  "batch_size": 32,
+  "warmup_steps": 100,
+  "notes": "Tests mid-point SFT duration"
+}

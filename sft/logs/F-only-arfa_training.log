@@ -1,0 +1,265 @@
+Device: cuda
+Loading tokenizer: /tmp/eval/multilingual_32k.model
+Loading base model: /tmp/eval/best_model.pt
+Model loaded: 3.04B parameters
+Loading SFT data from: /tmp/sft_v3_runs/F-only-arfa/data
+Train: 1598605 tokens, Val: 80629 tokens
+Using 8-bit AdamW (bitsandbytes)
+
+Starting SFT training for 2000 steps...
+Batch size: 2 x 8 accum = 16 effective, Seq len: 2048, LR: 2e-05
+Step 10/2000 | Loss: 2.7330 | LR: 0.000002 | TPS: 5950 | 55s
+Step 20/2000 | Loss: 2.7413 | LR: 0.000004 | TPS: 5893 | 111s
+Step 30/2000 | Loss: 2.7149 | LR: 0.000006 | TPS: 5905 | 166s
+Step 40/2000 | Loss: 2.7501 | LR: 0.000008 | TPS: 5909 | 222s
+Step 50/2000 | Loss: 2.6606 | LR: 0.000010 | TPS: 5884 | 278s
+Step 60/2000 | Loss: 2.6857 | LR: 0.000012 | TPS: 5866 | 335s
+Step 70/2000 | Loss: 2.5627 | LR: 0.000014 | TPS: 5853 | 392s
+Step 80/2000 | Loss: 2.5675 | LR: 0.000016 | TPS: 5846 | 448s
+Step 90/2000 | Loss: 2.5204 | LR: 0.000018 | TPS: 5854 | 504s
+Step 100/2000 | Loss: 2.4968 | LR: 0.000020 | TPS: 5854 | 560s
+Step 110/2000 | Loss: 2.3569 | LR: 0.000020 | TPS: 5856 | 616s
+Step 120/2000 | Loss: 2.4149 | LR: 0.000020 | TPS: 5862 | 671s
+Step 130/2000 | Loss: 2.3841 | LR: 0.000020 | TPS: 5861 | 727s
+Step 140/2000 | Loss: 2.2857 | LR: 0.000020 | TPS: 5854 | 784s
+Step 150/2000 | Loss: 2.3074 | LR: 0.000020 | TPS: 5850 | 840s
+Step 160/2000 | Loss: 2.3204 | LR: 0.000020 | TPS: 5844 | 897s
+Step 170/2000 | Loss: 2.2629 | LR: 0.000020 | TPS: 5840 | 954s
+Step 180/2000 | Loss: 2.1395 | LR: 0.000020 | TPS: 5836 | 1011s
+Step 190/2000 | Loss: 2.2318 | LR: 0.000020 | TPS: 5839 | 1066s
+Step 200/2000 | Loss: 2.1750 | LR: 0.000020 | TPS: 5844 | 1121s
+  📊 Val loss: 2.2733 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/F-only-arfa/sft_model.pt
+Step 210/2000 | Loss: 2.1996 | LR: 0.000020 | TPS: 5771 | 1192s
+Step 220/2000 | Loss: 2.1292 | LR: 0.000020 | TPS: 5771 | 1249s
+Step 230/2000 | Loss: 2.2003 | LR: 0.000020 | TPS: 5770 | 1306s
+Step 240/2000 | Loss: 2.2405 | LR: 0.000020 | TPS: 5769 | 1363s
+Step 250/2000 | Loss: 2.2331 | LR: 0.000020 | TPS: 5771 | 1419s
+Step 260/2000 | Loss: 2.1847 | LR: 0.000020 | TPS: 5771 | 1476s
+Step 270/2000 | Loss: 2.1568 | LR: 0.000020 | TPS: 5770 | 1533s
+Step 280/2000 | Loss: 2.1075 | LR: 0.000020 | TPS: 5770 | 1590s
+Step 290/2000 | Loss: 2.1260 | LR: 0.000020 | TPS: 5770 | 1647s
+Step 300/2000 | Loss: 2.1728 | LR: 0.000020 | TPS: 5769 | 1704s
+Step 310/2000 | Loss: 2.1251 | LR: 0.000019 | TPS: 5770 | 1761s
+Step 320/2000 | Loss: 2.1217 | LR: 0.000019 | TPS: 5772 | 1817s
+Step 330/2000 | Loss: 2.1034 | LR: 0.000019 | TPS: 5774 | 1873s
+Step 340/2000 | Loss: 2.1919 | LR: 0.000019 | TPS: 5778 | 1928s
+Step 350/2000 | Loss: 2.1058 | LR: 0.000019 | TPS: 5782 | 1984s
+Step 360/2000 | Loss: 2.1359 | LR: 0.000019 | TPS: 5781 | 2041s
+Step 370/2000 | Loss: 2.0854 | LR: 0.000019 | TPS: 5780 | 2098s
+Step 380/2000 | Loss: 2.1878 | LR: 0.000019 | TPS: 5780 | 2154s
+Step 390/2000 | Loss: 2.1073 | LR: 0.000019 | TPS: 5780 | 2211s
+Step 400/2000 | Loss: 2.1444 | LR: 0.000019 | TPS: 5780 | 2268s
+  📊 Val loss: 2.1785 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/F-only-arfa/sft_model.pt
+Step 410/2000 | Loss: 2.0679 | LR: 0.000019 | TPS: 5650 | 2378s
+Step 420/2000 | Loss: 2.1176 | LR: 0.000019 | TPS: 5655 | 2434s
+Step 430/2000 | Loss: 2.0379 | LR: 0.000019 | TPS: 5657 | 2491s
+Step 440/2000 | Loss: 2.0624 | LR: 0.000019 | TPS: 5659 | 2548s
+Step 450/2000 | Loss: 2.0778 | LR: 0.000019 | TPS: 5663 | 2604s
+Step 460/2000 | Loss: 2.1211 | LR: 0.000018 | TPS: 5668 | 2659s
+Step 470/2000 | Loss: 2.1830 | LR: 0.000018 | TPS: 5671 | 2716s
+Step 480/2000 | Loss: 1.9532 | LR: 0.000018 | TPS: 5673 | 2772s
+Step 490/2000 | Loss: 2.0910 | LR: 0.000018 | TPS: 5675 | 2830s
+Step 500/2000 | Loss: 1.9934 | LR: 0.000018 | TPS: 5678 | 2886s
+
+  🔤 Generation samples (step 500):
+    [EN] Lucky (English). ### Frontend/Web Developer. What is your main area of interest and how can I help you? ### Web Designer, Technical Architect. Are there any interesting projects you are working on or 
+    [HE] *Gabriela Pascale (Activity Coordinator). **Senior Manager, Marketing & Communications**. ### 35 freelancers are bidding on average $42 for this job Hi i can help you the best.. We have more than 10 y
+    [AR] • متحف اللوفر (Palais de l'Opéra). • مسرح لوميير. • الميدان الكبير (Orsacre). • برج إيفل (E
+    [FA] <|assistant|> @
+    [TRANSLATE] Ladki ibn Abu Hanifa. He said in the Qur'an that he was good to those who were not, but he would make them like him and be like him, because they are his
+
+Step 510/2000 | Loss: 2.1013 | LR: 0.000018 | TPS: 5661 | 2952s
+Step 520/2000 | Loss: 2.1060 | LR: 0.000018 | TPS: 5664 | 3008s
+Step 530/2000 | Loss: 2.0776 | LR: 0.000018 | TPS: 5667 | 3065s
+Step 540/2000 | Loss: 2.0428 | LR: 0.000018 | TPS: 5671 | 3120s
+Step 550/2000 | Loss: 2.0358 | LR: 0.000018 | TPS: 5675 | 3176s
+Step 560/2000 | Loss: 1.9810 | LR: 0.000018 | TPS: 5676 | 3233s
+Step 570/2000 | Loss: 2.0778 | LR: 0.000017 | TPS: 5678 | 3290s
+Step 580/2000 | Loss: 1.9666 | LR: 0.000017 | TPS: 5681 | 3346s
+Step 590/2000 | Loss: 2.0982 | LR: 0.000017 | TPS: 5681 | 3403s
+Step 600/2000 | Loss: 1.9862 | LR: 0.000017 | TPS: 5684 | 3459s
+  📊 Val loss: 2.1430 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/F-only-arfa/sft_model.pt
+Step 610/2000 | Loss: 2.0331 | LR: 0.000017 | TPS: 5602 | 3568s
+Step 620/2000 | Loss: 2.0201 | LR: 0.000017 | TPS: 5608 | 3623s
+Step 630/2000 | Loss: 2.0974 | LR: 0.000017 | TPS: 5613 | 3678s
+Step 640/2000 | Loss: 2.0065 | LR: 0.000017 | TPS: 5619 | 3732s
+Step 650/2000 | Loss: 2.0827 | LR: 0.000017 | TPS: 5622 | 3788s
+Step 660/2000 | Loss: 1.9242 | LR: 0.000016 | TPS: 5625 | 3845s
+Step 670/2000 | Loss: 2.0676 | LR: 0.000016 | TPS: 5627 | 3901s
+Step 680/2000 | Loss: 1.9507 | LR: 0.000016 | TPS: 5632 | 3957s
+Step 690/2000 | Loss: 1.9237 | LR: 0.000016 | TPS: 5636 | 4012s
+Step 700/2000 | Loss: 1.9316 | LR: 0.000016 | TPS: 5638 | 4069s
+Step 710/2000 | Loss: 1.9653 | LR: 0.000016 | TPS: 5641 | 4124s
+Step 720/2000 | Loss: 1.9793 | LR: 0.000016 | TPS: 5644 | 4180s
+Step 730/2000 | Loss: 1.9381 | LR: 0.000016 | TPS: 5647 | 4236s
+Step 740/2000 | Loss: 2.0276 | LR: 0.000015 | TPS: 5648 | 4293s
+Step 750/2000 | Loss: 2.0681 | LR: 0.000015 | TPS: 5650 | 4350s
+Step 760/2000 | Loss: 1.9828 | LR: 0.000015 | TPS: 5652 | 4406s
+Step 770/2000 | Loss: 2.0037 | LR: 0.000015 | TPS: 5653 | 4463s
+Step 780/2000 | Loss: 2.0245 | LR: 0.000015 | TPS: 5654 | 4520s
+Step 790/2000 | Loss: 1.9472 | LR: 0.000015 | TPS: 5656 | 4577s
+Step 800/2000 | Loss: 2.0131 | LR: 0.000015 | TPS: 5658 | 4634s
+  📊 Val loss: 2.1044 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/F-only-arfa/sft_model.pt
+Step 810/2000 | Loss: 1.9818 | LR: 0.000014 | TPS: 5595 | 4744s
+Step 820/2000 | Loss: 1.9923 | LR: 0.000014 | TPS: 5599 | 4799s
+Step 830/2000 | Loss: 2.0130 | LR: 0.000014 | TPS: 5601 | 4856s
+Step 840/2000 | Loss: 1.9720 | LR: 0.000014 | TPS: 5604 | 4911s
+Step 850/2000 | Loss: 1.9385 | LR: 0.000014 | TPS: 5608 | 4967s
+Step 860/2000 | Loss: 1.9393 | LR: 0.000014 | TPS: 5610 | 5024s
+Step 870/2000 | Loss: 1.9689 | LR: 0.000014 | TPS: 5611 | 5080s
+Step 880/2000 | Loss: 1.8754 | LR: 0.000013 | TPS: 5613 | 5137s
+Step 890/2000 | Loss: 1.9605 | LR: 0.000013 | TPS: 5615 | 5194s
+Step 900/2000 | Loss: 2.0454 | LR: 0.000013 | TPS: 5616 | 5251s
+Step 910/2000 | Loss: 1.9610 | LR: 0.000013 | TPS: 5618 | 5307s
+Step 920/2000 | Loss: 1.9967 | LR: 0.000013 | TPS: 5621 | 5363s
+Step 930/2000 | Loss: 1.9920 | LR: 0.000013 | TPS: 5623 | 5420s
+Step 940/2000 | Loss: 1.9453 | LR: 0.000013 | TPS: 5626 | 5475s
+Step 950/2000 | Loss: 1.9841 | LR: 0.000012 | TPS: 5629 | 5531s
+Step 960/2000 | Loss: 2.0551 | LR: 0.000012 | TPS: 5630 | 5587s
+Step 970/2000 | Loss: 1.9911 | LR: 0.000012 | TPS: 5633 | 5642s
+Step 980/2000 | Loss: 2.0081 | LR: 0.000012 | TPS: 5635 | 5699s
+Step 990/2000 | Loss: 1.9377 | LR: 0.000012 | TPS: 5636 | 5755s
+Step 1000/2000 | Loss: 1.9119 | LR: 0.000012 | TPS: 5638 | 5812s
+  📊 Val loss: 2.1230 
+
+  🔤 Generation samples (step 1000):
+    [EN] $5,750.00. What is the best online dating site for seniors? 1,849 likes · 3 talking about this. Meet senior women in your area for free! Dating as an institution has become more popular than ever befo
+    [HE] Alexandre Pierre-Lebrecht. Founder of @wik
+    [AR] <|assistant|> هي مدينة فرنسية تقع في شمال البلاد. يبلغ عدد سكانها 143,028 نسمة (حسب احصاء عام 2019). تبلغ مساحتها 576 كم2،وعدد سكانها حسب إحصائيات سنة 2013 حوالي 143,329 نسمة. تقع في جنوب فرنسا بين ال
+    [FA] بله، شهر پاریس در کشور فرانسه واقع شده و به عنوان یکی از مراکز فرهنگی و تاریخی جهان شناخته می شود. این شهر با معماری های قرون وسطایی، باغ ها و پارک های زیبا شهرت دارد. زبان رسمی آن فرانسوی است.
+    [TRANSLATE] I am Yahweh. Translation of "Yahweh" is: You are my friend and protector. A translation from the Hebrew words that people use to describe me, which translate as: your friend or protector, is often use
+
+Step 1010/2000 | Loss: 1.9250 | LR: 0.000012 | TPS: 5628 | 5881s
+Step 1020/2000 | Loss: 1.9017 | LR: 0.000011 | TPS: 5630 | 5936s
+Step 1030/2000 | Loss: 1.9314 | LR: 0.000011 | TPS: 5633 | 5992s
+Step 1040/2000 | Loss: 1.9849 | LR: 0.000011 | TPS: 5634 | 6049s
+Step 1050/2000 | Loss: 1.9654 | LR: 0.000011 | TPS: 5636 | 6105s
+Step 1060/2000 | Loss: 2.0048 | LR: 0.000011 | TPS: 5637 | 6162s
+Step 1070/2000 | Loss: 1.9443 | LR: 0.000011 | TPS: 5638 | 6218s
+Step 1080/2000 | Loss: 1.8740 | LR: 0.000011 | TPS: 5640 | 6275s
+Step 1090/2000 | Loss: 1.8983 | LR: 0.000010 | TPS: 5641 | 6332s
+Step 1100/2000 | Loss: 1.9408 | LR: 0.000010 | TPS: 5642 | 6389s
+Step 1110/2000 | Loss: 2.0830 | LR: 0.000010 | TPS: 5644 | 6445s
+Step 1120/2000 | Loss: 1.8762 | LR: 0.000010 | TPS: 5646 | 6500s
+Step 1130/2000 | Loss: 1.9837 | LR: 0.000010 | TPS: 5648 | 6556s
+Step 1140/2000 | Loss: 2.0024 | LR: 0.000010 | TPS: 5649 | 6613s
+Step 1150/2000 | Loss: 1.9323 | LR: 0.000010 | TPS: 5650 | 6670s
+Step 1160/2000 | Loss: 1.9092 | LR: 0.000009 | TPS: 5652 | 6725s
+Step 1170/2000 | Loss: 1.9502 | LR: 0.000009 | TPS: 5653 | 6782s
+Step 1180/2000 | Loss: 1.9065 | LR: 0.000009 | TPS: 5654 | 6839s
+Step 1190/2000 | Loss: 1.9721 | LR: 0.000009 | TPS: 5655 | 6896s
+Step 1200/2000 | Loss: 1.9860 | LR: 0.000009 | TPS: 5656 | 6953s
+  📊 Val loss: 2.1061 
+Step 1210/2000 | Loss: 1.9436 | LR: 0.000009 | TPS: 5654 | 7012s
+Step 1220/2000 | Loss: 1.8162 | LR: 0.000009 | TPS: 5656 | 7068s
+Step 1230/2000 | Loss: 1.9648 | LR: 0.000008 | TPS: 5658 | 7124s
+Step 1240/2000 | Loss: 2.0250 | LR: 0.000008 | TPS: 5659 | 7180s
+Step 1250/2000 | Loss: 2.0018 | LR: 0.000008 | TPS: 5660 | 7236s
+Step 1260/2000 | Loss: 1.9716 | LR: 0.000008 | TPS: 5661 | 7293s
+Step 1270/2000 | Loss: 1.9466 | LR: 0.000008 | TPS: 5662 | 7350s
+Step 1280/2000 | Loss: 1.9646 | LR: 0.000008 | TPS: 5663 | 7406s
+Step 1290/2000 | Loss: 1.9936 | LR: 0.000008 | TPS: 5664 | 7463s
+Step 1300/2000 | Loss: 1.9738 | LR: 0.000007 | TPS: 5666 | 7518s
+Step 1310/2000 | Loss: 1.9816 | LR: 0.000007 | TPS: 5668 | 7574s
+Step 1320/2000 | Loss: 1.8845 | LR: 0.000007 | TPS: 5669 | 7631s
+Step 1330/2000 | Loss: 2.0108 | LR: 0.000007 | TPS: 5670 | 7687s
+Step 1340/2000 | Loss: 1.9146 | LR: 0.000007 | TPS: 5670 | 7744s
+Step 1350/2000 | Loss: 1.9869 | LR: 0.000007 | TPS: 5671 | 7800s
+Step 1360/2000 | Loss: 1.9410 | LR: 0.000007 | TPS: 5672 | 7858s
+Step 1370/2000 | Loss: 1.8915 | LR: 0.000006 | TPS: 5673 | 7913s
+Step 1380/2000 | Loss: 1.9677 | LR: 0.000006 | TPS: 5675 | 7969s
+Step 1390/2000 | Loss: 1.8802 | LR: 0.000006 | TPS: 5676 | 8025s
+Step 1400/2000 | Loss: 1.8909 | LR: 0.000006 | TPS: 5677 | 8080s
+  📊 Val loss: 2.1236 
+Step 1410/2000 | Loss: 1.9836 | LR: 0.000006 | TPS: 5676 | 8140s
+Step 1420/2000 | Loss: 1.9394 | LR: 0.000006 | TPS: 5677 | 8196s
+Step 1430/2000 | Loss: 1.9775 | LR: 0.000006 | TPS: 5679 | 8251s
+Step 1440/2000 | Loss: 1.9711 | LR: 0.000006 | TPS: 5680 | 8308s
+Step 1450/2000 | Loss: 1.9651 | LR: 0.000005 | TPS: 5680 | 8364s
+Step 1460/2000 | Loss: 1.9437 | LR: 0.000005 | TPS: 5681 | 8421s
+Step 1470/2000 | Loss: 1.9766 | LR: 0.000005 | TPS: 5682 | 8478s
+Step 1480/2000 | Loss: 1.9565 | LR: 0.000005 | TPS: 5682 | 8535s
+Step 1490/2000 | Loss: 1.9537 | LR: 0.000005 | TPS: 5683 | 8592s
+Step 1500/2000 | Loss: 1.9543 | LR: 0.000005 | TPS: 5683 | 8649s
+
+  🔤 Generation samples (step 1500):
+    [EN] +34 (0) 20 7315 986 Fax: +34 (0) 20 73153299
+    [HE] @KeithBennett. Name of the city in France, France or England. The main street in each area is named after a famous person/company and has the names of its streets with their names. User: @KeithBennett
+    [AR] @SuzieLaurent - 02/24/2018 ### Resident Evil: Revelations Review - Fans of the series can expect a lot from this game. The story is quite good, there are many aspects to enjoy, and it really doesn’t f
+    [FA] با سلام! من یک هوش مصنوعی هستم که توسط OpenAI توسعه داده شده ام. هدف من کمک به شما در پاسخگویی به سوالات، ارائه اطلاعات، و انجام وظایف مختلف است. چطور میتوانم به شما کمک کنم؟
+    [TRANSLATE] You can't do anything right now. "Why are you here?" I asked. "I'm here for a reason," he replied. He looked down and saw the ground beneath him, like a blanket. He turned his head towards me and smil
+
+Step 1510/2000 | Loss: 1.9988 | LR: 0.000005 | TPS: 5679 | 8713s
+Step 1520/2000 | Loss: 1.9430 | LR: 0.000005 | TPS: 5680 | 8770s
+Step 1530/2000 | Loss: 1.9707 | LR: 0.000005 | TPS: 5680 | 8827s
+Step 1540/2000 | Loss: 1.9102 | LR: 0.000004 | TPS: 5681 | 8883s
+Step 1550/2000 | Loss: 1.9413 | LR: 0.000004 | TPS: 5681 | 8940s
+Step 1560/2000 | Loss: 1.9642 | LR: 0.000004 | TPS: 5682 | 8997s
+Step 1570/2000 | Loss: 1.9629 | LR: 0.000004 | TPS: 5682 | 9054s
+Step 1580/2000 | Loss: 1.9928 | LR: 0.000004 | TPS: 5683 | 9111s
+Step 1590/2000 | Loss: 1.9080 | LR: 0.000004 | TPS: 5684 | 9167s
+Step 1600/2000 | Loss: 1.9970 | LR: 0.000004 | TPS: 5685 | 9223s
+  📊 Val loss: 2.1733 
+Step 1610/2000 | Loss: 1.8873 | LR: 0.000004 | TPS: 5683 | 9282s
+Step 1620/2000 | Loss: 1.9149 | LR: 0.000004 | TPS: 5685 | 9338s
+Step 1630/2000 | Loss: 1.9566 | LR: 0.000004 | TPS: 5685 | 9395s
+Step 1640/2000 | Loss: 2.0046 | LR: 0.000004 | TPS: 5685 | 9452s
+Step 1650/2000 | Loss: 1.8821 | LR: 0.000003 | TPS: 5686 | 9508s
+Step 1660/2000 | Loss: 1.9025 | LR: 0.000003 | TPS: 5687 | 9565s
+Step 1670/2000 | Loss: 2.0397 | LR: 0.000003 | TPS: 5687 | 9622s
+Step 1680/2000 | Loss: 1.9594 | LR: 0.000003 | TPS: 5688 | 9678s
+Step 1690/2000 | Loss: 1.9136 | LR: 0.000003 | TPS: 5689 | 9734s
+Step 1700/2000 | Loss: 1.9273 | LR: 0.000003 | TPS: 5689 | 9791s
+Step 1710/2000 | Loss: 1.9709 | LR: 0.000003 | TPS: 5690 | 9848s
+Step 1720/2000 | Loss: 1.9147 | LR: 0.000003 | TPS: 5691 | 9904s
+Step 1730/2000 | Loss: 1.9813 | LR: 0.000003 | TPS: 5691 | 9960s
+Step 1740/2000 | Loss: 1.9546 | LR: 0.000003 | TPS: 5693 | 10016s
+Step 1750/2000 | Loss: 1.9166 | LR: 0.000003 | TPS: 5694 | 10071s
+Step 1760/2000 | Loss: 1.8291 | LR: 0.000003 | TPS: 5695 | 10127s
+Step 1770/2000 | Loss: 2.0285 | LR: 0.000003 | TPS: 5696 | 10183s
+Step 1780/2000 | Loss: 1.9713 | LR: 0.000003 | TPS: 5697 | 10238s
+Step 1790/2000 | Loss: 2.0024 | LR: 0.000003 | TPS: 5697 | 10295s
+Step 1800/2000 | Loss: 2.0066 | LR: 0.000002 | TPS: 5698 | 10352s
+  📊 Val loss: 2.1401 
+Step 1810/2000 | Loss: 1.9639 | LR: 0.000002 | TPS: 5696 | 10412s
+Step 1820/2000 | Loss: 1.8888 | LR: 0.000002 | TPS: 5697 | 10469s
+Step 1830/2000 | Loss: 1.9113 | LR: 0.000002 | TPS: 5697 | 10525s
+Step 1840/2000 | Loss: 1.9168 | LR: 0.000002 | TPS: 5697 | 10583s
+Step 1850/2000 | Loss: 1.9526 | LR: 0.000002 | TPS: 5698 | 10638s
+Step 1860/2000 | Loss: 1.9520 | LR: 0.000002 | TPS: 5700 | 10693s
+Step 1870/2000 | Loss: 1.9183 | LR: 0.000002 | TPS: 5701 | 10749s
+Step 1880/2000 | Loss: 2.0100 | LR: 0.000002 | TPS: 5701 | 10805s
+Step 1890/2000 | Loss: 1.9665 | LR: 0.000002 | TPS: 5703 | 10860s
+Step 1900/2000 | Loss: 1.9243 | LR: 0.000002 | TPS: 5703 | 10917s
+Step 1910/2000 | Loss: 1.8949 | LR: 0.000002 | TPS: 5704 | 10973s
+Step 1920/2000 | Loss: 2.0560 | LR: 0.000002 | TPS: 5705 | 11028s
+Step 1930/2000 | Loss: 1.9191 | LR: 0.000002 | TPS: 5705 | 11085s
+Step 1940/2000 | Loss: 1.8856 | LR: 0.000002 | TPS: 5706 | 11140s
+Step 1950/2000 | Loss: 2.0230 | LR: 0.000002 | TPS: 5707 | 11196s
+Step 1960/2000 | Loss: 1.9709 | LR: 0.000002 | TPS: 5708 | 11252s
+Step 1970/2000 | Loss: 1.9137 | LR: 0.000002 | TPS: 5708 | 11308s
+Step 1980/2000 | Loss: 1.9417 | LR: 0.000002 | TPS: 5709 | 11365s
+Step 1990/2000 | Loss: 1.8904 | LR: 0.000002 | TPS: 5709 | 11421s
+Step 2000/2000 | Loss: 1.9258 | LR: 0.000002 | TPS: 5710 | 11477s
+  📊 Val loss: 2.1438 
+
+  🔤 Generation samples (step 2000):
+    [EN] Hughes, B. (2019). The Anatomy of a Piece of Cake. In L. Aldrich & M. Sterling (Eds.), Handbook of Food and Nutrition: From the Scientific Basis to the Personal, Taylor & Francis Group Publishers, pp.
+    [HE] I have a lot of hobbies, and my favorite places are always the ones I go to. Why do you like traveling in Europe? Where do you want to go next? What cities do you see on your bucket list?
+    [AR] نعم، إنها تستحق الزيارة. يقع المتحف في باريس ، مع معالم بارزة مثل حديقة التويلري ومركز اللوفر ، بالإضافة إلى مجموعة رائعة من التحف الفنية الحديثة والمسيرات الفرنسية التاريخية... (مشاركات: 4) أحدث المر
+    [FA] شهر پاریس و پاریس پایتخت کشور فرانسه است. این شهر بزرگ ترین و پر جمعیت ترین شهر در قاره اروپا است. با جمعیتی بیش از ۵۲۰ میلیون نفر، پاریس دومین شهر پرجمعیت در جهان و مرکز اقتصادی آن محسوب می شود. این 
+    [TRANSLATE] @danielle314 Tags: abeyance #abeyance #captain_girl #diy #french #judenstress #frenchmadness #military #heroine #historian #manson #grandson #prestige #PGCollegeFootball #lady_saint_johnstress
+
+
+============================================================
+SFT TRAINING COMPLETE
+Steps: 2000, Time: 11489s (191.5min)
+Best val loss: 2.1044
+Model saved to: /tmp/sft_v3_runs/F-only-arfa/sft_model.pt
+============================================================
+Uploading to S3...
+Done!

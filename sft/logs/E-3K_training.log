@@ -1,0 +1,264 @@
+Device: cuda
+Loading tokenizer: /tmp/eval/multilingual_32k.model
+Loading base model: /tmp/eval/best_model.pt
+Model loaded: 3.04B parameters
+Loading SFT data from: /tmp/sft_v3_runs/E-3K/data
+Train: 2193670 tokens, Val: 111096 tokens
+Using 8-bit AdamW (bitsandbytes)
+
+Starting SFT training for 2000 steps...
+Batch size: 2 x 8 accum = 16 effective, Seq len: 2048, LR: 2e-05
+Step 10/2000 | Loss: 2.4196 | LR: 0.000002 | TPS: 5925 | 55s
+Step 20/2000 | Loss: 2.3550 | LR: 0.000004 | TPS: 5917 | 111s
+Step 30/2000 | Loss: 2.3107 | LR: 0.000006 | TPS: 5885 | 167s
+Step 40/2000 | Loss: 2.3500 | LR: 0.000008 | TPS: 5897 | 222s
+Step 50/2000 | Loss: 2.3217 | LR: 0.000010 | TPS: 5893 | 278s
+Step 60/2000 | Loss: 2.3142 | LR: 0.000012 | TPS: 5884 | 334s
+Step 70/2000 | Loss: 2.1108 | LR: 0.000014 | TPS: 5893 | 389s
+Step 80/2000 | Loss: 2.1609 | LR: 0.000016 | TPS: 5891 | 445s
+Step 90/2000 | Loss: 2.1482 | LR: 0.000018 | TPS: 5879 | 502s
+Step 100/2000 | Loss: 2.1348 | LR: 0.000020 | TPS: 5869 | 558s
+Step 110/2000 | Loss: 2.0011 | LR: 0.000020 | TPS: 5876 | 613s
+Step 120/2000 | Loss: 2.0212 | LR: 0.000020 | TPS: 5880 | 669s
+Step 130/2000 | Loss: 1.8569 | LR: 0.000020 | TPS: 5875 | 725s
+Step 140/2000 | Loss: 1.9731 | LR: 0.000020 | TPS: 5881 | 780s
+Step 150/2000 | Loss: 1.9302 | LR: 0.000020 | TPS: 5881 | 836s
+Step 160/2000 | Loss: 1.9612 | LR: 0.000020 | TPS: 5874 | 893s
+Step 170/2000 | Loss: 1.9905 | LR: 0.000020 | TPS: 5866 | 950s
+Step 180/2000 | Loss: 1.9184 | LR: 0.000020 | TPS: 5861 | 1006s
+Step 190/2000 | Loss: 2.0369 | LR: 0.000020 | TPS: 5859 | 1063s
+Step 200/2000 | Loss: 1.9416 | LR: 0.000020 | TPS: 5855 | 1119s
+  📊 Val loss: 1.9202 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/E-3K/sft_model.pt
+Step 210/2000 | Loss: 1.9544 | LR: 0.000020 | TPS: 5779 | 1191s
+Step 220/2000 | Loss: 1.9812 | LR: 0.000020 | TPS: 5784 | 1246s
+Step 230/2000 | Loss: 1.9823 | LR: 0.000020 | TPS: 5784 | 1303s
+Step 240/2000 | Loss: 1.8421 | LR: 0.000020 | TPS: 5783 | 1360s
+Step 250/2000 | Loss: 1.8726 | LR: 0.000020 | TPS: 5781 | 1417s
+Step 260/2000 | Loss: 1.9227 | LR: 0.000020 | TPS: 5782 | 1474s
+Step 270/2000 | Loss: 1.8986 | LR: 0.000020 | TPS: 5781 | 1530s
+Step 280/2000 | Loss: 2.0353 | LR: 0.000020 | TPS: 5780 | 1587s
+Step 290/2000 | Loss: 1.9452 | LR: 0.000020 | TPS: 5779 | 1644s
+Step 300/2000 | Loss: 1.9866 | LR: 0.000020 | TPS: 5778 | 1701s
+Step 310/2000 | Loss: 1.8710 | LR: 0.000019 | TPS: 5778 | 1758s
+Step 320/2000 | Loss: 1.8850 | LR: 0.000019 | TPS: 5777 | 1815s
+Step 330/2000 | Loss: 1.8552 | LR: 0.000019 | TPS: 5777 | 1872s
+Step 340/2000 | Loss: 1.9114 | LR: 0.000019 | TPS: 5777 | 1929s
+Step 350/2000 | Loss: 1.9584 | LR: 0.000019 | TPS: 5778 | 1985s
+Step 360/2000 | Loss: 1.9300 | LR: 0.000019 | TPS: 5778 | 2042s
+Step 370/2000 | Loss: 1.8798 | LR: 0.000019 | TPS: 5777 | 2099s
+Step 380/2000 | Loss: 1.8713 | LR: 0.000019 | TPS: 5777 | 2155s
+Step 390/2000 | Loss: 1.8470 | LR: 0.000019 | TPS: 5777 | 2212s
+Step 400/2000 | Loss: 1.7678 | LR: 0.000019 | TPS: 5777 | 2269s
+  📊 Val loss: 2.0024 
+Step 410/2000 | Loss: 2.0005 | LR: 0.000019 | TPS: 5768 | 2329s
+Step 420/2000 | Loss: 1.8890 | LR: 0.000019 | TPS: 5769 | 2385s
+Step 430/2000 | Loss: 1.8388 | LR: 0.000019 | TPS: 5771 | 2442s
+Step 440/2000 | Loss: 1.8436 | LR: 0.000019 | TPS: 5772 | 2498s
+Step 450/2000 | Loss: 1.8346 | LR: 0.000019 | TPS: 5775 | 2553s
+Step 460/2000 | Loss: 1.8041 | LR: 0.000018 | TPS: 5776 | 2610s
+Step 470/2000 | Loss: 1.8555 | LR: 0.000018 | TPS: 5777 | 2666s
+Step 480/2000 | Loss: 1.8405 | LR: 0.000018 | TPS: 5777 | 2723s
+Step 490/2000 | Loss: 1.8561 | LR: 0.000018 | TPS: 5780 | 2778s
+Step 500/2000 | Loss: 1.8075 | LR: 0.000018 | TPS: 5783 | 2833s
+
+  🔤 Generation samples (step 500):
+    [EN] "Pour une fédération Égypte" (The French Revolution), L'Enfant Nous
+    [HE] Joyce van Hoofnum 🔊✨️ #Canadians👋❤️✍️☺️☚️ #Travels🌈️ Dear Coworker, can you give me some advice on how to get from A to B? I’m not sure about the first place. In general for any
+    [AR] @CheapestLondonMarch 13, 2019 ### The #BritishHotelWebsite is the official website of London Hotels.com and the #BritishHotelWeb page has been created to provide information about Belfast, Northern Ir
+    [FA] @ColinMillarDistrict_City#Terminology
+    [TRANSLATE] שלום עולם, יש לך בית חדש? Translator: Yes! אנחנו בונים יחד את הבית שלנו. Translate: "עוד מעט" -"אני רוצה אותך!"
+
+Step 510/2000 | Loss: 1.8239 | LR: 0.000018 | TPS: 5768 | 2897s
+Step 520/2000 | Loss: 1.7515 | LR: 0.000018 | TPS: 5771 | 2953s
+Step 530/2000 | Loss: 1.8382 | LR: 0.000018 | TPS: 5773 | 3008s
+Step 540/2000 | Loss: 1.8290 | LR: 0.000018 | TPS: 5774 | 3065s
+Step 550/2000 | Loss: 1.9044 | LR: 0.000018 | TPS: 5777 | 3120s
+Step 560/2000 | Loss: 1.8329 | LR: 0.000018 | TPS: 5779 | 3176s
+Step 570/2000 | Loss: 1.7721 | LR: 0.000017 | TPS: 5779 | 3232s
+Step 580/2000 | Loss: 1.7082 | LR: 0.000017 | TPS: 5782 | 3287s
+Step 590/2000 | Loss: 1.7773 | LR: 0.000017 | TPS: 5783 | 3343s
+Step 600/2000 | Loss: 1.6934 | LR: 0.000017 | TPS: 5784 | 3399s
+  📊 Val loss: 1.8262 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/E-3K/sft_model.pt
+Step 610/2000 | Loss: 1.6885 | LR: 0.000017 | TPS: 5691 | 3512s
+Step 620/2000 | Loss: 1.7946 | LR: 0.000017 | TPS: 5694 | 3568s
+Step 630/2000 | Loss: 1.8746 | LR: 0.000017 | TPS: 5698 | 3623s
+Step 640/2000 | Loss: 1.8422 | LR: 0.000017 | TPS: 5699 | 3680s
+Step 650/2000 | Loss: 1.8009 | LR: 0.000017 | TPS: 5700 | 3737s
+Step 660/2000 | Loss: 1.7949 | LR: 0.000016 | TPS: 5701 | 3794s
+Step 670/2000 | Loss: 1.8007 | LR: 0.000016 | TPS: 5702 | 3850s
+Step 680/2000 | Loss: 1.7441 | LR: 0.000016 | TPS: 5706 | 3905s
+Step 690/2000 | Loss: 1.7564 | LR: 0.000016 | TPS: 5709 | 3961s
+Step 700/2000 | Loss: 1.7135 | LR: 0.000016 | TPS: 5709 | 4017s
+Step 710/2000 | Loss: 1.7386 | LR: 0.000016 | TPS: 5710 | 4074s
+Step 720/2000 | Loss: 1.7983 | LR: 0.000016 | TPS: 5711 | 4131s
+Step 730/2000 | Loss: 1.7140 | LR: 0.000016 | TPS: 5712 | 4188s
+Step 740/2000 | Loss: 1.7283 | LR: 0.000015 | TPS: 5712 | 4245s
+Step 750/2000 | Loss: 1.6979 | LR: 0.000015 | TPS: 5714 | 4301s
+Step 760/2000 | Loss: 1.7396 | LR: 0.000015 | TPS: 5717 | 4356s
+Step 770/2000 | Loss: 1.7971 | LR: 0.000015 | TPS: 5718 | 4413s
+Step 780/2000 | Loss: 1.6418 | LR: 0.000015 | TPS: 5719 | 4470s
+Step 790/2000 | Loss: 1.7758 | LR: 0.000015 | TPS: 5719 | 4526s
+Step 800/2000 | Loss: 1.7731 | LR: 0.000015 | TPS: 5720 | 4583s
+  📊 Val loss: 1.9258 
+Step 810/2000 | Loss: 1.7221 | LR: 0.000014 | TPS: 5717 | 4643s
+Step 820/2000 | Loss: 1.6595 | LR: 0.000014 | TPS: 5719 | 4699s
+Step 830/2000 | Loss: 1.7162 | LR: 0.000014 | TPS: 5721 | 4754s
+Step 840/2000 | Loss: 1.6942 | LR: 0.000014 | TPS: 5723 | 4810s
+Step 850/2000 | Loss: 1.6637 | LR: 0.000014 | TPS: 5724 | 4866s
+Step 860/2000 | Loss: 1.6775 | LR: 0.000014 | TPS: 5725 | 4922s
+Step 870/2000 | Loss: 1.7450 | LR: 0.000014 | TPS: 5725 | 4979s
+Step 880/2000 | Loss: 1.6664 | LR: 0.000013 | TPS: 5725 | 5037s
+Step 890/2000 | Loss: 1.5963 | LR: 0.000013 | TPS: 5726 | 5094s
+Step 900/2000 | Loss: 1.7254 | LR: 0.000013 | TPS: 5726 | 5150s
+Step 910/2000 | Loss: 1.7608 | LR: 0.000013 | TPS: 5728 | 5206s
+Step 920/2000 | Loss: 1.6786 | LR: 0.000013 | TPS: 5730 | 5261s
+Step 930/2000 | Loss: 1.7196 | LR: 0.000013 | TPS: 5731 | 5317s
+Step 940/2000 | Loss: 1.7286 | LR: 0.000013 | TPS: 5733 | 5373s
+Step 950/2000 | Loss: 1.6840 | LR: 0.000012 | TPS: 5734 | 5429s
+Step 960/2000 | Loss: 1.6874 | LR: 0.000012 | TPS: 5735 | 5486s
+Step 970/2000 | Loss: 1.7482 | LR: 0.000012 | TPS: 5735 | 5542s
+Step 980/2000 | Loss: 1.6453 | LR: 0.000012 | TPS: 5735 | 5599s
+Step 990/2000 | Loss: 1.6214 | LR: 0.000012 | TPS: 5736 | 5655s
+Step 1000/2000 | Loss: 1.6902 | LR: 0.000012 | TPS: 5737 | 5712s
+  📊 Val loss: 1.8961 
+
+  🔤 Generation samples (step 1000):
+    [EN] 136,000.00
+    [HE] José Luis Fernandes (Portuguese) - Global Sales & Marketing Director. ### Rec
+    [AR] @Benz1985 . -Michel_Prince (@michelp) | Twitter.com/MichelPrince -Technical Director at MIT Media Lab | C++ programmer, web developer, and writer. ### ✨ 🔁 @michaelprince -Michel_Prince (@michelp) is a
+    [FA] Meinekefen، Stephanie
+    [TRANSLATE] O Lord, how long have you been here? You know from your wisdom that it is in vain. Do not worry about anything and do not be concerned for man's sake. May the God of peace grant to me the ability to s
+
+Step 1010/2000 | Loss: 1.7418 | LR: 0.000012 | TPS: 5728 | 5778s
+Step 1020/2000 | Loss: 1.7224 | LR: 0.000011 | TPS: 5728 | 5835s
+Step 1030/2000 | Loss: 1.7763 | LR: 0.000011 | TPS: 5729 | 5892s
+Step 1040/2000 | Loss: 1.7642 | LR: 0.000011 | TPS: 5729 | 5949s
+Step 1050/2000 | Loss: 1.7248 | LR: 0.000011 | TPS: 5729 | 6005s
+Step 1060/2000 | Loss: 1.6885 | LR: 0.000011 | TPS: 5731 | 6061s
+Step 1070/2000 | Loss: 1.7124 | LR: 0.000011 | TPS: 5732 | 6116s
+Step 1080/2000 | Loss: 1.6717 | LR: 0.000011 | TPS: 5733 | 6173s
+Step 1090/2000 | Loss: 1.8339 | LR: 0.000010 | TPS: 5735 | 6228s
+Step 1100/2000 | Loss: 1.6808 | LR: 0.000010 | TPS: 5736 | 6284s
+Step 1110/2000 | Loss: 1.7140 | LR: 0.000010 | TPS: 5737 | 6341s
+Step 1120/2000 | Loss: 1.7179 | LR: 0.000010 | TPS: 5737 | 6397s
+Step 1130/2000 | Loss: 1.6805 | LR: 0.000010 | TPS: 5738 | 6453s
+Step 1140/2000 | Loss: 1.7188 | LR: 0.000010 | TPS: 5740 | 6508s
+Step 1150/2000 | Loss: 1.6760 | LR: 0.000010 | TPS: 5741 | 6564s
+Step 1160/2000 | Loss: 1.7920 | LR: 0.000009 | TPS: 5741 | 6621s
+Step 1170/2000 | Loss: 1.6993 | LR: 0.000009 | TPS: 5742 | 6677s
+Step 1180/2000 | Loss: 1.7335 | LR: 0.000009 | TPS: 5743 | 6733s
+Step 1190/2000 | Loss: 1.6856 | LR: 0.000009 | TPS: 5743 | 6789s
+Step 1200/2000 | Loss: 1.7049 | LR: 0.000009 | TPS: 5744 | 6846s
+  📊 Val loss: 1.8619 
+Step 1210/2000 | Loss: 1.6206 | LR: 0.000009 | TPS: 5741 | 6907s
+Step 1220/2000 | Loss: 1.7335 | LR: 0.000009 | TPS: 5741 | 6963s
+Step 1230/2000 | Loss: 1.7046 | LR: 0.000008 | TPS: 5742 | 7020s
+Step 1240/2000 | Loss: 1.6782 | LR: 0.000008 | TPS: 5742 | 7077s
+Step 1250/2000 | Loss: 1.7060 | LR: 0.000008 | TPS: 5742 | 7134s
+Step 1260/2000 | Loss: 1.6548 | LR: 0.000008 | TPS: 5742 | 7190s
+Step 1270/2000 | Loss: 1.7484 | LR: 0.000008 | TPS: 5742 | 7247s
+Step 1280/2000 | Loss: 1.6784 | LR: 0.000008 | TPS: 5743 | 7303s
+Step 1290/2000 | Loss: 1.6991 | LR: 0.000008 | TPS: 5743 | 7360s
+Step 1300/2000 | Loss: 1.7200 | LR: 0.000007 | TPS: 5743 | 7417s
+Step 1310/2000 | Loss: 1.6449 | LR: 0.000007 | TPS: 5744 | 7474s
+Step 1320/2000 | Loss: 1.6148 | LR: 0.000007 | TPS: 5744 | 7530s
+Step 1330/2000 | Loss: 1.6525 | LR: 0.000007 | TPS: 5744 | 7587s
+Step 1340/2000 | Loss: 1.8142 | LR: 0.000007 | TPS: 5745 | 7643s
+Step 1350/2000 | Loss: 1.7410 | LR: 0.000007 | TPS: 5746 | 7698s
+Step 1360/2000 | Loss: 1.7453 | LR: 0.000007 | TPS: 5747 | 7755s
+Step 1370/2000 | Loss: 1.7580 | LR: 0.000006 | TPS: 5748 | 7810s
+Step 1380/2000 | Loss: 1.6368 | LR: 0.000006 | TPS: 5749 | 7866s
+Step 1390/2000 | Loss: 1.6788 | LR: 0.000006 | TPS: 5749 | 7922s
+Step 1400/2000 | Loss: 1.6714 | LR: 0.000006 | TPS: 5751 | 7978s
+  📊 Val loss: 1.8384 
+Step 1410/2000 | Loss: 1.6337 | LR: 0.000006 | TPS: 5749 | 8037s
+Step 1420/2000 | Loss: 1.7655 | LR: 0.000006 | TPS: 5749 | 8093s
+Step 1430/2000 | Loss: 1.7281 | LR: 0.000006 | TPS: 5749 | 8150s
+Step 1440/2000 | Loss: 1.7509 | LR: 0.000006 | TPS: 5749 | 8207s
+Step 1450/2000 | Loss: 1.6238 | LR: 0.000005 | TPS: 5750 | 8264s
+Step 1460/2000 | Loss: 1.7495 | LR: 0.000005 | TPS: 5750 | 8320s
+Step 1470/2000 | Loss: 1.8723 | LR: 0.000005 | TPS: 5750 | 8377s
+Step 1480/2000 | Loss: 1.7545 | LR: 0.000005 | TPS: 5751 | 8433s
+Step 1490/2000 | Loss: 1.6485 | LR: 0.000005 | TPS: 5750 | 8490s
+Step 1500/2000 | Loss: 1.6944 | LR: 0.000005 | TPS: 5751 | 8547s
+
+  🔤 Generation samples (step 1500):
+    [EN] Sébastien Bastet • Height: 170 cm (6'3") • Weight: 28 kg (59 pounds) • Dimensions: 4.5 x 1.5 x 1.5 inches • Hours of operation: Monday-Friday: 7am-8pm; Saturday: 6:30am-9
+    [HE] Nadira Djabal. Felipe
+    [AR] 684594 Posted on 2013-07-07 by DennisPosted on 2018-08-21 by dennis The US is one of the most populous countries in the world. Since its founding in 1645, there has been a vast and diverse culture, as
+    [FA] <|assistant|> پاریس، فرانسه شهری با معماری باشکوه و تاریخی غنی است که به دلیل معماری فوق العاده اش معروف شده. برخی از خیابان های آن پر از مغازه ها و پاساژهای لوکس است که هر کدام داستانی از گذشته الهام
+    [TRANSLATE] תן לי את זה. Sirius: אני הולך לתפוס אותך? I'm not ready! ### Translate the following Hebrew text to English: "Now you can be like a tree, and grow things with your hands." - Joshua 10:28, The Message 
+
+Step 1510/2000 | Loss: 1.7623 | LR: 0.000005 | TPS: 5745 | 8612s
+Step 1520/2000 | Loss: 1.6634 | LR: 0.000005 | TPS: 5747 | 8667s
+Step 1530/2000 | Loss: 1.7162 | LR: 0.000005 | TPS: 5747 | 8724s
+Step 1540/2000 | Loss: 1.7921 | LR: 0.000004 | TPS: 5748 | 8779s
+Step 1550/2000 | Loss: 1.7475 | LR: 0.000004 | TPS: 5750 | 8834s
+Step 1560/2000 | Loss: 1.5973 | LR: 0.000004 | TPS: 5751 | 8888s
+Step 1570/2000 | Loss: 1.6551 | LR: 0.000004 | TPS: 5752 | 8944s
+Step 1580/2000 | Loss: 1.6748 | LR: 0.000004 | TPS: 5753 | 9000s
+Step 1590/2000 | Loss: 1.6857 | LR: 0.000004 | TPS: 5754 | 9055s
+Step 1600/2000 | Loss: 1.6854 | LR: 0.000004 | TPS: 5755 | 9111s
+  📊 Val loss: 1.8372 
+Step 1610/2000 | Loss: 1.6372 | LR: 0.000004 | TPS: 5753 | 9171s
+Step 1620/2000 | Loss: 1.7152 | LR: 0.000004 | TPS: 5754 | 9226s
+Step 1630/2000 | Loss: 1.6754 | LR: 0.000004 | TPS: 5754 | 9283s
+Step 1640/2000 | Loss: 1.6422 | LR: 0.000004 | TPS: 5754 | 9339s
+Step 1650/2000 | Loss: 1.7221 | LR: 0.000003 | TPS: 5754 | 9397s
+Step 1660/2000 | Loss: 1.6791 | LR: 0.000003 | TPS: 5754 | 9454s
+Step 1670/2000 | Loss: 1.7052 | LR: 0.000003 | TPS: 5754 | 9511s
+Step 1680/2000 | Loss: 1.6546 | LR: 0.000003 | TPS: 5754 | 9568s
+Step 1690/2000 | Loss: 1.6580 | LR: 0.000003 | TPS: 5754 | 9625s
+Step 1700/2000 | Loss: 1.6671 | LR: 0.000003 | TPS: 5754 | 9681s
+Step 1710/2000 | Loss: 1.6945 | LR: 0.000003 | TPS: 5754 | 9738s
+Step 1720/2000 | Loss: 1.6743 | LR: 0.000003 | TPS: 5755 | 9794s
+Step 1730/2000 | Loss: 1.7356 | LR: 0.000003 | TPS: 5755 | 9851s
+Step 1740/2000 | Loss: 1.6799 | LR: 0.000003 | TPS: 5756 | 9906s
+Step 1750/2000 | Loss: 1.6656 | LR: 0.000003 | TPS: 5756 | 9962s
+Step 1760/2000 | Loss: 1.7945 | LR: 0.000003 | TPS: 5757 | 10018s
+Step 1770/2000 | Loss: 1.8713 | LR: 0.000003 | TPS: 5758 | 10074s
+Step 1780/2000 | Loss: 1.6840 | LR: 0.000003 | TPS: 5758 | 10130s
+Step 1790/2000 | Loss: 1.6858 | LR: 0.000003 | TPS: 5759 | 10186s
+Step 1800/2000 | Loss: 1.7445 | LR: 0.000002 | TPS: 5759 | 10241s
+  📊 Val loss: 1.8149 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/E-3K/sft_model.pt
+Step 1810/2000 | Loss: 1.6835 | LR: 0.000002 | TPS: 5729 | 10353s
+Step 1820/2000 | Loss: 1.7416 | LR: 0.000002 | TPS: 5730 | 10409s
+Step 1830/2000 | Loss: 1.7163 | LR: 0.000002 | TPS: 5731 | 10464s
+Step 1840/2000 | Loss: 1.6556 | LR: 0.000002 | TPS: 5731 | 10520s
+Step 1850/2000 | Loss: 1.6173 | LR: 0.000002 | TPS: 5732 | 10575s
+Step 1860/2000 | Loss: 1.6726 | LR: 0.000002 | TPS: 5733 | 10631s
+Step 1870/2000 | Loss: 1.6964 | LR: 0.000002 | TPS: 5734 | 10686s
+Step 1880/2000 | Loss: 1.7791 | LR: 0.000002 | TPS: 5735 | 10742s
+Step 1890/2000 | Loss: 1.6199 | LR: 0.000002 | TPS: 5735 | 10799s
+Step 1900/2000 | Loss: 1.6692 | LR: 0.000002 | TPS: 5735 | 10856s
+Step 1910/2000 | Loss: 1.7268 | LR: 0.000002 | TPS: 5736 | 10911s
+Step 1920/2000 | Loss: 1.6944 | LR: 0.000002 | TPS: 5737 | 10966s
+Step 1930/2000 | Loss: 1.7304 | LR: 0.000002 | TPS: 5737 | 11023s
+Step 1940/2000 | Loss: 1.6976 | LR: 0.000002 | TPS: 5738 | 11079s
+Step 1950/2000 | Loss: 1.7222 | LR: 0.000002 | TPS: 5738 | 11135s
+Step 1960/2000 | Loss: 1.6467 | LR: 0.000002 | TPS: 5739 | 11191s
+Step 1970/2000 | Loss: 1.6550 | LR: 0.000002 | TPS: 5739 | 11247s
+Step 1980/2000 | Loss: 1.6106 | LR: 0.000002 | TPS: 5740 | 11303s
+Step 1990/2000 | Loss: 1.7490 | LR: 0.000002 | TPS: 5741 | 11358s
+Step 2000/2000 | Loss: 1.7892 | LR: 0.000002 | TPS: 5741 | 11415s
+  📊 Val loss: 1.8365 
+
+  🔤 Generation samples (step 2000):
+    [EN] Javier Bolsonaro (@jbolsonari)
+    [HE] Mr. Faustin Lamberti (Associate Professor, Department of Psychology)
+    [AR] <|assistant="max-width: 600px"> <noinput type="text/javascript"> <input type="text" class="sortable"><noinput> ### عنوان الموضوع : <|assistant|> "Monsters University" <|assistant|> متحف اللوفر: مدينة 
+    [FA] <|assistant|> پاریس شهری بزرگ با ساختمان های قدیمی و موزه ها است. این شهر به عنوان یکی از مقاصد گردشگری محبوب در اروپا شناخته می شود، اما شهرهای دیگری نیز در سراسر جهان وجود دارند که تاریخ و فرهنگ غنی
+    [TRANSLATE] אני כאן. מה זה? I'm here. ### Your application is accepted. You are now ready for your interview! The application form is online and you can download it by clicking on the link below. 124773 - Greetin
+
+
+============================================================
+SFT TRAINING COMPLETE
+Steps: 2000, Time: 11425s (190.4min)
+Best val loss: 1.8149
+Model saved to: /tmp/sft_v3_runs/E-3K/sft_model.pt
+============================================================
+Uploading to S3...
+Done!

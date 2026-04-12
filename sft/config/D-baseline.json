@@ -1,0 +1,12 @@
+{
+  "name": "D-baseline",
+  "description": "Baseline SFT on all 4 languages. 5K steps of instruction tuning on balanced multilingual instruction data.",
+  "steps": 5000,
+  "languages": ["he", "ar", "en", "fa"],
+  "learning_rate": 2e-5,
+  "batch_size": 32,
+  "warmup_steps": 200,
+  "weight_decay": 0.01,
+  "max_seq_len": 2048,
+  "base_model": "3B pretrained checkpoint (best_model.pt from FSDP run)"
+}

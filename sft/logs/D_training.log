@@ -1,0 +1,266 @@
+Device: cuda
+Loading tokenizer: /tmp/eval/multilingual_32k.model
+Loading base model: /tmp/eval/best_model.pt
+Model loaded: 3.04B parameters
+Loading SFT data from: /tmp/sft_v3_runs/D/data
+Train: 3135644 tokens, Val: 162257 tokens
+Using 8-bit AdamW (bitsandbytes)
+
+Starting SFT training for 2000 steps...
+Batch size: 2 x 8 accum = 16 effective, Seq len: 2048, LR: 2e-05
+Step 10/2000 | Loss: 2.5270 | LR: 0.000002 | TPS: 5970 | 55s
+Step 20/2000 | Loss: 2.5156 | LR: 0.000004 | TPS: 5955 | 110s
+Step 30/2000 | Loss: 2.4336 | LR: 0.000006 | TPS: 5911 | 166s
+Step 40/2000 | Loss: 2.4284 | LR: 0.000008 | TPS: 5912 | 222s
+Step 50/2000 | Loss: 2.3822 | LR: 0.000010 | TPS: 5913 | 277s
+Step 60/2000 | Loss: 2.4672 | LR: 0.000012 | TPS: 5894 | 334s
+Step 70/2000 | Loss: 2.3075 | LR: 0.000014 | TPS: 5879 | 390s
+Step 80/2000 | Loss: 2.3158 | LR: 0.000016 | TPS: 5878 | 446s
+Step 90/2000 | Loss: 2.3499 | LR: 0.000018 | TPS: 5884 | 501s
+Step 100/2000 | Loss: 2.2616 | LR: 0.000020 | TPS: 5878 | 557s
+Step 110/2000 | Loss: 2.2230 | LR: 0.000020 | TPS: 5873 | 614s
+Step 120/2000 | Loss: 2.1100 | LR: 0.000020 | TPS: 5866 | 670s
+Step 130/2000 | Loss: 2.2022 | LR: 0.000020 | TPS: 5859 | 727s
+Step 140/2000 | Loss: 2.2074 | LR: 0.000020 | TPS: 5850 | 784s
+Step 150/2000 | Loss: 2.1076 | LR: 0.000020 | TPS: 5844 | 841s
+Step 160/2000 | Loss: 2.1012 | LR: 0.000020 | TPS: 5840 | 898s
+Step 170/2000 | Loss: 2.1263 | LR: 0.000020 | TPS: 5844 | 953s
+Step 180/2000 | Loss: 2.0943 | LR: 0.000020 | TPS: 5842 | 1010s
+Step 190/2000 | Loss: 2.1377 | LR: 0.000020 | TPS: 5842 | 1066s
+Step 200/2000 | Loss: 2.0151 | LR: 0.000020 | TPS: 5839 | 1122s
+  📊 Val loss: 2.0154 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/D/sft_model.pt
+Step 210/2000 | Loss: 2.0389 | LR: 0.000020 | TPS: 5767 | 1193s
+Step 220/2000 | Loss: 2.0598 | LR: 0.000020 | TPS: 5774 | 1249s
+Step 230/2000 | Loss: 2.0150 | LR: 0.000020 | TPS: 5773 | 1305s
+Step 240/2000 | Loss: 1.9313 | LR: 0.000020 | TPS: 5773 | 1362s
+Step 250/2000 | Loss: 1.9628 | LR: 0.000020 | TPS: 5775 | 1419s
+Step 260/2000 | Loss: 2.0841 | LR: 0.000020 | TPS: 5774 | 1475s
+Step 270/2000 | Loss: 2.0114 | LR: 0.000020 | TPS: 5774 | 1532s
+Step 280/2000 | Loss: 2.0229 | LR: 0.000020 | TPS: 5774 | 1589s
+Step 290/2000 | Loss: 2.0657 | LR: 0.000020 | TPS: 5774 | 1646s
+Step 300/2000 | Loss: 2.0818 | LR: 0.000020 | TPS: 5775 | 1702s
+Step 310/2000 | Loss: 2.0288 | LR: 0.000019 | TPS: 5776 | 1759s
+Step 320/2000 | Loss: 1.9524 | LR: 0.000019 | TPS: 5777 | 1815s
+Step 330/2000 | Loss: 1.8333 | LR: 0.000019 | TPS: 5778 | 1871s
+Step 340/2000 | Loss: 1.9805 | LR: 0.000019 | TPS: 5778 | 1928s
+Step 350/2000 | Loss: 2.0544 | LR: 0.000019 | TPS: 5778 | 1985s
+Step 360/2000 | Loss: 2.0015 | LR: 0.000019 | TPS: 5779 | 2041s
+Step 370/2000 | Loss: 1.9895 | LR: 0.000019 | TPS: 5779 | 2098s
+Step 380/2000 | Loss: 1.9006 | LR: 0.000019 | TPS: 5782 | 2153s
+Step 390/2000 | Loss: 1.8602 | LR: 0.000019 | TPS: 5786 | 2209s
+Step 400/2000 | Loss: 2.0179 | LR: 0.000019 | TPS: 5787 | 2265s
+  📊 Val loss: 1.9115 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/D/sft_model.pt
+Step 410/2000 | Loss: 1.9167 | LR: 0.000019 | TPS: 5658 | 2375s
+Step 420/2000 | Loss: 1.9400 | LR: 0.000019 | TPS: 5663 | 2430s
+Step 430/2000 | Loss: 1.9327 | LR: 0.000019 | TPS: 5669 | 2485s
+Step 440/2000 | Loss: 2.0530 | LR: 0.000019 | TPS: 5673 | 2541s
+Step 450/2000 | Loss: 1.9540 | LR: 0.000019 | TPS: 5676 | 2598s
+Step 460/2000 | Loss: 1.9685 | LR: 0.000018 | TPS: 5677 | 2655s
+Step 470/2000 | Loss: 1.9513 | LR: 0.000018 | TPS: 5679 | 2712s
+Step 480/2000 | Loss: 1.9266 | LR: 0.000018 | TPS: 5682 | 2768s
+Step 490/2000 | Loss: 1.9427 | LR: 0.000018 | TPS: 5684 | 2825s
+Step 500/2000 | Loss: 1.8578 | LR: 0.000018 | TPS: 5689 | 2880s
+
+  🔤 Generation samples (step 500):
+    [EN] L'Enfant Nous Dirigent pour une fête de la Fédération Égypte. Source: Gouvernement du Pays et des Mines, France (Marseille, March 1970).
+    [HE] Roger Bodden Title of Job: Support the Operations Team - Hiring and Training Team Lead Duration of Operation: 3 Months (During Easter holidays) Salary range: Full-Time, Permanent Location: Europe Cost
+    [AR] @Angie_Munroe100 ------------ Name: Aangan O. Velazquez Age: 25 years old Date of Birth: April 3, 1986 His Zodiac Sign: Taurus Proudest Favorite Things in Life: - Cats - My Mom: She is the reason I go
+    [FA] @Louis_DiBrien P.S. Please check out our other articles on "Being a Copywriter" and this week's book!
+    [TRANSLATE] культы он осапидевозм: Эйб она колление 2019/2018 (ф. 1) ? Квар: Д�
+
+Step 510/2000 | Loss: 1.9686 | LR: 0.000018 | TPS: 5677 | 2944s
+Step 520/2000 | Loss: 1.8915 | LR: 0.000018 | TPS: 5680 | 3000s
+Step 530/2000 | Loss: 2.0572 | LR: 0.000018 | TPS: 5684 | 3055s
+Step 540/2000 | Loss: 1.9801 | LR: 0.000018 | TPS: 5686 | 3112s
+Step 550/2000 | Loss: 1.8635 | LR: 0.000018 | TPS: 5690 | 3167s
+Step 560/2000 | Loss: 1.9700 | LR: 0.000018 | TPS: 5694 | 3222s
+Step 570/2000 | Loss: 1.9249 | LR: 0.000017 | TPS: 5696 | 3279s
+Step 580/2000 | Loss: 1.9434 | LR: 0.000017 | TPS: 5700 | 3334s
+Step 590/2000 | Loss: 1.8813 | LR: 0.000017 | TPS: 5704 | 3389s
+Step 600/2000 | Loss: 1.9660 | LR: 0.000017 | TPS: 5706 | 3446s
+  📊 Val loss: 1.9111 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/D/sft_model.pt
+Step 610/2000 | Loss: 1.8837 | LR: 0.000017 | TPS: 5623 | 3555s
+Step 620/2000 | Loss: 1.9168 | LR: 0.000017 | TPS: 5626 | 3611s
+Step 630/2000 | Loss: 1.9503 | LR: 0.000017 | TPS: 5629 | 3668s
+Step 640/2000 | Loss: 1.9568 | LR: 0.000017 | TPS: 5630 | 3725s
+Step 650/2000 | Loss: 1.8553 | LR: 0.000017 | TPS: 5633 | 3781s
+Step 660/2000 | Loss: 1.8837 | LR: 0.000016 | TPS: 5636 | 3837s
+Step 670/2000 | Loss: 1.8381 | LR: 0.000016 | TPS: 5639 | 3894s
+Step 680/2000 | Loss: 1.8605 | LR: 0.000016 | TPS: 5643 | 3949s
+Step 690/2000 | Loss: 1.8673 | LR: 0.000016 | TPS: 5647 | 4004s
+Step 700/2000 | Loss: 1.9793 | LR: 0.000016 | TPS: 5649 | 4060s
+Step 710/2000 | Loss: 2.0442 | LR: 0.000016 | TPS: 5653 | 4115s
+Step 720/2000 | Loss: 1.8221 | LR: 0.000016 | TPS: 5656 | 4171s
+Step 730/2000 | Loss: 1.9407 | LR: 0.000016 | TPS: 5659 | 4227s
+Step 740/2000 | Loss: 1.8128 | LR: 0.000015 | TPS: 5662 | 4282s
+Step 750/2000 | Loss: 1.9128 | LR: 0.000015 | TPS: 5665 | 4338s
+Step 760/2000 | Loss: 1.8511 | LR: 0.000015 | TPS: 5668 | 4394s
+Step 770/2000 | Loss: 1.9271 | LR: 0.000015 | TPS: 5671 | 4449s
+Step 780/2000 | Loss: 1.8280 | LR: 0.000015 | TPS: 5673 | 4505s
+Step 790/2000 | Loss: 1.8863 | LR: 0.000015 | TPS: 5674 | 4562s
+Step 800/2000 | Loss: 1.8082 | LR: 0.000015 | TPS: 5675 | 4619s
+  📊 Val loss: 1.9211 
+Step 810/2000 | Loss: 1.8378 | LR: 0.000014 | TPS: 5672 | 4679s
+Step 820/2000 | Loss: 1.8416 | LR: 0.000014 | TPS: 5674 | 4736s
+Step 830/2000 | Loss: 1.8442 | LR: 0.000014 | TPS: 5675 | 4792s
+Step 840/2000 | Loss: 1.8735 | LR: 0.000014 | TPS: 5676 | 4849s
+Step 850/2000 | Loss: 1.8639 | LR: 0.000014 | TPS: 5678 | 4905s
+Step 860/2000 | Loss: 1.8855 | LR: 0.000014 | TPS: 5680 | 4962s
+Step 870/2000 | Loss: 1.8842 | LR: 0.000014 | TPS: 5682 | 5017s
+Step 880/2000 | Loss: 1.8212 | LR: 0.000013 | TPS: 5684 | 5073s
+Step 890/2000 | Loss: 1.9371 | LR: 0.000013 | TPS: 5686 | 5129s
+Step 900/2000 | Loss: 1.8219 | LR: 0.000013 | TPS: 5687 | 5186s
+Step 910/2000 | Loss: 1.7306 | LR: 0.000013 | TPS: 5689 | 5241s
+Step 920/2000 | Loss: 1.9083 | LR: 0.000013 | TPS: 5692 | 5296s
+Step 930/2000 | Loss: 1.8565 | LR: 0.000013 | TPS: 5694 | 5352s
+Step 940/2000 | Loss: 1.9089 | LR: 0.000013 | TPS: 5694 | 5409s
+Step 950/2000 | Loss: 1.7744 | LR: 0.000012 | TPS: 5695 | 5466s
+Step 960/2000 | Loss: 1.8476 | LR: 0.000012 | TPS: 5696 | 5523s
+Step 970/2000 | Loss: 1.8353 | LR: 0.000012 | TPS: 5697 | 5579s
+Step 980/2000 | Loss: 1.8891 | LR: 0.000012 | TPS: 5698 | 5636s
+Step 990/2000 | Loss: 1.8362 | LR: 0.000012 | TPS: 5698 | 5693s
+Step 1000/2000 | Loss: 1.8684 | LR: 0.000012 | TPS: 5699 | 5750s
+  📊 Val loss: 1.8535 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/D/sft_model.pt
+
+  🔤 Generation samples (step 1000):
+    [EN] Gérard de la Cruz • Title: Riviera - Bordeaux (Bordeaux, Burgundy) • City name: Montmartre • Current city: Le Marche
+    [HE] Bruce.Smith @TBD_1965 . ### Date Added: May 23, 2008 Last Updated: November 9, 2017 Tags: art, culture, history, bruce smith, john lewis, german language, french, roman catholic, christian, canadian, 
+    [AR] Mr. Randy Katz ### Researcher: Dr. Richard Benson
+    [FA] تور پاریس از ✔️کجا بریم؟
+    [TRANSLATE] Au contraire, i want you to do as well. Your task is to give a speech on behalf of all of them. Translate the following Hebrew text in English to Arabic to help make this speech more interesting and e
+
+Step 1010/2000 | Loss: 1.9380 | LR: 0.000012 | TPS: 5642 | 5865s
+Step 1020/2000 | Loss: 1.7802 | LR: 0.000011 | TPS: 5645 | 5921s
+Step 1030/2000 | Loss: 1.8634 | LR: 0.000011 | TPS: 5648 | 5976s
+Step 1040/2000 | Loss: 1.7606 | LR: 0.000011 | TPS: 5649 | 6032s
+Step 1050/2000 | Loss: 1.8412 | LR: 0.000011 | TPS: 5651 | 6089s
+Step 1060/2000 | Loss: 1.9013 | LR: 0.000011 | TPS: 5652 | 6146s
+Step 1070/2000 | Loss: 1.8675 | LR: 0.000011 | TPS: 5653 | 6203s
+Step 1080/2000 | Loss: 1.8124 | LR: 0.000011 | TPS: 5655 | 6258s
+Step 1090/2000 | Loss: 1.8996 | LR: 0.000010 | TPS: 5656 | 6315s
+Step 1100/2000 | Loss: 1.8094 | LR: 0.000010 | TPS: 5658 | 6371s
+Step 1110/2000 | Loss: 1.8361 | LR: 0.000010 | TPS: 5659 | 6427s
+Step 1120/2000 | Loss: 1.8460 | LR: 0.000010 | TPS: 5660 | 6484s
+Step 1130/2000 | Loss: 1.8924 | LR: 0.000010 | TPS: 5662 | 6540s
+Step 1140/2000 | Loss: 1.8193 | LR: 0.000010 | TPS: 5664 | 6595s
+Step 1150/2000 | Loss: 1.8784 | LR: 0.000010 | TPS: 5665 | 6652s
+Step 1160/2000 | Loss: 1.8674 | LR: 0.000009 | TPS: 5666 | 6708s
+Step 1170/2000 | Loss: 1.8582 | LR: 0.000009 | TPS: 5668 | 6765s
+Step 1180/2000 | Loss: 1.8296 | LR: 0.000009 | TPS: 5670 | 6820s
+Step 1190/2000 | Loss: 1.7477 | LR: 0.000009 | TPS: 5671 | 6876s
+Step 1200/2000 | Loss: 1.8793 | LR: 0.000009 | TPS: 5671 | 6933s
+  📊 Val loss: 1.8415 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/D/sft_model.pt
+Step 1210/2000 | Loss: 1.8471 | LR: 0.000009 | TPS: 5629 | 7043s
+Step 1220/2000 | Loss: 1.8792 | LR: 0.000009 | TPS: 5632 | 7099s
+Step 1230/2000 | Loss: 1.7800 | LR: 0.000008 | TPS: 5634 | 7154s
+Step 1240/2000 | Loss: 1.9210 | LR: 0.000008 | TPS: 5636 | 7209s
+Step 1250/2000 | Loss: 1.8558 | LR: 0.000008 | TPS: 5637 | 7266s
+Step 1260/2000 | Loss: 1.8804 | LR: 0.000008 | TPS: 5640 | 7321s
+Step 1270/2000 | Loss: 1.8432 | LR: 0.000008 | TPS: 5642 | 7377s
+Step 1280/2000 | Loss: 1.7985 | LR: 0.000008 | TPS: 5643 | 7433s
+Step 1290/2000 | Loss: 1.8923 | LR: 0.000008 | TPS: 5645 | 7488s
+Step 1300/2000 | Loss: 1.9313 | LR: 0.000007 | TPS: 5647 | 7544s
+Step 1310/2000 | Loss: 1.8058 | LR: 0.000007 | TPS: 5648 | 7600s
+Step 1320/2000 | Loss: 1.8251 | LR: 0.000007 | TPS: 5650 | 7655s
+Step 1330/2000 | Loss: 1.9044 | LR: 0.000007 | TPS: 5652 | 7711s
+Step 1340/2000 | Loss: 1.8591 | LR: 0.000007 | TPS: 5653 | 7767s
+Step 1350/2000 | Loss: 1.8565 | LR: 0.000007 | TPS: 5655 | 7822s
+Step 1360/2000 | Loss: 1.8493 | LR: 0.000007 | TPS: 5657 | 7878s
+Step 1370/2000 | Loss: 1.8579 | LR: 0.000006 | TPS: 5658 | 7934s
+Step 1380/2000 | Loss: 1.8758 | LR: 0.000006 | TPS: 5660 | 7989s
+Step 1390/2000 | Loss: 1.8233 | LR: 0.000006 | TPS: 5661 | 8045s
+Step 1400/2000 | Loss: 1.7638 | LR: 0.000006 | TPS: 5663 | 8101s
+  📊 Val loss: 1.9268 
+Step 1410/2000 | Loss: 1.8363 | LR: 0.000006 | TPS: 5661 | 8161s
+Step 1420/2000 | Loss: 1.8679 | LR: 0.000006 | TPS: 5662 | 8218s
+Step 1430/2000 | Loss: 1.8719 | LR: 0.000006 | TPS: 5663 | 8274s
+Step 1440/2000 | Loss: 1.8358 | LR: 0.000006 | TPS: 5665 | 8329s
+Step 1450/2000 | Loss: 1.8308 | LR: 0.000005 | TPS: 5666 | 8386s
+Step 1460/2000 | Loss: 1.7674 | LR: 0.000005 | TPS: 5667 | 8443s
+Step 1470/2000 | Loss: 1.8013 | LR: 0.000005 | TPS: 5667 | 8499s
+Step 1480/2000 | Loss: 1.8169 | LR: 0.000005 | TPS: 5669 | 8555s
+Step 1490/2000 | Loss: 1.8913 | LR: 0.000005 | TPS: 5669 | 8612s
+Step 1500/2000 | Loss: 1.7419 | LR: 0.000005 | TPS: 5670 | 8669s
+
+  🔤 Generation samples (step 1500):
+    [EN] Habitat (1947) In 13 years, this country has grown from a lowly rural town to one of the most dense cities in Europe. It is also home to some of the world’s oldest colleges and universities. The capit
+    [HE] Fabio Mercado (L'Atelier Giacomo Rizzoli) Actor: Dennis Hoppler Actress: Selma Blair, Rosalie Chavez, Anthony Quinn, Jeanne-Claude Van Damme Producer: Teddy Pendergrass Screenplay: David Fincher, Greg
+    [AR] Gregory D. Babcock Director of the National Park Service Center for Applied Research | 302-974-5961 | email@example.com | Email | Twitter | Google+ | Youtube Member since: Aug 2018
+    [FA] <|assistant|> پایتخت فرانسه پاریس است. پایتخت اروپا و عضو اتحادیه اروپاست. با مساحت 2389.45 کیلومتر مربع (11086.7 مایل مربع) بزرگترین شهر و مرکز این کشور به حساب می آید. این شهر از شمال به دریای مدیتر
+    [TRANSLATE] אני חושב שהדרך הכי טובה היא להיות אנושי. מה זה אומר? אתה לא יכול לעשות את כל הדברים האלה כמו שאת
+
+Step 1510/2000 | Loss: 1.8088 | LR: 0.000005 | TPS: 5666 | 8733s
+Step 1520/2000 | Loss: 1.8381 | LR: 0.000005 | TPS: 5668 | 8788s
+Step 1530/2000 | Loss: 1.8735 | LR: 0.000005 | TPS: 5669 | 8844s
+Step 1540/2000 | Loss: 1.8434 | LR: 0.000004 | TPS: 5670 | 8901s
+Step 1550/2000 | Loss: 1.9623 | LR: 0.000004 | TPS: 5670 | 8957s
+Step 1560/2000 | Loss: 1.7754 | LR: 0.000004 | TPS: 5671 | 9014s
+Step 1570/2000 | Loss: 1.8007 | LR: 0.000004 | TPS: 5672 | 9069s
+Step 1580/2000 | Loss: 1.8435 | LR: 0.000004 | TPS: 5674 | 9125s
+Step 1590/2000 | Loss: 1.8140 | LR: 0.000004 | TPS: 5674 | 9182s
+Step 1600/2000 | Loss: 2.0136 | LR: 0.000004 | TPS: 5675 | 9239s
+  📊 Val loss: 1.8683 
+Step 1610/2000 | Loss: 1.8653 | LR: 0.000004 | TPS: 5673 | 9299s
+Step 1620/2000 | Loss: 1.8449 | LR: 0.000004 | TPS: 5675 | 9355s
+Step 1630/2000 | Loss: 1.9124 | LR: 0.000004 | TPS: 5675 | 9411s
+Step 1640/2000 | Loss: 1.8589 | LR: 0.000004 | TPS: 5676 | 9467s
+Step 1650/2000 | Loss: 1.7970 | LR: 0.000003 | TPS: 5677 | 9524s
+Step 1660/2000 | Loss: 1.9074 | LR: 0.000003 | TPS: 5678 | 9580s
+Step 1670/2000 | Loss: 1.8106 | LR: 0.000003 | TPS: 5679 | 9637s
+Step 1680/2000 | Loss: 1.8447 | LR: 0.000003 | TPS: 5680 | 9693s
+Step 1690/2000 | Loss: 1.8292 | LR: 0.000003 | TPS: 5680 | 9749s
+Step 1700/2000 | Loss: 1.6797 | LR: 0.000003 | TPS: 5682 | 9805s
+Step 1710/2000 | Loss: 1.8556 | LR: 0.000003 | TPS: 5683 | 9860s
+Step 1720/2000 | Loss: 1.8782 | LR: 0.000003 | TPS: 5683 | 9917s
+Step 1730/2000 | Loss: 2.0236 | LR: 0.000003 | TPS: 5684 | 9973s
+Step 1740/2000 | Loss: 1.9210 | LR: 0.000003 | TPS: 5685 | 10030s
+Step 1750/2000 | Loss: 1.9726 | LR: 0.000003 | TPS: 5685 | 10086s
+Step 1760/2000 | Loss: 1.9092 | LR: 0.000003 | TPS: 5687 | 10142s
+Step 1770/2000 | Loss: 1.8354 | LR: 0.000003 | TPS: 5688 | 10197s
+Step 1780/2000 | Loss: 1.9119 | LR: 0.000003 | TPS: 5688 | 10254s
+Step 1790/2000 | Loss: 1.8514 | LR: 0.000003 | TPS: 5689 | 10311s
+Step 1800/2000 | Loss: 1.8867 | LR: 0.000002 | TPS: 5689 | 10367s
+  📊 Val loss: 1.8519 
+Step 1810/2000 | Loss: 1.8018 | LR: 0.000002 | TPS: 5688 | 10427s
+Step 1820/2000 | Loss: 1.9035 | LR: 0.000002 | TPS: 5688 | 10484s
+Step 1830/2000 | Loss: 1.8702 | LR: 0.000002 | TPS: 5689 | 10541s
+Step 1840/2000 | Loss: 1.8488 | LR: 0.000002 | TPS: 5689 | 10597s
+Step 1850/2000 | Loss: 1.8353 | LR: 0.000002 | TPS: 5690 | 10655s
+Step 1860/2000 | Loss: 1.9824 | LR: 0.000002 | TPS: 5690 | 10711s
+Step 1870/2000 | Loss: 1.8690 | LR: 0.000002 | TPS: 5691 | 10768s
+Step 1880/2000 | Loss: 1.8169 | LR: 0.000002 | TPS: 5692 | 10823s
+Step 1890/2000 | Loss: 1.8857 | LR: 0.000002 | TPS: 5693 | 10878s
+Step 1900/2000 | Loss: 2.0156 | LR: 0.000002 | TPS: 5694 | 10935s
+Step 1910/2000 | Loss: 1.8400 | LR: 0.000002 | TPS: 5695 | 10990s
+Step 1920/2000 | Loss: 1.7980 | LR: 0.000002 | TPS: 5696 | 11046s
+Step 1930/2000 | Loss: 1.8597 | LR: 0.000002 | TPS: 5696 | 11103s
+Step 1940/2000 | Loss: 1.8957 | LR: 0.000002 | TPS: 5697 | 11159s
+Step 1950/2000 | Loss: 2.0115 | LR: 0.000002 | TPS: 5697 | 11216s
+Step 1960/2000 | Loss: 1.8698 | LR: 0.000002 | TPS: 5697 | 11273s
+Step 1970/2000 | Loss: 1.8417 | LR: 0.000002 | TPS: 5698 | 11329s
+Step 1980/2000 | Loss: 1.8097 | LR: 0.000002 | TPS: 5698 | 11387s
+Step 1990/2000 | Loss: 1.7653 | LR: 0.000002 | TPS: 5699 | 11443s
+Step 2000/2000 | Loss: 1.8520 | LR: 0.000002 | TPS: 5699 | 11499s
+  📊 Val loss: 1.8444 
+
+  🔤 Generation samples (step 2000):
+    [EN] Hugo, Sr. Founder and CEO The company's founders in 1973 are renowned names in international business, including Naveen Patil (brother of Pranav Kumar), a former chief financial officer at Mannesmann.
+    [HE] Mohamed Saeed. Hello, I am from Egypt and I am a 25 year old web developer. I have worked with some of the biggest names in web development including Facebook, Google, Yahoo!, Microsoft and Flock. My 
+    [AR] سأقرأ عن هذا الموضوع في المستقبل. سأكون سعيدًا إذا قرأت كل شيء تقريبًا عنه! ما هو المقصد من هذه المدينة؟ 10/23/37 · مدينة باريس هي عاصمة فرنسا، وتقع على ضفاف نهر السين. تقع في منطقة رون ألب شمال غرب ف
+    [FA] Il y a été lugar de leur français.
+    [TRANSLATE] We can't understand that, now we have to go and
+
+
+============================================================
+SFT TRAINING COMPLETE
+Steps: 2000, Time: 11511s (191.8min)
+Best val loss: 1.8415
+Model saved to: /tmp/sft_v3_runs/D/sft_model.pt
+============================================================
+Uploading to S3...
+Done!

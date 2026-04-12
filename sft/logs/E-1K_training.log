@@ -1,0 +1,265 @@
+Device: cuda
+Loading tokenizer: /tmp/eval/multilingual_32k.model
+Loading base model: /tmp/eval/best_model.pt
+Model loaded: 3.04B parameters
+Loading SFT data from: /tmp/sft_v3_runs/E-1K/data
+Train: 1756598 tokens, Val: 91033 tokens
+Using 8-bit AdamW (bitsandbytes)
+
+Starting SFT training for 2000 steps...
+Batch size: 2 x 8 accum = 16 effective, Seq len: 2048, LR: 2e-05
+Step 10/2000 | Loss: 2.2333 | LR: 0.000002 | TPS: 5972 | 55s
+Step 20/2000 | Loss: 2.2114 | LR: 0.000004 | TPS: 5981 | 110s
+Step 30/2000 | Loss: 2.2633 | LR: 0.000006 | TPS: 5970 | 165s
+Step 40/2000 | Loss: 2.1592 | LR: 0.000008 | TPS: 5932 | 221s
+Step 50/2000 | Loss: 2.1532 | LR: 0.000010 | TPS: 5933 | 276s
+Step 60/2000 | Loss: 2.0982 | LR: 0.000012 | TPS: 5933 | 331s
+Step 70/2000 | Loss: 2.2360 | LR: 0.000014 | TPS: 5914 | 388s
+Step 80/2000 | Loss: 2.1308 | LR: 0.000016 | TPS: 5915 | 443s
+Step 90/2000 | Loss: 2.0532 | LR: 0.000018 | TPS: 5905 | 499s
+Step 100/2000 | Loss: 1.9286 | LR: 0.000020 | TPS: 5890 | 556s
+Step 110/2000 | Loss: 1.9493 | LR: 0.000020 | TPS: 5887 | 612s
+Step 120/2000 | Loss: 1.8923 | LR: 0.000020 | TPS: 5878 | 669s
+Step 130/2000 | Loss: 1.8430 | LR: 0.000020 | TPS: 5876 | 725s
+Step 140/2000 | Loss: 1.8818 | LR: 0.000020 | TPS: 5872 | 781s
+Step 150/2000 | Loss: 1.8573 | LR: 0.000020 | TPS: 5876 | 837s
+Step 160/2000 | Loss: 1.8266 | LR: 0.000020 | TPS: 5871 | 893s
+Step 170/2000 | Loss: 1.8148 | LR: 0.000020 | TPS: 5875 | 948s
+Step 180/2000 | Loss: 1.8604 | LR: 0.000020 | TPS: 5879 | 1003s
+Step 190/2000 | Loss: 1.7732 | LR: 0.000020 | TPS: 5882 | 1059s
+Step 200/2000 | Loss: 1.9187 | LR: 0.000020 | TPS: 5878 | 1115s
+  📊 Val loss: 1.8144 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/E-1K/sft_model.pt
+Step 210/2000 | Loss: 1.8066 | LR: 0.000020 | TPS: 5803 | 1186s
+Step 220/2000 | Loss: 1.9006 | LR: 0.000020 | TPS: 5804 | 1242s
+Step 230/2000 | Loss: 1.7142 | LR: 0.000020 | TPS: 5810 | 1297s
+Step 240/2000 | Loss: 1.7546 | LR: 0.000020 | TPS: 5815 | 1353s
+Step 250/2000 | Loss: 1.7808 | LR: 0.000020 | TPS: 5813 | 1409s
+Step 260/2000 | Loss: 1.7258 | LR: 0.000020 | TPS: 5811 | 1466s
+Step 270/2000 | Loss: 1.9225 | LR: 0.000020 | TPS: 5810 | 1523s
+Step 280/2000 | Loss: 1.7622 | LR: 0.000020 | TPS: 5811 | 1579s
+Step 290/2000 | Loss: 1.8465 | LR: 0.000020 | TPS: 5816 | 1634s
+Step 300/2000 | Loss: 1.7876 | LR: 0.000020 | TPS: 5817 | 1690s
+Step 310/2000 | Loss: 1.7223 | LR: 0.000019 | TPS: 5815 | 1747s
+Step 320/2000 | Loss: 1.7673 | LR: 0.000019 | TPS: 5815 | 1803s
+Step 330/2000 | Loss: 1.7248 | LR: 0.000019 | TPS: 5813 | 1860s
+Step 340/2000 | Loss: 1.7212 | LR: 0.000019 | TPS: 5812 | 1917s
+Step 350/2000 | Loss: 1.7316 | LR: 0.000019 | TPS: 5812 | 1973s
+Step 360/2000 | Loss: 1.8056 | LR: 0.000019 | TPS: 5810 | 2030s
+Step 370/2000 | Loss: 1.8106 | LR: 0.000019 | TPS: 5809 | 2087s
+Step 380/2000 | Loss: 1.7069 | LR: 0.000019 | TPS: 5808 | 2144s
+Step 390/2000 | Loss: 1.6770 | LR: 0.000019 | TPS: 5807 | 2201s
+Step 400/2000 | Loss: 1.8675 | LR: 0.000019 | TPS: 5806 | 2257s
+  📊 Val loss: 1.7715 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/E-1K/sft_model.pt
+Step 410/2000 | Loss: 1.7126 | LR: 0.000019 | TPS: 5674 | 2368s
+Step 420/2000 | Loss: 1.6733 | LR: 0.000019 | TPS: 5681 | 2422s
+Step 430/2000 | Loss: 1.6750 | LR: 0.000019 | TPS: 5689 | 2477s
+Step 440/2000 | Loss: 1.7412 | LR: 0.000019 | TPS: 5695 | 2532s
+Step 450/2000 | Loss: 1.6737 | LR: 0.000019 | TPS: 5700 | 2587s
+Step 460/2000 | Loss: 1.7098 | LR: 0.000018 | TPS: 5703 | 2643s
+Step 470/2000 | Loss: 1.7155 | LR: 0.000018 | TPS: 5708 | 2698s
+Step 480/2000 | Loss: 1.7079 | LR: 0.000018 | TPS: 5713 | 2753s
+Step 490/2000 | Loss: 1.7061 | LR: 0.000018 | TPS: 5717 | 2808s
+Step 500/2000 | Loss: 1.6300 | LR: 0.000018 | TPS: 5719 | 2865s
+
+  🔤 Generation samples (step 500):
+    [EN] Total population of France is 1.5 billion people. - The capital of France is Paris. - It lies in the northwestern part
+    [HE] Joyce van Hoofnum 🔊✨️ #Canadians👋❤️✍️☺️☚️ #Travels🌳️ @DailyMotivation 7 days ago I'm happy to be in an RV with you! You look like a lovable cat! #
+    [AR] @CheapestLondonSolitaireGraduate.com.au ### Advertiser: @EquipeMovie.com.au ### Categories: Movies, Comedy, Action, Romance, Crime, Horror
+    [FA] شهر پاریس مرکز سیاسی، اقتصادی و فرهنگی فرانسه است. این شهر دارای جاذبه های تاریخی فراوانی است که بسیاری از گردشگران برای بازدید از آن ها به آنجا سفر می کنند. با وجود اینکه هنوز بسیاری از مکان های دیدن
+    [TRANSLATE] // __ ____ ____ ? _ ____ ? ? ________ _____ 1. Is it possible that your mother is in the clouds or has been there for days and years (he says)? 2. Have you ever slept with someone who was not at all l
+
+Step 510/2000 | Loss: 1.6509 | LR: 0.000018 | TPS: 5705 | 2930s
+Step 520/2000 | Loss: 1.6996 | LR: 0.000018 | TPS: 5706 | 2986s
+Step 530/2000 | Loss: 1.6287 | LR: 0.000018 | TPS: 5707 | 3043s
+Step 540/2000 | Loss: 1.7118 | LR: 0.000018 | TPS: 5709 | 3099s
+Step 550/2000 | Loss: 1.5684 | LR: 0.000018 | TPS: 5710 | 3156s
+Step 560/2000 | Loss: 1.6596 | LR: 0.000018 | TPS: 5711 | 3213s
+Step 570/2000 | Loss: 1.6415 | LR: 0.000017 | TPS: 5712 | 3270s
+Step 580/2000 | Loss: 1.6753 | LR: 0.000017 | TPS: 5714 | 3326s
+Step 590/2000 | Loss: 1.6181 | LR: 0.000017 | TPS: 5716 | 3382s
+Step 600/2000 | Loss: 1.6585 | LR: 0.000017 | TPS: 5718 | 3439s
+  📊 Val loss: 1.6985 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/E-1K/sft_model.pt
+Step 610/2000 | Loss: 1.6022 | LR: 0.000017 | TPS: 5635 | 3547s
+Step 620/2000 | Loss: 1.5919 | LR: 0.000017 | TPS: 5637 | 3604s
+Step 630/2000 | Loss: 1.5905 | LR: 0.000017 | TPS: 5639 | 3661s
+Step 640/2000 | Loss: 1.6719 | LR: 0.000017 | TPS: 5643 | 3716s
+Step 650/2000 | Loss: 1.6445 | LR: 0.000017 | TPS: 5647 | 3771s
+Step 660/2000 | Loss: 1.6929 | LR: 0.000016 | TPS: 5649 | 3828s
+Step 670/2000 | Loss: 1.6745 | LR: 0.000016 | TPS: 5651 | 3885s
+Step 680/2000 | Loss: 1.6881 | LR: 0.000016 | TPS: 5653 | 3942s
+Step 690/2000 | Loss: 1.6694 | LR: 0.000016 | TPS: 5656 | 3998s
+Step 700/2000 | Loss: 1.6165 | LR: 0.000016 | TPS: 5657 | 4055s
+Step 710/2000 | Loss: 1.6720 | LR: 0.000016 | TPS: 5658 | 4112s
+Step 720/2000 | Loss: 1.6793 | LR: 0.000016 | TPS: 5661 | 4168s
+Step 730/2000 | Loss: 1.5739 | LR: 0.000016 | TPS: 5662 | 4224s
+Step 740/2000 | Loss: 1.6069 | LR: 0.000015 | TPS: 5664 | 4281s
+Step 750/2000 | Loss: 1.6091 | LR: 0.000015 | TPS: 5666 | 4337s
+Step 760/2000 | Loss: 1.5723 | LR: 0.000015 | TPS: 5668 | 4394s
+Step 770/2000 | Loss: 1.6064 | LR: 0.000015 | TPS: 5670 | 4450s
+Step 780/2000 | Loss: 1.5858 | LR: 0.000015 | TPS: 5672 | 4507s
+Step 790/2000 | Loss: 1.5074 | LR: 0.000015 | TPS: 5673 | 4563s
+Step 800/2000 | Loss: 1.5876 | LR: 0.000015 | TPS: 5675 | 4619s
+  📊 Val loss: 1.7488 
+Step 810/2000 | Loss: 1.6089 | LR: 0.000014 | TPS: 5674 | 4678s
+Step 820/2000 | Loss: 1.5861 | LR: 0.000014 | TPS: 5675 | 4735s
+Step 830/2000 | Loss: 1.6214 | LR: 0.000014 | TPS: 5677 | 4791s
+Step 840/2000 | Loss: 1.5819 | LR: 0.000014 | TPS: 5678 | 4847s
+Step 850/2000 | Loss: 1.6386 | LR: 0.000014 | TPS: 5681 | 4902s
+Step 860/2000 | Loss: 1.5934 | LR: 0.000014 | TPS: 5683 | 4958s
+Step 870/2000 | Loss: 1.6180 | LR: 0.000014 | TPS: 5684 | 5015s
+Step 880/2000 | Loss: 1.5486 | LR: 0.000013 | TPS: 5685 | 5072s
+Step 890/2000 | Loss: 1.6591 | LR: 0.000013 | TPS: 5687 | 5129s
+Step 900/2000 | Loss: 1.7488 | LR: 0.000013 | TPS: 5687 | 5186s
+Step 910/2000 | Loss: 1.5619 | LR: 0.000013 | TPS: 5688 | 5242s
+Step 920/2000 | Loss: 1.5464 | LR: 0.000013 | TPS: 5689 | 5299s
+Step 930/2000 | Loss: 1.6251 | LR: 0.000013 | TPS: 5690 | 5356s
+Step 940/2000 | Loss: 1.6244 | LR: 0.000013 | TPS: 5691 | 5412s
+Step 950/2000 | Loss: 1.5457 | LR: 0.000012 | TPS: 5692 | 5469s
+Step 960/2000 | Loss: 1.5908 | LR: 0.000012 | TPS: 5695 | 5524s
+Step 970/2000 | Loss: 1.7175 | LR: 0.000012 | TPS: 5697 | 5580s
+Step 980/2000 | Loss: 1.6329 | LR: 0.000012 | TPS: 5697 | 5636s
+Step 990/2000 | Loss: 1.6833 | LR: 0.000012 | TPS: 5698 | 5693s
+Step 1000/2000 | Loss: 1.5852 | LR: 0.000012 | TPS: 5699 | 5750s
+  📊 Val loss: 1.7032 
+
+  🔤 Generation samples (step 1000):
+    [EN] 01436 217995 Fax: +33 (0)1 821 70 11
+    [HE] <|assistant|> ב-8 בינואר 1492, עם ירידת כוחו של הרוזן ג'ון הולידיי, נכנסות ארבע ערים לשולחן אחד. העיר השנייה היא פריז עם הכיכרות האדומות והרחבות המסילות, ואילו השלישית היא מונמארטר (Montparnasse) אשר 
+    [AR] @DanielBourgon2005.JPG/184px|Viewed (63) by alexis_jones in Category:Architecture, Architectural Guide and Photography Tags: Arcadia, 75° to the Sky, Paris, Picturesque, Art Deco, Interiors, Design, D
+    [FA] فرانسه کشور زیبایی است! شهری که به اندازه ی یک شهر بزرگ و پیشرفته نیست. پاریس به عنوان مرکز دنیای مد، فرهنگ و هنر در اروپا شناخته می شود و هر ساله میلیون ها گردشگر را از سراسر جهان جذب می کند. این شهر
+    [TRANSLATE] אני.
+
+Step 1010/2000 | Loss: 1.6905 | LR: 0.000012 | TPS: 5691 | 5815s
+Step 1020/2000 | Loss: 1.6016 | LR: 0.000011 | TPS: 5694 | 5870s
+Step 1030/2000 | Loss: 1.5676 | LR: 0.000011 | TPS: 5695 | 5926s
+Step 1040/2000 | Loss: 1.6748 | LR: 0.000011 | TPS: 5696 | 5983s
+Step 1050/2000 | Loss: 1.5745 | LR: 0.000011 | TPS: 5697 | 6040s
+Step 1060/2000 | Loss: 1.5666 | LR: 0.000011 | TPS: 5698 | 6096s
+Step 1070/2000 | Loss: 1.5574 | LR: 0.000011 | TPS: 5698 | 6153s
+Step 1080/2000 | Loss: 1.5975 | LR: 0.000011 | TPS: 5699 | 6209s
+Step 1090/2000 | Loss: 1.6218 | LR: 0.000010 | TPS: 5701 | 6265s
+Step 1100/2000 | Loss: 1.6333 | LR: 0.000010 | TPS: 5703 | 6320s
+Step 1110/2000 | Loss: 1.6030 | LR: 0.000010 | TPS: 5706 | 6375s
+Step 1120/2000 | Loss: 1.6714 | LR: 0.000010 | TPS: 5708 | 6430s
+Step 1130/2000 | Loss: 1.5432 | LR: 0.000010 | TPS: 5708 | 6487s
+Step 1140/2000 | Loss: 1.6025 | LR: 0.000010 | TPS: 5709 | 6543s
+Step 1150/2000 | Loss: 1.5970 | LR: 0.000010 | TPS: 5710 | 6600s
+Step 1160/2000 | Loss: 1.7075 | LR: 0.000009 | TPS: 5710 | 6657s
+Step 1170/2000 | Loss: 1.5876 | LR: 0.000009 | TPS: 5711 | 6713s
+Step 1180/2000 | Loss: 1.4725 | LR: 0.000009 | TPS: 5712 | 6770s
+Step 1190/2000 | Loss: 1.6477 | LR: 0.000009 | TPS: 5712 | 6827s
+Step 1200/2000 | Loss: 1.4942 | LR: 0.000009 | TPS: 5713 | 6883s
+  📊 Val loss: 1.6305 (NEW BEST!)
+  💾 Best model saved to /tmp/sft_v3_runs/E-1K/sft_model.pt
+Step 1210/2000 | Loss: 1.6695 | LR: 0.000009 | TPS: 5669 | 6993s
+Step 1220/2000 | Loss: 1.5722 | LR: 0.000009 | TPS: 5672 | 7049s
+Step 1230/2000 | Loss: 1.5548 | LR: 0.000008 | TPS: 5674 | 7104s
+Step 1240/2000 | Loss: 1.5561 | LR: 0.000008 | TPS: 5676 | 7159s
+Step 1250/2000 | Loss: 1.5131 | LR: 0.000008 | TPS: 5677 | 7216s
+Step 1260/2000 | Loss: 1.6491 | LR: 0.000008 | TPS: 5678 | 7272s
+Step 1270/2000 | Loss: 1.5130 | LR: 0.000008 | TPS: 5679 | 7329s
+Step 1280/2000 | Loss: 1.5799 | LR: 0.000008 | TPS: 5679 | 7385s
+Step 1290/2000 | Loss: 1.5006 | LR: 0.000008 | TPS: 5680 | 7442s
+Step 1300/2000 | Loss: 1.5720 | LR: 0.000007 | TPS: 5681 | 7499s
+Step 1310/2000 | Loss: 1.6109 | LR: 0.000007 | TPS: 5681 | 7556s
+Step 1320/2000 | Loss: 1.6161 | LR: 0.000007 | TPS: 5682 | 7612s
+Step 1330/2000 | Loss: 1.6374 | LR: 0.000007 | TPS: 5683 | 7668s
+Step 1340/2000 | Loss: 1.5590 | LR: 0.000007 | TPS: 5685 | 7723s
+Step 1350/2000 | Loss: 1.5873 | LR: 0.000007 | TPS: 5686 | 7781s
+Step 1360/2000 | Loss: 1.5605 | LR: 0.000007 | TPS: 5686 | 7837s
+Step 1370/2000 | Loss: 1.6143 | LR: 0.000006 | TPS: 5687 | 7894s
+Step 1380/2000 | Loss: 1.6159 | LR: 0.000006 | TPS: 5688 | 7950s
+Step 1390/2000 | Loss: 1.5252 | LR: 0.000006 | TPS: 5688 | 8007s
+Step 1400/2000 | Loss: 1.6075 | LR: 0.000006 | TPS: 5689 | 8064s
+  📊 Val loss: 1.6843 
+Step 1410/2000 | Loss: 1.6049 | LR: 0.000006 | TPS: 5688 | 8123s
+Step 1420/2000 | Loss: 1.5880 | LR: 0.000006 | TPS: 5688 | 8180s
+Step 1430/2000 | Loss: 1.4353 | LR: 0.000006 | TPS: 5690 | 8235s
+Step 1440/2000 | Loss: 1.5801 | LR: 0.000006 | TPS: 5691 | 8291s
+Step 1450/2000 | Loss: 1.5608 | LR: 0.000005 | TPS: 5692 | 8347s
+Step 1460/2000 | Loss: 1.5073 | LR: 0.000005 | TPS: 5694 | 8402s
+Step 1470/2000 | Loss: 1.5732 | LR: 0.000005 | TPS: 5696 | 8457s
+Step 1480/2000 | Loss: 1.5932 | LR: 0.000005 | TPS: 5697 | 8513s
+Step 1490/2000 | Loss: 1.6281 | LR: 0.000005 | TPS: 5698 | 8569s
+Step 1500/2000 | Loss: 1.5632 | LR: 0.000005 | TPS: 5699 | 8624s
+
+  🔤 Generation samples (step 1500):
+    [EN] Pierre Michel (LO) The capital of France is Paris. It's located in northern Sud-Est, along its coastline and to the east of the city of Marseille
+    [HE] Mihai Sauerwein. Sauerwein is a Berlin-based architect,
+    [AR] <|assistant|> باريس هي أكبر مدن فرنسا وثالث أكبر مدينة في البلاد بعد باريس ولندن. تقع العاصمة الفرنسية على نهر السين وهي عاصمة الجمهورية الفرنسية، وهي ثاني أكبر بلد من حيث عدد السكان (بعد هونغ كونغ)، 
+    [FA] اگر به دنبال اطلاعات خاصی درباره شهر پاریس هستید، می توانید از منابع زیر استفاده کنید:
+    [TRANSLATE] (Laughter) I'm glad you were here. You're a very talented young woman with many goals and ambitions. How can we help? Surely you have the skills, knowledge and experience to succeed in this field. Hel
+
+Step 1510/2000 | Loss: 1.6164 | LR: 0.000005 | TPS: 5694 | 8689s
+Step 1520/2000 | Loss: 1.5760 | LR: 0.000005 | TPS: 5696 | 8744s
+Step 1530/2000 | Loss: 1.6746 | LR: 0.000005 | TPS: 5697 | 8800s
+Step 1540/2000 | Loss: 1.5531 | LR: 0.000004 | TPS: 5698 | 8856s
+Step 1550/2000 | Loss: 1.5480 | LR: 0.000004 | TPS: 5700 | 8911s
+Step 1560/2000 | Loss: 1.5052 | LR: 0.000004 | TPS: 5701 | 8966s
+Step 1570/2000 | Loss: 1.6010 | LR: 0.000004 | TPS: 5702 | 9022s
+Step 1580/2000 | Loss: 1.5111 | LR: 0.000004 | TPS: 5703 | 9079s
+Step 1590/2000 | Loss: 1.5703 | LR: 0.000004 | TPS: 5703 | 9135s
+Step 1600/2000 | Loss: 1.5492 | LR: 0.000004 | TPS: 5703 | 9192s
+  📊 Val loss: 1.7218 
+Step 1610/2000 | Loss: 1.6416 | LR: 0.000004 | TPS: 5702 | 9252s
+Step 1620/2000 | Loss: 1.5371 | LR: 0.000004 | TPS: 5703 | 9309s
+Step 1630/2000 | Loss: 1.5159 | LR: 0.000004 | TPS: 5703 | 9366s
+Step 1640/2000 | Loss: 1.5307 | LR: 0.000004 | TPS: 5704 | 9422s
+Step 1650/2000 | Loss: 1.5397 | LR: 0.000003 | TPS: 5704 | 9478s
+Step 1660/2000 | Loss: 1.5439 | LR: 0.000003 | TPS: 5705 | 9535s
+Step 1670/2000 | Loss: 1.5671 | LR: 0.000003 | TPS: 5705 | 9592s
+Step 1680/2000 | Loss: 1.5244 | LR: 0.000003 | TPS: 5705 | 9649s
+Step 1690/2000 | Loss: 1.5580 | LR: 0.000003 | TPS: 5706 | 9705s
+Step 1700/2000 | Loss: 1.6843 | LR: 0.000003 | TPS: 5708 | 9760s
+Step 1710/2000 | Loss: 1.5512 | LR: 0.000003 | TPS: 5708 | 9816s
+Step 1720/2000 | Loss: 1.5007 | LR: 0.000003 | TPS: 5709 | 9872s
+Step 1730/2000 | Loss: 1.5692 | LR: 0.000003 | TPS: 5710 | 9927s
+Step 1740/2000 | Loss: 1.6038 | LR: 0.000003 | TPS: 5711 | 9984s
+Step 1750/2000 | Loss: 1.5274 | LR: 0.000003 | TPS: 5711 | 10041s
+Step 1760/2000 | Loss: 1.5538 | LR: 0.000003 | TPS: 5712 | 10097s
+Step 1770/2000 | Loss: 1.5681 | LR: 0.000003 | TPS: 5712 | 10153s
+Step 1780/2000 | Loss: 1.5700 | LR: 0.000003 | TPS: 5713 | 10210s
+Step 1790/2000 | Loss: 1.5618 | LR: 0.000003 | TPS: 5713 | 10267s
+Step 1800/2000 | Loss: 1.5432 | LR: 0.000002 | TPS: 5713 | 10324s
+  📊 Val loss: 1.6894 
+Step 1810/2000 | Loss: 1.5565 | LR: 0.000002 | TPS: 5712 | 10383s
+Step 1820/2000 | Loss: 1.5783 | LR: 0.000002 | TPS: 5713 | 10439s
+Step 1830/2000 | Loss: 1.6506 | LR: 0.000002 | TPS: 5714 | 10495s
+Step 1840/2000 | Loss: 1.5956 | LR: 0.000002 | TPS: 5715 | 10550s
+Step 1850/2000 | Loss: 1.5777 | LR: 0.000002 | TPS: 5716 | 10606s
+Step 1860/2000 | Loss: 1.5530 | LR: 0.000002 | TPS: 5717 | 10661s
+Step 1870/2000 | Loss: 1.6059 | LR: 0.000002 | TPS: 5718 | 10717s
+Step 1880/2000 | Loss: 1.5797 | LR: 0.000002 | TPS: 5718 | 10773s
+Step 1890/2000 | Loss: 1.5083 | LR: 0.000002 | TPS: 5719 | 10830s
+Step 1900/2000 | Loss: 1.5400 | LR: 0.000002 | TPS: 5719 | 10886s
+Step 1910/2000 | Loss: 1.5433 | LR: 0.000002 | TPS: 5720 | 10943s
+Step 1920/2000 | Loss: 1.4965 | LR: 0.000002 | TPS: 5721 | 10998s
+Step 1930/2000 | Loss: 1.5133 | LR: 0.000002 | TPS: 5721 | 11054s
+Step 1940/2000 | Loss: 1.4585 | LR: 0.000002 | TPS: 5721 | 11111s
+Step 1950/2000 | Loss: 1.4962 | LR: 0.000002 | TPS: 5722 | 11168s
+Step 1960/2000 | Loss: 1.6566 | LR: 0.000002 | TPS: 5722 | 11224s
+Step 1970/2000 | Loss: 1.5247 | LR: 0.000002 | TPS: 5722 | 11281s
+Step 1980/2000 | Loss: 1.6322 | LR: 0.000002 | TPS: 5722 | 11338s
+Step 1990/2000 | Loss: 1.5365 | LR: 0.000002 | TPS: 5723 | 11395s
+Step 2000/2000 | Loss: 1.5552 | LR: 0.000002 | TPS: 5723 | 11452s
+  📊 Val loss: 1.6555 
+
+  🔤 Generation samples (step 2000):
+    [EN] ★★★★★ 🔥 A total of 10 cities, with 3 main towns. The largest city is Paris-Est in the southwest corner of France. It has a population of around 467,200 people (about 255,000 admitted in 2019). This ca
+    [HE] (Available in English) Katie Hughes. Age-38, has a degree from Brigham Young University and a master’s degree from the University of California, Davis. She is
+    [AR] @JeanLouis_Quimby Administrator/User: Jean-Louis Quimby Assistant/User: Achilles, Marcel D. (Monterey, CA) User: Eduardo Chavez de la Paz Administrator/User: Eduardo Chavez de la Paz Administrator/Use
+    [FA] @Director_of_Civil=
+    [TRANSLATE] क्यैर्दुलों कने सामिकः परणाल्या जनो��
+
+
+============================================================
+SFT TRAINING COMPLETE
+Steps: 2000, Time: 11463s (191.1min)
+Best val loss: 1.6305
+Model saved to: /tmp/sft_v3_runs/E-1K/sft_model.pt
+============================================================
+Uploading to S3...
+Done!

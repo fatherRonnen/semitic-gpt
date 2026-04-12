@@ -1,0 +1,10 @@
+{
+  "name": "F-only-arfa",
+  "description": "Language ablation: SFT on Arabic + Farsi only (Hebrew and English removed)",
+  "steps": 5000,
+  "languages": ["ar", "fa"],
+  "learning_rate": 1e-5,
+  "batch_size": 32,
+  "warmup_steps": 100,
+  "notes": "Tests impact of removing Hebrew/English from SFT data"
+}
