@@ -16,7 +16,7 @@ sys.stdout.reconfigure(line_buffering=True)
 from datasets import load_dataset
 import sentencepiece as spm
 
-HF_TOKEN = os.environ.get('HF_TOKEN', 'YOUR_HF_TOKEN')
+HF_TOKEN = os.environ['HF_TOKEN']  # Set via: export HF_TOKEN=your_token
 OUTPUT_DIR = '/tmp/domain_finetune'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

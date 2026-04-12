@@ -20,7 +20,7 @@ sys.stdout.reconfigure(line_buffering=True)
 OUTPUT_DIR = '/tmp/sft_v3_data'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-HF_TOKEN = os.environ.get('HF_TOKEN', 'YOUR_HF_TOKEN')
+HF_TOKEN = os.environ['HF_TOKEN']  # Set via: export HF_TOKEN=your_token
 
 
 def extract_instruction_output(item, source_name):

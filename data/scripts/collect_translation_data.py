@@ -17,7 +17,7 @@ Output: JSONL with instruction/output format for translation SFT.
 import os, sys, json, random
 sys.stdout.reconfigure(line_buffering=True)
 
-HF_TOKEN = os.environ.get('HF_TOKEN', 'YOUR_HF_TOKEN')
+HF_TOKEN = os.environ['HF_TOKEN']  # Set via: export HF_TOKEN=your_token
 OUTPUT_DIR = '/tmp/translation_data'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

@@ -1,0 +1,81 @@
+{
+  "description": "Machine-readable data for all tables in the SemiticGPT paper",
+  "tables": {
+    "bpb": {
+      "title": "Bits-per-byte across languages and SFT configurations",
+      "metric": "BPB (lower is better)",
+      "columns": ["Model", "HE", "AR", "EN", "FA"],
+      "rows": [
+        {"model": "Base (pretrained)", "HE": 0.879, "AR": 0.731, "EN": 0.972, "FA": 0.663},
+        {"model": "D-SFT (5K)", "HE": 0.876, "AR": 0.726, "EN": 0.964, "FA": 0.657},
+        {"model": "E-1K SFT", "HE": 0.878, "AR": 0.729, "EN": 0.967, "FA": 0.663},
+        {"model": "E-3K SFT", "HE": 0.877, "AR": 0.728, "EN": 0.965, "FA": 0.660},
+        {"model": "E-5K SFT", "HE": 0.876, "AR": 0.726, "EN": 0.964, "FA": 0.658},
+        {"model": "F-no-arfa", "HE": 0.879, "AR": 0.733, "EN": 0.968, "FA": 0.669},
+        {"model": "F-only-arfa", "HE": 0.880, "AR": 0.727, "EN": 0.968, "FA": 0.658}
+      ]
+    },
+    "belebele": {
+      "title": "Belebele reading comprehension accuracy (%)",
+      "metric": "Accuracy (%, chance=25%)",
+      "columns": ["Model", "HE", "AR", "EN", "FA"],
+      "rows": [
+        {"model": "Random baseline", "HE": 25.0, "AR": 25.0, "EN": 25.0, "FA": 25.0},
+        {"model": "Base (pretrained)", "HE": 28.3, "AR": 27.3, "EN": 31.1, "FA": 29.2},
+        {"model": "D-SFT", "HE": 28.1, "AR": 27.9, "EN": 31.8, "FA": 28.6}
+      ]
+    },
+    "translation": {
+      "title": "Translation quality (chrF%) across model configurations",
+      "metric": "chrF (%)",
+      "columns": ["Model", "AR→FA", "FA→AR", "HE→EN", "EN→HE", "AR→EN", "EN→AR", "HE→AR", "AR→HE", "EN→FA", "FA→EN"],
+      "rows": [
+        {"model": "D-baseline", "AR→FA": 6.2, "FA→AR": 7.6, "HE→EN": 1.4, "EN→HE": 0.9, "AR→EN": 0.9, "EN→AR": 0.6, "HE→AR": 1.4, "AR→HE": 0.0, "EN→FA": 0.1, "FA→EN": 0.3},
+        {"model": "G-trans", "AR→FA": 5.4, "FA→AR": 4.2, "HE→EN": 10.5, "EN→HE": 9.1, "AR→EN": 7.3, "EN→AR": 5.1, "HE→AR": 0.0, "AR→HE": 0.0, "EN→FA": 3.8, "FA→EN": 6.0},
+        {"model": "G-mixed", "AR→FA": 5.8, "FA→AR": 6.0, "HE→EN": 5.7, "EN→HE": 5.3, "AR→EN": 4.6, "EN→AR": 3.3, "HE→AR": 0.0, "AR→HE": 0.0, "EN→FA": 2.5, "FA→EN": 6.3},
+        {"model": "G2-trans", "AR→FA": 16.7, "FA→AR": 13.7, "HE→EN": 7.1, "EN→HE": 5.7, "AR→EN": 6.0, "EN→AR": 4.3, "HE→AR": 1.8, "AR→HE": 5.9, "EN→FA": 3.2, "FA→EN": 5.2},
+        {"model": "G2-direct", "AR→FA": 18.7, "FA→AR": 15.3, "HE→EN": 0.4, "EN→HE": 2.2, "AR→EN": 0.4, "EN→AR": 3.7, "HE→AR": 4.8, "AR→HE": 3.4, "EN→FA": 2.7, "FA→EN": 0.4}
+      ]
+    },
+    "embeddings": {
+      "title": "Cross-lingual retrieval accuracy (10-way, chance=10%)",
+      "metric": "Accuracy (%)",
+      "columns": ["Direction", "Base", "D-SFT"],
+      "rows": [
+        {"direction": "EN→HE", "Base": 90, "D-SFT": 90},
+        {"direction": "HE→EN", "Base": 90, "D-SFT": 80},
+        {"direction": "AR→EN", "Base": 70, "D-SFT": 50},
+        {"direction": "AR→HE", "Base": 70, "D-SFT": 70},
+        {"direction": "EN→AR", "Base": 50, "D-SFT": 60},
+        {"direction": "FA→HE", "Base": 50, "D-SFT": 30},
+        {"direction": "HE→AR", "Base": 40, "D-SFT": 60},
+        {"direction": "HE→FA", "Base": 40, "D-SFT": 30},
+        {"direction": "EN→FA", "Base": 20, "D-SFT": 20},
+        {"direction": "AR→FA", "Base": 10, "D-SFT": 10},
+        {"direction": "FA→EN", "Base": 10, "D-SFT": 10},
+        {"direction": "FA→AR", "Base": 10, "D-SFT": 10},
+        {"direction": "Average", "Base": 45.8, "D-SFT": 43.3}
+      ]
+    },
+    "sentiment": {
+      "title": "Sentiment classification accuracy (%) after domain fine-tuning",
+      "metric": "Accuracy (%)",
+      "columns": ["Training Config", "HE", "AR", "FA", "EN"],
+      "rows": [
+        {"config": "No training (baseline)", "HE": 19.0, "AR": 5.5, "FA": 0.5, "EN": 11.5},
+        {"config": "Hebrew only", "HE": 18.5, "AR": 49.0, "FA": 1.5, "EN": 33.5},
+        {"config": "All 4 languages", "HE": 18.0, "AR": 43.0, "FA": 1.5, "EN": 18.5},
+        {"config": "Arabic + Farsi only", "HE": 23.0, "AR": 67.0, "FA": 5.5, "EN": 21.0}
+      ]
+    },
+    "news_classification": {
+      "title": "News topic classification accuracy (4-class, chance=25%)",
+      "metric": "Accuracy (%)",
+      "columns": ["Config", "EN News Accuracy"],
+      "rows": [
+        {"config": "D-baseline (no news training)", "EN_News_Accuracy": 4.0},
+        {"config": "After EN news fine-tuning", "EN_News_Accuracy": 79.0}
+      ]
+    }
+  }
+}
