@@ -43,7 +43,7 @@ Our central finding is that multilingual pretraining with a linguistically-motiv
 
 We also report instructive negative results: English-mediated parallel data does not enable direct translation between non-English pairs, and all-language fine-tuning underperforms focused same-family fine-tuning.
 
-We provide a step-by-step practitioner's guide covering tokenizer design, data curation, pretraining, supervised fine-tuning, and evaluation, intended for researchers building similar models for other under-resourced language clusters. We release the model, tokenizer, and training code.
+We provide a step-by-step practitioner's guide covering tokenizer design, data curation, pretraining, supervised fine-tuning, and evaluation, intended for researchers building similar models for other under-resourced language clusters. We release the model, tokenizer, and training code.\footnote{Code and artifacts: \url{https://github.com/fatherRonnen/semitic-gpt}}
 \end{abstract}
 
 % ============================================================
@@ -86,7 +86,7 @@ We present SemiticGPT, a 3.04-billion parameter decoder-only language model trai
 
 Our work differs from all the above by (1) training from scratch with a custom tokenizer optimized for the target language family, (2) combining Hebrew, Arabic, and Farsi in a single model, (3) operating at academic budget, and (4) providing comprehensive cross-lingual transfer evaluation.
 
-\paragraph{Training Recipe Discovery.}\label{sec:related_recipe} Our pretraining recipe was derived using the autoresearch framework \citep{karpathy2026autoresearch}, which enables systematic proxy-scale experimentation to validate training choices before full-scale commitment. In our prior work \citep{slasky2026hebrew}, we conducted 200 proxy experiments for Hebrew language modeling, discovering that WSD linear-decay schedules outperform cosine warm-restarts, that the Muon optimizer outperforms AdamW by 12.3\% at 1B scale but fails at larger multilingual scale, and that SWA benefits Muon but degrades AdamW. The multilingual recipe in this paper was validated through an additional 32 proxy experiments at 110M scale before scaling to 3B.
+\paragraph{Training Recipe Discovery.}\label{sec:related_recipe} Our pretraining recipe was derived using the autoresearch framework \citep{karpathy2026autoresearch}, which enables systematic proxy-scale experimentation to validate training choices before full-scale commitment. In our prior work \citep{slasky2026hebrew}, we conducted 200 proxy experiments for Hebrew language modeling, discovering that WSD linear-decay schedules outperform cosine warm-restarts, that the Muon optimizer outperforms AdamW by 12.3\% at 1B scale but fails at larger multilingual scale, and that SWA benefits Muon but degrades AdamW. The multilingual recipe in this paper was validated through an additional 32 proxy experiments at 110M scale before scaling to 3B.\footnote{Proxy experiment configs, sweep results, and recipe selection rationale: \texttt{proxy/} in the repository.}
 
 % ============================================================
 \section{Methodology}
@@ -97,7 +97,7 @@ We train a 32,768-token SentencePiece BPE tokenizer on a balanced sample from al
 
 The resulting tokenizer achieves fertility rates (tokens per word) of approximately 1.4 for Hebrew, 1.5 for Arabic, 1.6 for Farsi, and 1.2 for English---significantly better than multilingual tokenizers like mBERT's WordPiece (2.5+ for Hebrew) or LLaMA's BPE (3+ for Arabic).
 
-Special tokens include: \texttt{<|user|>}, \texttt{<|assistant|>}, \texttt{<s>} (BOS), \texttt{</s>} (EOS), and \texttt{<pad>}.
+Special tokens include: \texttt{<|user|>}, \texttt{<|assistant|>}, \texttt{<s>} (BOS), \texttt{</s>} (EOS), and \texttt{<pad>}.\footnote{Tokenizer training script, config, and fertility report: \texttt{tokenizer/} in the repository.}
 
 \subsection{Data Collection and Curation}
 
@@ -139,7 +139,7 @@ Hebrew is overrepresented relative to speaker population to ensure strong anchor
 \label{fig:data_dist}
 \end{figure}
 
-Data preprocessing includes: deduplication (MinHash at document level), quality filtering (perplexity-based, removing boilerplate and machine-generated text), and language identification verification.
+Data preprocessing includes: deduplication (MinHash at document level), quality filtering (perplexity-based, removing boilerplate and machine-generated text), and language identification verification.\footnote{Collection scripts, source manifest, and mixture specification: \texttt{data/} in the repository.}
 
 \subsection{Architecture}
 
@@ -182,7 +182,7 @@ Training is conducted on AWS using spot instances (primarily g6e.xlarge with NVI
 
 \paragraph{Note on schedule choice.} Our 3B model uses cosine decay. Subsequent proxy experiments at 110M scale (Section~\ref{sec:related_recipe}) found that WSD linear-decay outperforms cosine warm-restarts in this setting. We report this finding in the practitioner's guide (Section~\ref{sec:guide}) as a recommendation for future work, though we did not retrain the 3B model with WSD.
 
-\paragraph{Cost efficiency.} By leveraging spot instances at 60-70\% discount from on-demand pricing, total pretraining requires approximately 400 GPU-hours on H100-equivalent hardware---achievable at academic budgets without dedicated cluster access.
+\paragraph{Cost efficiency.} By leveraging spot instances at 60-70\% discount from on-demand pricing, total pretraining requires approximately 400 GPU-hours on H100-equivalent hardware---achievable at academic budgets without dedicated cluster access.\footnote{Training scripts, hyperparameter config, and training logs: \texttt{pretrain/} in the repository.}
 
 \subsection{Supervised Fine-Tuning}
 
@@ -200,6 +200,8 @@ We also study data composition:
     \item \textbf{F-no-arfa}: Hebrew + English only
     \item \textbf{F-only-arfa}: Arabic + Farsi only
 \end{itemize}
+
+\noindent SFT configuration files, training scripts, data recipes, and training logs for all six configurations are provided in \texttt{sft/} in the repository.
 
 % ============================================================
 \section{Evaluation}
@@ -258,7 +260,7 @@ News & AG News subset & 200 & 4 & AG News \\
 \label{tab:datasets}
 \end{table}
 
-\paragraph{Evaluation methodology.} For classification tasks (sentiment, news), we use generative evaluation: the model receives an instruction prompt and generates a label. Outputs are matched against expected labels using case-insensitive substring matching. We report the fraction of correctly matched outputs over total samples. We acknowledge that this methodology may undercount correct classifications when the model produces semantically equivalent but textually different outputs, and that very low baseline scores (below random chance) likely reflect prompt/parsing issues rather than anti-correlated predictions. We discuss this further in Section~\ref{sec:limitations}.
+\paragraph{Evaluation methodology.} For classification tasks (sentiment, news), we use generative evaluation: the model receives an instruction prompt and generates a label. Outputs are matched against expected labels using case-insensitive substring matching. We report the fraction of correctly matched outputs over total samples. We acknowledge that this methodology may undercount correct classifications when the model produces semantically equivalent but textually different outputs, and that very low baseline scores (below random chance) likely reflect prompt/parsing issues rather than anti-correlated predictions. We discuss this further in Section~\ref{sec:limitations}. All evaluation scripts, exact prompts, and raw result files are provided in \texttt{eval/} in the repository.
 
 \subsection{Language Modeling Quality (BPB)}
 
@@ -691,9 +693,38 @@ We have presented SemiticGPT, a 3B parameter multilingual model covering Hebrew,
 
 Beyond the model itself, we offer a reproducible recipe (Section~\ref{sec:guide}) for building multilingual foundation models for any under-resourced language family. The key principles---linguistically-motivated language grouping, balanced custom tokenizers, anchor language overrepresentation, proxy-validated training recipes, and comprehensive negative-result reporting---are directly applicable to other language family clusters (e.g., Turkic, Bantu, Dravidian).
 
-We release the model weights, tokenizer, and training code to support reproducible research.
+We release the model weights, tokenizer, and training code to support reproducible research.\footnote{Repository: \url{https://github.com/fatherRonnen/semitic-gpt}. The tag \texttt{v0.1-paper-draft} freezes the exact configs and result files used in this paper. Machine-readable versions of all tables are in \texttt{paper/tables/result\_tables.json}.}
 
 \paragraph{Future work.} (1) Scaling to 7B parameters with improved Arabic SFT data quality; (2) adding more Semitic languages (Amharic, Tigrinya); (3) exploring adapter-based extension to new languages post-pretraining; (4) investigating whether the Hebrew$\rightarrow$Arabic transfer effect persists at larger scales.
+
+% ============================================================
+\section{Reproducibility}
+
+All code, configurations, and result artifacts are available at \url{https://github.com/fatherRonnen/semitic-gpt}. The repository is organized to mirror the paper's pipeline, enabling end-to-end tracing from claims to artifacts:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Paper Section} & \textbf{Repo Path} & \textbf{Contents} \\
+\midrule
+Tokenizer (\S3.1) & \texttt{tokenizer/} & Config, training script, fertility report \\
+Data (\S3.2) & \texttt{data/} & Collection scripts, source manifests \\
+Proxy (\S2, Related) & \texttt{proxy/} & 32 experiment configs, results, rationale \\
+Pretraining (\S3.4) & \texttt{pretrain/} & Training scripts, hyperparams, logs \\
+SFT (\S3.5) & \texttt{sft/} & 6 config files, training logs, data recipes \\
+Evaluation (\S4) & \texttt{eval/} & All scripts, prompts, result JSONs \\
+Tables/Figures & \texttt{paper/tables/} & Machine-readable result data \\
+\bottomrule
+\end{tabular}
+\caption{Mapping from paper sections to repository artifacts.}
+\label{tab:reproducibility}
+\end{table}
+
+Model weights (12.5GB base, 6GB SFT) are available on request and will be uploaded to HuggingFace. The tokenizer binary (\texttt{multilingual\_32k.model}, 817KB) is available from the same source. Large training data files are stored on AWS S3; the repository contains collection scripts and metadata sufficient to reconstruct the training corpus from public sources.
+
+The tag \texttt{v0.1-paper-draft} in the repository freezes the exact state of all configs and results corresponding to this paper.
 
 % ============================================================
 \section{Limitations}
