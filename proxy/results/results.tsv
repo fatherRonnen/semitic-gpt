@@ -1,0 +1,33 @@
+experiment	val_bpb	status	description	snapshot_file	timestamp
+1	713.4442	kept	WSD schedule + EMA weights + label smoothing — stable LR avoids the early-peak degradation seen in failed 1B run	exp_001_train.py	2026-04-02T18:43:19.435517
+2	257.9299	kept	Fix critical EMA bug (decay=0.9995 over 200 steps = ~random weights eval), replace with best raw-model checkpoint tracking	exp_002_train.py	2026-04-02T18:49:01.970075
+3	55.2874	kept	Replace unstable Muon (LR=0.02 causing explosion, val_bpb=257>>15) with AdamW for all params; 300 steps cosine schedule; no label smoothing	exp_003_train.py	2026-04-02T18:51:52.875329
+4	65.4309	discarded	Fix divergence (val_bpb=55>random=15) by removing GradScaler (bf16 doesn't need it); reintroduce Muon at conservative LR=0.005; WSD schedule; 200 steps	exp_004_train.py	2026-04-02T18:54:38.274387
+5	51.7861	kept	AdamW-only 500 steps, LR=1.5e-4, WD=0.01, clip=1.0, warmup=100, no GradScaler — fix divergence from exp_3	exp_005_train.py	2026-04-02T18:58:15.423171
+6	44.0869	kept	AdamW 1000 steps, LR=3e-4, WSD schedule, SWA last 20% — double tokens + proven LR from exp3 minus its bugs	exp_006_train.py	2026-04-02T19:03:56.774401
+7	43.3470	kept	AdamW 1500 steps, LR=5e-4, WSD (stable→1200, decay→1500), label_smooth=0.1, SWA last 20%	exp_007_train.py	2026-04-02T19:11:50.402992
+8	43.8231	discarded	AdamW 1700 steps, LR=8e-4, WSD (stable→1360, decay→1700), label_smooth=0.1, SWA freq=15	exp_008_train.py	2026-04-02T19:20:40.676834
+9	99.0000	error	FAILED: AdamW 2000 steps, LR=5e-4, WSD (stable→1600, decay→2000), WD=0.05, SWA freq=15, min_lr_ratio=0.01	exp_009_train.py	2026-04-02T19:30:17.433912
+10	99.0000	error	FAILED: batch=16, 1000 steps, LR=5e-4, WSD (stable→800, decay→1000) — double tokens vs exp_7 by 2× batch	exp_010_train.py	2026-04-02T19:39:51.582627
+11	42.8391	kept	AdamW 1500 steps, LR=5e-4, WSD stable→1050 (70%), SWA from step 750 freq=10 (dense averaging)	exp_011_train.py	2026-04-02T19:48:21.083325
+12	99.0000	error	FAILED: EMA model tracking (decay=0.9999) + denser SWA (step 600, freq=7, ~128 ckpts) + min_lr_ratio=0.02	exp_012_train.py	2026-04-02T19:58:15.689185
+13	99.0000	error	FAILED: EMA (decay=0.9995, start step 300) + dense SWA (step 750, freq=10), WSD stable@60%, label_smooth=0.05	exp_013_train.py	2026-04-02T20:07:57.409497
+14	45.1892	discarded	3-cycle cosine warm-restarts + snapshot ensemble (average 3 cycle-minima checkpoints)	exp_014_train.py	2026-04-02T20:15:56.062602
+15	41.7964	kept	WSD linear-decay + SWA from 40% freq=8 + 1700 steps + label_smooth=0.08	exp_015_train.py	2026-04-02T20:25:46.051334
+16	99.0000	error	FAILED: WSD linear-decay + SWA from 30% freq=6 + 1900 steps + label_smooth=0.06 + min_lr=0.03	exp_016_train.py	2026-04-02T20:35:33.090570
+17	99.0000	error	FAILED: WSD linear-decay + SWA 35%/freq=7 + stable@65% + label_smooth=0.07 + WD=0.025 + warmup=150	exp_017_train.py	2026-04-02T20:45:13.279509
+18	99.0000	error	FAILED: LR=6e-4 + stable@75% + min_lr=0.02 + SWA@35%/freq=7 + warmup=150 + 1700 steps	exp_018_train.py	2026-04-02T20:54:52.229992
+19	41.7454	kept	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.06	exp_019_train.py	2026-04-02T21:04:32.727614
+20	99.0000	error	FAILED: WSD linear-decay + SWA 40%/freq=5 (denser) + 1700 steps + min_lr=0.03 + label_smooth=0.04	exp_020_train.py	2026-04-02T21:14:09.546989
+21	41.9256	discarded	WSD cosine-decay (vs linear) + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.06	exp_021_train.py	2026-04-02T21:23:58.301108
+22	41.9718	discarded	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.05	exp_022_train.py	2026-04-02T21:33:35.579388
+23	41.9048	discarded	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + stable_end=75% + label_smooth=0.06 + min_lr=0.03	exp_023_train.py	2026-04-02T21:43:11.608508
+24	99.0000	error	FAILED: EMA (decay=0.9999) alongside SWA — compare and pick best final model	exp_024_train.py	2026-04-02T21:52:54.517351
+25	41.6640	kept	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.06 + betas=(0.9,0.98)	exp_025_train.py	2026-04-02T22:02:37.987782
+26	99.0000	error	FAILED: WSD linear-decay + SWA 40%/freq=8 + 2000 steps + min_lr=0.01 + label_smooth=0.06 + betas=(0.9,0.98)	exp_026_train.py	2026-04-02T22:12:29.556872
+27	42.1777	discarded	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.06 + betas=(0.9,0.98) + LR=6e-4	exp_027_train.py	2026-04-02T22:22:18.870432
+28	41.9518	discarded	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.06 + betas=(0.9,0.98) + WD=0.05	exp_028_train.py	2026-04-02T22:31:54.937532
+29	99.0000	error	FAILED: WSD linear-decay + SWA 30%/freq=4 (earlier+denser) + 1700 steps + min_lr=0.03 + label_smooth=0.06 + betas=(0.9,0.98)	exp_029_train.py	2026-04-02T22:41:37.699286
+30	42.0520	discarded	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.07 + betas=(0.9,0.98)	exp_030_train.py	2026-04-02T22:51:19.165259
+31	42.0196	discarded	WSD linear-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.03 + label_smooth=0.06 + betas=(0.9,0.98) + warmup=200	exp_031_train.py	2026-04-02T23:01:03.605535
+32	42.2696	discarded	WSD cosine-decay + SWA 40%/freq=8 + 1700 steps + min_lr=0.01 + label_smooth=0.06 + betas=(0.9,0.98)	exp_032_train.py	2026-04-02T23:10:58.992646

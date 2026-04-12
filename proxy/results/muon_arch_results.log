@@ -1,0 +1,274 @@
+PyTorch: 2.5.1+cu121, CUDA: True
+GPU: NVIDIA A10G
+Phase 1: Downloading data...
+[data] en already exists (50MB), skipping
+[data] ar already exists (89MB), skipping
+[data] he already exists (88MB), skipping
+[data] fa already exists (89MB), skipping
+
+Phase 2: Training tokenizer...
+[tok] Tokenizer already exists, skipping
+
+Phase 3: Tokenizing data...
+[tokenize] Already tokenized, skipping
+
+Phase 4: Running Muon at Scale experiments...
+
+============================================================
+EXPERIMENT SET 3: MUON AT SCALE (Optimizer Comparison)
+============================================================
+  train en: 11,441,779 tokens
+  train ar: 12,349,343 tokens
+  train he: 13,209,171 tokens
+  train fa: 11,761,811 tokens
+  val en: 610,471 tokens
+  val ar: 664,313 tokens
+  val he: 694,011 tokens
+  val fa: 620,979 tokens
+
+--- Experiment 1/25: muon_lr0.01 ---
+  Params: 58.5M
+  step 100/500, loss=64.3052, time=38.7s
+  step 200/500, loss=14.0052, time=77.0s
+  step 300/500, loss=12.4290, time=115.4s
+  step 400/500, loss=11.2798, time=153.7s
+  step 500/500, loss=12.9152, time=192.1s
+  Final loss: 12.9152, Avg BPB: 16.1768
+    en: BPB=16.8753
+    ar: BPB=15.6176
+    he: BPB=18.0245
+    fa: BPB=14.1897
+
+--- Experiment 2/25: muon_lr0.02 ---
+  Params: 58.5M
+  step 100/500, loss=48.9228, time=38.4s
+  step 200/500, loss=14.1032, time=76.7s
+  step 300/500, loss=11.6745, time=115.1s
+  step 400/500, loss=10.5540, time=153.5s
+  step 500/500, loss=9.4176, time=191.9s
+  Final loss: 9.4176, Avg BPB: 13.3124
+    en: BPB=12.4357
+    ar: BPB=13.8110
+    he: BPB=14.3846
+    fa: BPB=12.6181
+
+--- Experiment 3/25: muon_lr0.05 ---
+  Params: 58.5M
+  step 100/500, loss=35.9674, time=38.4s
+  step 200/500, loss=10.6678, time=76.7s
+  step 300/500, loss=8.7256, time=115.1s
+  step 400/500, loss=8.2229, time=153.5s
+  step 500/500, loss=7.7898, time=191.9s
+  Final loss: 7.7898, Avg BPB: 11.1766
+    en: BPB=10.3429
+    ar: BPB=11.7881
+    he: BPB=11.6769
+    fa: BPB=10.8986
+
+--- Experiment 4/25: adamw_lr1e-4 ---
+  Params: 58.5M
+  step 100/500, loss=98.6261, time=30.0s
+  step 200/500, loss=38.2004, time=59.9s
+  step 300/500, loss=31.4157, time=89.8s
+  step 400/500, loss=25.6837, time=119.7s
+  step 500/500, loss=21.2768, time=149.7s
+  Final loss: 21.2768, Avg BPB: 28.5363
+    en: BPB=25.8017
+    ar: BPB=30.7815
+    he: BPB=30.1213
+    fa: BPB=27.4407
+
+--- Experiment 5/25: adamw_lr3e-4 ---
+  Params: 58.5M
+  step 100/500, loss=64.3316, time=29.9s
+  step 200/500, loss=30.2481, time=59.8s
+  step 300/500, loss=32.2548, time=89.8s
+  step 400/500, loss=16.9875, time=119.7s
+  step 500/500, loss=12.8215, time=149.6s
+  Final loss: 12.8215, Avg BPB: 16.9985
+    en: BPB=14.9723
+    ar: BPB=18.4039
+    he: BPB=17.5074
+    fa: BPB=17.1104
+
+--- Experiment 6/25: adamw_lr6e-4 ---
+  Params: 58.5M
+  step 100/500, loss=52.8777, time=29.9s
+  step 200/500, loss=25.6701, time=59.8s
+  step 300/500, loss=29.6127, time=89.8s
+  step 400/500, loss=13.6638, time=119.7s
+  step 500/500, loss=9.8548, time=149.6s
+  Final loss: 9.8548, Avg BPB: 13.3624
+    en: BPB=12.4717
+    ar: BPB=13.9774
+    he: BPB=14.1977
+    fa: BPB=12.8028
+
+--- Experiment 7/25: adamw_lr1e-3 ---
+  Params: 58.5M
+  step 100/500, loss=48.0498, time=29.9s
+  step 200/500, loss=12.9708, time=59.8s
+  step 300/500, loss=9.5212, time=89.8s
+  step 400/500, loss=8.7568, time=119.7s
+  step 500/500, loss=8.3875, time=149.6s
+  Final loss: 8.3875, Avg BPB: 12.1442
+    en: BPB=11.3170
+    ar: BPB=12.7613
+    he: BPB=12.8742
+    fa: BPB=11.6243
+
+--- Experiment 8/25: soap_lr0.01 ---
+  Params: 58.5M
+  step 100/500, loss=22.7304, time=30.7s
+  step 200/500, loss=11.0625, time=61.5s
+  step 300/500, loss=11.0625, time=92.2s
+  step 400/500, loss=11.0625, time=122.9s
+  step 500/500, loss=11.0625, time=153.6s
+  Final loss: 11.0625, Avg BPB: 15.9598
+    en: BPB=15.9598
+    ar: BPB=15.9598
+    he: BPB=15.9598
+    fa: BPB=15.9598
+
+--- Experiment 9/25: soap_lr0.02 ---
+  Params: 58.5M
+  step 100/500, loss=22.2171, time=30.7s
+  step 200/500, loss=11.0625, time=61.4s
+  step 300/500, loss=11.0625, time=92.2s
+  step 400/500, loss=11.0625, time=122.9s
+  step 500/500, loss=11.0625, time=153.6s
+  Final loss: 11.0625, Avg BPB: 15.9598
+    en: BPB=15.9598
+    ar: BPB=15.9598
+    he: BPB=15.9598
+    fa: BPB=15.9598
+
+Top 3: ['muon_lr0.05', 'adamw_lr1e-3', 'muon_lr0.02']
+
+--- Experiment 10/25: muon_lr0.05_swa ---
+  step 100/500, loss=38.1483, time=38.3s
+  step 200/500, loss=11.1787, time=76.7s
+  step 300/500, loss=8.9286, time=115.0s
+  step 400/500, loss=8.1072, time=153.4s
+  step 500/500, loss=7.8139, time=192.0s
+  Applying SWA (averaged 100 checkpoints)
+  BPB: 11.0937 (improvement: 0.0829)
+
+--- Experiment 11/25: adamw_lr1e-3_swa ---
+  step 100/500, loss=47.7066, time=29.9s
+  step 200/500, loss=13.1467, time=59.8s
+  step 300/500, loss=9.6740, time=89.8s
+  step 400/500, loss=8.8176, time=119.7s
+  step 500/500, loss=8.3813, time=149.8s
+  Applying SWA (averaged 100 checkpoints)
+  BPB: 11.8961 (improvement: 0.2481)
+
+--- Experiment 12/25: muon_lr0.02_swa ---
+  step 100/500, loss=50.1455, time=38.3s
+  step 200/500, loss=13.8210, time=76.7s
+  step 300/500, loss=12.5708, time=115.0s
+  step 400/500, loss=10.5256, time=153.4s
+  step 500/500, loss=9.7868, time=192.0s
+  Applying SWA (averaged 100 checkpoints)
+  BPB: 12.7270 (improvement: 0.5854)
+
+--- Experiment 13/25: muon_lr0.05_lookahead ---
+  step 100/500, loss=40.1308, time=38.4s
+  step 200/500, loss=13.4796, time=76.9s
+  step 300/500, loss=10.4546, time=115.3s
+  step 400/500, loss=10.1574, time=153.8s
+  step 500/500, loss=8.6775, time=192.2s
+  BPB: 11.8445 (improvement: -0.6679)
+
+--- Experiment 14/25: adamw_lr1e-3_lookahead ---
+  step 100/500, loss=54.1760, time=30.0s
+  step 200/500, loss=23.3924, time=60.0s
+  step 300/500, loss=30.1086, time=90.0s
+  step 400/500, loss=15.2899, time=120.0s
+  step 500/500, loss=10.7346, time=150.0s
+  BPB: 14.3743 (improvement: -2.2301)
+
+--- Experiment 15/25: muon_lr0.02_lookahead ---
+  step 100/500, loss=56.1387, time=38.4s
+  step 200/500, loss=16.9000, time=76.9s
+  step 300/500, loss=12.9688, time=115.3s
+  step 400/500, loss=11.6519, time=153.7s
+  step 500/500, loss=10.1123, time=192.2s
+  BPB: 16.0574 (improvement: -2.7451)
+
+--- Experiment 16/25: muon_lr0.05_swa_lookahead ---
+  step 100/500, loss=40.2337, time=38.4s
+  step 200/500, loss=14.7615, time=76.9s
+  step 300/500, loss=11.3039, time=115.3s
+  step 400/500, loss=10.2048, time=153.7s
+  step 500/500, loss=8.8736, time=192.4s
+  Applying SWA (averaged 100 checkpoints)
+  BPB: 11.8151
+
+--- Experiment 17/25: adamw_lr1e-3_swa_lookahead ---
+  step 100/500, loss=53.6951, time=30.0s
+  step 200/500, loss=30.6131, time=60.0s
+  step 300/500, loss=27.4967, time=90.1s
+  step 400/500, loss=15.1015, time=120.1s
+  step 500/500, loss=10.8042, time=150.4s
+  Applying SWA (averaged 100 checkpoints)
+  BPB: 15.3640
+
+--- Experiment 18/25: muon_lr0.02_swa_lookahead ---
+  step 100/500, loss=56.0987, time=38.5s
+  step 200/500, loss=18.8976, time=76.9s
+  step 300/500, loss=12.6951, time=115.4s
+  step 400/500, loss=11.9035, time=153.9s
+  step 500/500, loss=10.1152, time=192.6s
+  Applying SWA (averaged 100 checkpoints)
+  BPB: 13.1128
+
+--- Experiment 19/25: muon_mom0.9 ---
+  step 100/500, loss=39.0418, time=38.4s
+  step 200/500, loss=13.0623, time=76.8s
+  step 300/500, loss=9.3318, time=115.2s
+  step 400/500, loss=8.4088, time=153.5s
+  step 500/500, loss=8.0603, time=191.9s
+  BPB: 11.5788
+
+--- Experiment 20/25: muon_mom0.95 ---
+  step 100/500, loss=36.5417, time=38.4s
+  step 200/500, loss=12.2009, time=76.8s
+  step 300/500, loss=9.0738, time=115.2s
+  step 400/500, loss=8.3732, time=153.6s
+  step 500/500, loss=8.1311, time=192.0s
+  BPB: 11.4894
+
+--- Experiment 21/25: muon_mom0.99 ---
+  step 100/500, loss=34.7826, time=38.4s
+  step 200/500, loss=9.2373, time=76.8s
+  step 300/500, loss=8.2415, time=115.2s
+  step 400/500, loss=7.8239, time=153.6s
+  step 500/500, loss=7.6538, time=192.0s
+  BPB: 11.1460
+
+--- Experiments 22-25: Gradient Analysis ---
+
+--- Experiment 22/25: muon_grads ---
+  Gradient norms:
+    en: mean=34.1963, std=41.2180
+    ar: mean=28.8023, std=36.7372
+    he: mean=33.8328, std=39.6213
+    fa: mean=30.1468, std=41.4024
+  Final gradient cosines: {'step': 50, 'en-ar': 0.4450911283493042, 'en-he': 0.18074989318847656, 'en-fa': 0.3516247868537903, 'ar-he': 0.5244016647338867, 'ar-fa': 0.5805788040161133, 'he-fa': 0.40923553705215454}
+
+--- Experiment 23/25: adamw_grads ---
+Traceback (most recent call last):
+  File "/tmp/run_experiments.py", line 1000, in <module>
+    muon_results = run_muon_experiments()
+  File "/tmp/run_experiments.py", line 762, in run_muon_experiments
+    grad_results = analyze_gradients(model, train_loader, opt_fn, steps=100)
+  File "/tmp/run_experiments.py", line 526, in analyze_gradients
+    loss.backward()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.91 GiB. GPU 0 has a total capacity of 22.06 GiB of which 3.61 GiB is free. Including non-PyTorch memory, this process has 18.44 GiB memory in use. Of the allocated memory 14.18 GiB is allocated by PyTorch, and 3.92 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
