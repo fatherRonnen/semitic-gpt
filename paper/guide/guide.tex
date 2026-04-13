@@ -2584,14 +2584,6 @@ Data leakage is insidious because \textbf{it produces results that look correct}
 
 \textbf{The fix:} Use exactly the same model class for training, SFT, and evaluation. Define the architecture once and import it everywhere. Never copy-paste model code between scripts.
 
-\subsection{Lesson 8: Instance Type Mistakes}
-
-\textbf{What happened:} We initially launched the 3B training on a g6e.48xlarge (8$\times$L40S) instead of the planned p5en (8$\times$H100). The L40S is 3.5$\times$ slower for this workload. We discovered this 15 hours in, having already spent $\sim$\$200 on a run that would have taken 200+ hours total.
-
-\textbf{The fix:} We launched the correct p5en instance, verified the training speed (200K+ TPS vs 14K TPS), confirmed identical loss curves, and terminated the slow instance after saving checkpoints.
-
-\textbf{What we learned:} Always verify your instance type and training speed in the first 30 minutes. A 10$\times$ mismatch in throughput means 10$\times$ the cost for the same result.
-
 \subsection{The Meta-Lesson}
 
 \begin{keyidea}
@@ -2602,7 +2594,7 @@ Every mistake in this chapter has the same structure:
     \item Later discovery invalidated the results.
 \end{enumerate}
 
-The defense is systematic verification at every stage: check your labels, check your data splits, check your model architecture, check your instance type, check your file sizes. The 10 minutes you spend verifying will save you days of wasted training.
+The defense is systematic verification at every stage: check your labels, check your data splits, check your model architecture, check your file sizes. The 10 minutes you spend verifying will save you days of wasted training.
 \end{keyidea}
 
 \subsection{Verification Checklist}
