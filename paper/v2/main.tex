@@ -97,7 +97,7 @@
   
   {\small We present SemiticGPT, a 3.14-billion parameter decoder-only language model trained from scratch for Hebrew, Arabic, Persian (Farsi), and English---a script-diverse, low-resource language cluster centered on the Semitic family. The model is pretrained on 4.48 billion tokens using cloud spot instances at a total cost under \$1,500.
 
-Our central finding is that \textbf{multilingual SFT is necessary and English-only SFT does not transfer cross-lingually} in our setup. Across a three-stage evaluation (base $\rightarrow$ English-only SFT $\rightarrow$ multilingual SFT), English-only fine-tuning produces near-zero improvement on non-English sentiment tasks, while multilingual SFT yields substantial gains: Hebrew 53\%$\rightarrow$84.5\%, Arabic 45\%$\rightarrow$60.5\%, Farsi 60.5\%$\rightarrow$78.5\% (logprob classification on balanced evaluation sets).
+Our central finding is that \textbf{in this setting, English-only SFT is insufficient for non-English downstream performance, while multilingual SFT yields substantial gains}. Across a three-stage evaluation (base $\rightarrow$ English-only SFT $\rightarrow$ multilingual SFT), English-only fine-tuning produces near-zero improvement on non-English sentiment tasks, while multilingual SFT yields: Hebrew 53\%$\rightarrow$84.5\%, Arabic 45\%$\rightarrow$60.5\%, Persian 60.5\%$\rightarrow$78.5\% (logprob classification on balanced evaluation sets).
 
 We also demonstrate that a custom balanced tokenizer achieves \textbf{49--69\% fewer tokens} than Llama-2 for Hebrew, Arabic, and Farsi at equivalent English efficiency, and that the model develops strong cross-lingual embeddings (90\% retrieval accuracy for English$\leftrightarrow$Hebrew) purely from multilingual pretraining.
 
@@ -119,9 +119,9 @@ This paper addresses a specific empirical question: \emph{Can efficient multilin
 
 We investigate this through three experiments:
 \begin{enumerate}
-    \item \textbf{Experiment A} (Hebrew Downstream): How well does multilingual SFT enable sentiment classification across all four languages?
-    \item \textbf{Experiment B} (Cross-lingual Transfer): Does English-only SFT transfer to non-English languages, or is multilingual SFT required?
-    \item \textbf{Experiment C} (Tokenizer Ablation): How much efficiency does a custom balanced tokenizer provide over English-centric alternatives?
+    \item \textbf{Experiment A}: Multilingual downstream performance---how well does multilingual SFT enable sentiment classification across all four languages?
+    \item \textbf{Experiment B}: English-only vs.\ multilingual transfer---does English-only SFT transfer to non-English languages, or is explicit multilingual SFT required?
+    \item \textbf{Experiment C}: Tokenizer efficiency ablation---how much does a custom balanced tokenizer improve over English-centric alternatives?
 \end{enumerate}
 
 Hebrew and Arabic share the Semitic triconsonantal root system, derivational morphology (binyan/wazn patterns), and flexible word order. Persian, while using Arabic script and containing extensive Arabic loanwords, belongs to the Indo-European family---providing a control for distinguishing linguistic relatedness from script similarity.
@@ -129,7 +129,7 @@ Hebrew and Arabic share the Semitic triconsonantal root system, derivational mor
 Our primary contributions:
 \begin{enumerate}
     \item A \textbf{reproducible, low-cost recipe} (\textless\$1,500) for training a 3B multilingual model from scratch for an under-resourced language cluster.
-    \item Evidence that \textbf{English-only SFT does not transfer} cross-lingually at this scale---multilingual SFT is necessary for non-English task performance.
+    \item Evidence that \textbf{English-only SFT is insufficient} for non-English downstream performance at this scale, while multilingual SFT yields substantial gains.
     \item A custom tokenizer achieving \textbf{49--69\% fewer tokens} than Llama-2 for target languages, with detailed ablation against two baselines.
     \item A \textbf{practitioner's guide} with step-by-step recommendations and negative results for researchers targeting other language clusters.
 \end{enumerate}
@@ -340,6 +340,8 @@ Experiment B directly tests whether fine-tuning in one language transfers to oth
 
 This contrasts with findings in larger models where English fine-tuning can transfer cross-lingually \citep{conneau2020unsupervised}. At 3B scale with 4.48B pretraining tokens, \textbf{explicit multilingual SFT data is required} for each target language.
 
+\textbf{External baseline context.} As a reference point, XLM-R-Large \citep{conneau2020unsupervised} fine-tuned on XNLI (a 550M parameter encoder model with much larger pretraining data) achieves 79.5\% on English zero-shot sentiment but only 33.5\% on Arabic zero-shot sentiment using our evaluation methodology.\footnote{XLM-R evaluated using zero-shot NLI classification (\texttt{joeddav/xlm-roberta-large-xnli}), N=200 per language. Arabic evaluated on different data (tweet sentiment) due to dataset availability; comparison is approximate.} This suggests that even large multilingual encoder models struggle with zero-shot cross-lingual sentiment transfer, providing context for our 3B decoder model's requirement of explicit multilingual SFT.
+
 \textbf{Belebele reading comprehension} (Table~\ref{tab:belebele}) shows a similar pattern: all stages perform near chance, confirming that 3B scale is insufficient for abstract reasoning tasks regardless of SFT strategy.
 
 \begin{table}[H]
@@ -387,6 +389,8 @@ FA$\rightarrow$AR & 10\% & 10\% \\
 \end{table}
 
 English$\leftrightarrow$Hebrew achieves 90\% retrieval (9$\times$ chance), and Arabic shows meaningful alignment with both English and Hebrew. Persian shows weak connectivity, consistent with its typological distance from the Semitic family.
+
+Notably, multilingual SFT improves downstream sentiment while slightly reducing average retrieval accuracy (45.8\%$\rightarrow$43.3\%). This suggests that downstream task adaptation may trade off against some alignment properties of the pretrained representation space---the model becomes better at following task instructions but slightly less balanced as a general-purpose cross-lingual encoder.
 
 \begin{figure}[H]
 \centering
@@ -509,7 +513,16 @@ Key findings:
 
 \subsubsection{Segmentation Examples}
 
-To illustrate the practical impact, consider the Arabic sentence ``عاصمة فرنسا هي باريس.'' (The capital of France is Paris):
+To illustrate the practical impact, consider two examples:
+
+\textbf{Hebrew:} ``הבינה המלאכותית משנה את העולם'' (Artificial intelligence is changing the world):
+\begin{itemize}
+    \item \textbf{Ours}: 4 tokens (▁הבינה | ▁המלאכותית | ▁משנה | ▁את\_העולם)
+    \item \textbf{Llama-2}: 18 tokens (character-level fragmentation)
+    \item \textbf{HebrewGPT}: 5 tokens (comparable---Hebrew-optimized)
+\end{itemize}
+
+\textbf{Arabic:} ``عاصمة فرنسا هي باريس.'' (The capital of France is Paris):
 
 \begin{itemize}
     \item \textbf{Ours}: 5 tokens (▁عاصمة | ▁فرنسا | ▁هي | ▁باريس | .)
@@ -526,7 +539,9 @@ Our tokenizer captures whole Arabic words as single tokens, while the baselines 
 
 The most important finding is the sharp contrast between English-only and multilingual SFT (Figure~\ref{fig:sentiment}). At 3B scale with 4.48B pretraining tokens, the model does not develop sufficient cross-lingual task transfer from English fine-tuning alone. This differs from observations in much larger models (175B+ parameters) where English fine-tuning shows some cross-lingual generalization.
 
-\textbf{Why does this matter for practitioners?} Researchers building models for low-resource languages cannot rely on cheap English-only SFT and hope for cross-lingual transfer. They must invest in multilingual SFT data for each target language---but the good news is that relatively small amounts suffice (our SFT uses only 36,980 total samples).
+The key negative result is not merely that English-only SFT helps \emph{less}, but that it helps \emph{almost not at all}---despite measurable cross-lingual representational alignment from pretraining (90\% EN$\leftrightarrow$HE retrieval). The pretrained model ``knows'' these languages are related at the representation level, but cannot use that knowledge for tasks without explicit multilingual fine-tuning.
+
+\textbf{Why does this matter for practitioners?} Researchers building models for low-resource languages cannot rely on cheap English-only SFT and hope for cross-lingual transfer. They must invest in multilingual SFT data for each target language---but relatively small amounts suffice (our SFT uses only 36,980 total samples).
 
 \subsection{Representation vs.\ Task Transfer}
 
@@ -534,11 +549,11 @@ An intriguing asymmetry: the base model develops strong cross-lingual \emph{repr
 
 \subsection{Hebrew as Anchor Language}
 
-Hebrew shows the strongest results across all experiments: highest sentiment accuracy (84.5\%), strongest embedding alignment with English, and best tokenizer coverage. This is consistent with Hebrew receiving 40\% of pretraining data. Whether anchor overrepresentation produces \emph{disproportionate} returns (beyond the linear expectation from more data) remains an open question.
+Hebrew shows the strongest results across all experiments: highest sentiment accuracy (84.5\%), strongest embedding alignment with English, and best tokenizer coverage. This is consistent with Hebrew receiving 40\% of pretraining data. Whether anchor overrepresentation produces \emph{disproportionate} returns (beyond the linear expectation from more data) remains an open question that would require controlled ablation (e.g., 40\% vs 25\% Hebrew) to answer.
 
 \subsection{Persian Isolation}
 
-Persian consistently shows weak cross-lingual connectivity despite sharing Arabic script. In our retrieval experiment, Persian achieves only 10--30\% accuracy with other languages, compared to 40--90\% for the Hebrew-Arabic-English triad. This suggests that \textbf{in our setup, linguistic family membership predicts transfer better than script similarity}, though we cannot fully disentangle this from Persian's 20\% pretraining share vs Hebrew's 40\%.
+Persian consistently shows weak cross-lingual connectivity despite sharing Arabic script. In our retrieval experiment, Persian achieves only 10--30\% accuracy with other languages, compared to 40--90\% for the Hebrew-Arabic-English triad. Our results are consistent with linguistic family membership being a stronger predictor of transfer than script similarity in this setup, though we cannot fully disentangle this from Persian's 20\% pretraining share vs Hebrew's 40\%.
 
 \subsection{Data Quality Lessons}
 \label{sec:data_lessons}
@@ -582,9 +597,7 @@ Based on our experience, we provide recommendations for researchers building sim
 \subsection{Language Cluster Selection}
 
 \begin{itemize}
-    \item Prioritize \textbf{linguistic family membership} over geographic proximity or script similarity. Our results suggest that Semitic family languages (Hebrew, Arabic) show stronger mutual transfer than script-mates (Arabic, Persian).
-    \item Include one high-resource language (English) for evaluation infrastructure and instruction-following bootstrapping.
-    \item Include a typologically distant language as a control condition.
+    \item Our results are consistent with \textbf{linguistic family membership} being a stronger predictor of transfer than script similarity. Include a typologically distant language as a control condition.
 \end{itemize}
 
 \subsection{Tokenizer Design}
@@ -600,14 +613,14 @@ Based on our experience, we provide recommendations for researchers building sim
 \begin{itemize}
     \item \textbf{Anchor overrepresentation} (30--40\% for primary language) appears beneficial but is not ablated in this work.
     \item Use \textbf{spot instances with checkpointing} every 30 minutes for cost efficiency.
-    \item \textbf{bfloat16} is sufficient---we observed no degradation compared to float32 in preliminary experiments.
+    \item \textbf{bfloat16}: We observed no degradation in our setup compared to float32 in preliminary experiments.
     \item Validate recipe at proxy scale (100--200M parameters) before full commitment.
 \end{itemize}
 
 \subsection{Supervised Fine-Tuning}
 
 \begin{itemize}
-    \item \textbf{Include all target languages} in SFT data. English-only SFT does not transfer at 3B scale.
+    \item \textbf{Include all target languages} in SFT data. In our experiments, English-only SFT was insufficient at 3B scale.
     \item \textbf{Native-language data $>$ machine-translated data}. We found translated Alpaca produces weaker results than native-language datasets.
     \item \textbf{Audit data pipelines} before training: verify label encoding, check for sorting artifacts, confirm train/eval separation.
     \item 37K samples with 8K steps was sufficient for our model.
@@ -628,7 +641,7 @@ Based on our experience, we provide recommendations for researchers building sim
 \toprule
 \textbf{Decision} & \textbf{Recommendation} \\
 \midrule
-Language selection & Linguistic family $>$ script similarity \\
+Language selection & Linguistic family $>$ script (in our setup) \\
 Tokenizer & Custom BPE, 32K vocab, balanced \\
 Anchor language & Over-represent at 30--40\% \\
 Recipe validation & 20--50 proxy experiments first \\
@@ -652,7 +665,7 @@ Compute & Cloud spot instances + checkpointing \\
 \begin{itemize}
     \item \textbf{Single-run results}: All experiments are single-run without confidence intervals. Effects under 5 percentage points may not be statistically significant. Key findings (e.g., 84.5\% vs 51.5\% sentiment) are large enough to be meaningful.
     \item \textbf{Small evaluation sets}: 200 samples for logprob, 50 for generative, 100 for Belebele. Sufficient for detecting large effects but not small ones.
-    \item \textbf{No external baselines}: We do not compare against mBERT, XLM-R, or NLLB on identical tasks. Such comparisons would contextualize our results.
+    \item \textbf{Limited external baselines}: We provide a partial XLM-R comparison (Section~\ref{sec:exp_b}), but a full apples-to-apples comparison on identical datasets against mBERT, XLM-R, and multilingual instruction models would better contextualize our results.
     \item \textbf{Scale}: At 3B parameters, the model is below thresholds for complex reasoning. Findings about transfer requirements may not hold at larger scales where English-only SFT \emph{does} transfer.
     \item \textbf{Confounded variables}: Hebrew receives 40\% of pretraining data vs Persian's 20\%. Persian's weak transfer may partly reflect data quantity rather than purely typological distance.
     \item \textbf{Anchor ablation}: We do not ablate the effect of anchor overrepresentation (e.g., 40\% Hebrew vs 25\% balanced).
@@ -665,9 +678,9 @@ Compute & Cloud spot instances + checkpointing \\
 We present SemiticGPT, a 3.14B parameter multilingual model covering Hebrew, Arabic, Persian, and English, trained from scratch for under \$1,500. Our three experiments establish that:
 
 \begin{enumerate}
-    \item \textbf{Multilingual SFT is required}: English-only fine-tuning does not transfer to non-English tasks at 3B scale. Explicit multilingual SFT data unlocks the cross-lingual representations built during pretraining.
+    \item \textbf{Multilingual SFT is required in this setting}: English-only fine-tuning is insufficient for non-English downstream tasks at 3B scale. Explicit multilingual SFT data unlocks the cross-lingual representations built during pretraining.
     \item \textbf{Custom tokenizers eliminate waste}: A balanced tokenizer uses 49--69\% fewer tokens than English-centric alternatives for target languages, with negligible English penalty.
-    \item \textbf{Representations precede tasks}: The model builds strong cross-lingual embeddings (90\% EN$\leftrightarrow$HE retrieval) from pretraining alone, but task-specific SFT is needed to leverage them.
+    \item \textbf{Cross-lingual representations emerge before task transfer}: The model builds strong cross-lingual embeddings (90\% EN$\leftrightarrow$HE retrieval) from pretraining alone, but task-specific multilingual SFT is needed to leverage them for downstream performance.
 \end{enumerate}
 
 We release all code, data, and model weights to support reproducible research and provide a practitioner's guide for researchers targeting other under-resourced language families.
