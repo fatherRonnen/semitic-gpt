@@ -90,6 +90,30 @@
   #1
 }
 
+\newtcolorbox{buildnow}[1][]{
+  colback=tipbg,
+  colframe=tipborder,
+  fonttitle=\bfseries,
+  title={If You Are Building Now},
+  #1
+}
+
+\newtcolorbox{successcheck}[1][]{
+  colback=lightaccent,
+  colframe=accent,
+  fonttitle=\bfseries,
+  title={Success Check},
+  #1
+}
+
+\newtcolorbox{failuresign}[1][]{
+  colback=warnbg,
+  colframe=red!60!black,
+  fonttitle=\bfseries,
+  title={Common Failure Signs},
+  #1
+}
+
 % --- Section formatting ---
 \titleformat{\section}{\Large\bfseries\color{accent}}{Chapter \thesection:}{0.5em}{}[\vspace{2pt}{\color{accent}\hrule height 1.5pt}\vspace{6pt}]
 \titleformat{\subsection}{\large\bfseries\color{accent}}{\thesubsection}{0.5em}{}
@@ -156,6 +180,73 @@ We walk through every step of building SemiticGPT---a 3.14-billion parameter lan
 
 \vspace{12pt}
 
+% ============================================================
+% HOW TO USE THIS GUIDE
+% ============================================================
+
+\subsection*{How to Use This Guide}
+\addcontentsline{toc}{subsection}{How to Use This Guide}
+
+This guide supports two reading paths. Choose the one that matches your goal:
+
+\begin{tcolorbox}[colback=tipbg, colframe=tipborder, fonttitle=\bfseries, title={Track A --- Learn the Concepts}]
+\textbf{Goal:} Understand how multilingual language models work, from tokenization to evaluation.\\
+\textbf{Time:} 3--4 hours of focused reading.\\
+\textbf{Path:} Read chapters 1--5, 8--10 in order. Skim chapters 6--7 for key ideas. Use Chapter~11 as a reference.\\
+\textbf{What you will get:} Deep understanding of design decisions, trade-offs, and what makes multilingual models different.
+\end{tcolorbox}
+
+\vspace{6pt}
+
+\begin{tcolorbox}[colback=lightaccent, colframe=accent, fonttitle=\bfseries, title={Track B --- Build First}]
+\textbf{Goal:} Train your own multilingual model as quickly as possible.\\
+\textbf{Time:} 1--2 hours of reading, then 3--5 weeks of building.\\
+\textbf{Path:} Read the ``If You Are Building Now'' boxes in chapters 3--8. Follow Chapter~11 step by step. Refer back to concept chapters when you need depth.\\
+\textbf{What you will get:} A working model, with understanding built through practice.
+\end{tcolorbox}
+
+\vspace{6pt}
+
+Every chapter is labelled with its track at the top: \textbf{Concept}, \textbf{Build}, or both. You can switch tracks at any point---the guide is designed to work either way.
+
+\subsection*{One-Page Build Map}
+\addcontentsline{toc}{subsection}{One-Page Build Map}
+
+The entire pipeline from idea to working model:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    phase/.style={draw, rounded corners, fill=#1, minimum width=3.2cm, minimum height=0.9cm, align=center, font=\small\bfseries},
+    arrow/.style={-{Stealth[length=2.5mm]}, thick, color=accent},
+    note/.style={font=\scriptsize, text width=3.2cm, align=center}
+]
+\node[phase=gray!15] (scope) at (0, 0) {1. Scope};
+\node[phase=lightaccent] (tok) at (4, 0) {2. Tokenizer};
+\node[phase=warnbg] (data) at (8, 0) {3. Data};
+\node[phase=tipbg] (proxy) at (12, 0) {4. Proxy};
+\node[phase=lightaccent] (pretrain) at (2, -2) {5. Pretrain};
+\node[phase=tipbg] (sft) at (6, -2) {6. SFT};
+\node[phase=warnbg] (eval) at (10, -2) {7. Evaluate};
+
+\node[note] at (0, -0.8) {Languages,\\size, tasks};
+\node[note] at (4, -0.8) {32K BPE,\\fertility $\leq$2.0};
+\node[note] at (8, -0.8) {Clean, dedupe,\\balance, verify};
+\node[note] at (12, -0.8) {20--40 runs\\at 110M scale};
+\node[note] at (2, -2.8) {Full scale,\\validated recipe};
+\node[note] at (6, -2.8) {37K examples,\\multilingual};
+\node[note] at (10, -2.8) {Logprob +\\generative + retrieval};
+
+\draw[arrow] (scope) -- (tok);
+\draw[arrow] (tok) -- (data);
+\draw[arrow] (data) -- (proxy);
+\draw[arrow] (proxy) -- ++(0,-0.5) -| (pretrain);
+\draw[arrow] (pretrain) -- (sft);
+\draw[arrow] (sft) -- (eval);
+\end{tikzpicture}
+\caption{The seven-phase pipeline. Chapters 1--2 provide conceptual foundations; Chapters 3--8 map to phases 2--7; Chapters 9--10 inform iteration.}
+\end{figure}
+
 \tableofcontents
 \newpage
 
@@ -165,6 +256,10 @@ We walk through every step of building SemiticGPT---a 3.14-billion parameter lan
 
 \section{What Is a Language Model?}
 \label{ch:what_is_lm}
+
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept + Build}}
+\end{center}
 
 \subsection{The Core Idea}
 
@@ -242,7 +337,7 @@ Building a language model for English is ``easy'' (relatively speaking) because:
 
 Our challenge is harder for several reasons:
 
-\textbf{Multiple scripts.} Hebrew uses its own alphabet (\textenglish{alef-bet}), Arabic uses Arabic script (which Persian also uses, but with four extra characters), and English uses Latin. These scripts have different character sets, write in different directions (Hebrew and Arabic are right-to-left), and have different rules for how letters connect.
+\textbf{Multiple scripts.} Hebrew uses its own alphabet (alef-bet), Arabic uses Arabic script (which Persian also uses, but with four extra characters), and English uses Latin. These scripts have different character sets, write in different directions (Hebrew and Arabic are right-to-left), and have different rules for how letters connect.
 
 \textbf{Rich morphology.} Hebrew and Arabic are \textbf{morphologically rich}---a single root of three consonants can generate dozens of words through patterns. The Hebrew root K-T-V (write) produces: \emph{katav} (he wrote), \emph{kotev} (he writes), \emph{miktav} (a letter), \emph{ktuva} (written), and many more. This means these languages have far more distinct word forms than English, making tokenization harder.
 
@@ -335,6 +430,14 @@ Model weights are available at:\\
 
 \section{Choosing an Architecture: Encoders, Decoders, and Why It Matters}
 \label{ch:architecture}
+
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept}}
+\end{center}
+
+\begin{tip}[title={For Build-First Readers}]
+This chapter covers architecture theory. If you are following Track~B (build first), treat this as a reference. Skip to Chapter~3 (Tokenizer) for your first hands-on step. Come back here when you want to understand \emph{why} the architecture works.
+\end{tip}
 
 Before you can train a language model, you must choose its architecture---the blueprint that determines how information flows through the model. This choice affects what your model can do, how it is trained, and how it is used. The dominant architecture in modern NLP is the \textbf{transformer} \citep{vaswani2017attention}, but there are three major variants, and they are suited to different tasks.
 
@@ -656,7 +759,26 @@ If you are building your own language model, the architecture decisions boil dow
 \section{Building a Multilingual Tokenizer}
 \label{ch:tokenizer}
 
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept + Build}}
+\end{center}
+
 Before a language model can process any text, that text must be converted into numbers. The component that does this is the \textbf{tokenizer}, and for a multilingual model, it is one of the most consequential design decisions you will make. A bad tokenizer can cripple your model before training even begins.
+
+\begin{buildnow}
+\textbf{Outcome:} A trained SentencePiece BPE tokenizer with 32K vocabulary that handles all your target languages efficiently.
+
+\textbf{Decisions required:}
+\begin{itemize}[nosep]
+  \item Vocabulary size (32K or 64K)
+  \item Language balance in tokenizer training data
+  \item Special tokens for your downstream tasks
+\end{itemize}
+
+\textbf{Safe defaults:} 32K vocabulary, equal language proportions, SentencePiece BPE with byte fallback and NFKC normalization.
+
+\textbf{Skip on first pass:} The specialization trade-off analysis (\S\ref{ch:tokenizer}.7). Come back after you see fertility results.
+\end{buildnow}
 
 \subsection{Why Tokenization Matters}
 
@@ -915,6 +1037,25 @@ If you are building a multilingual model:
 Tokenizer training is fast (minutes, not hours) and does not require a GPU. You can iterate on the tokenizer many times, testing different vocabulary sizes and language balances, before committing to pretraining. This is one of the cheapest experiments you can run, so do not skimp on it.
 \end{tip}
 
+\begin{successcheck}
+\begin{itemize}[nosep]
+  \item Fertility $\leq$2.0 tokens per word for all target languages
+  \item English penalty $<$5\% compared to an English-only tokenizer
+  \item Vocabulary composition roughly reflects your language mix
+  \item Encoding then decoding any test sentence produces the original text
+  \item Special tokens (\texttt{<|user|>}, \texttt{<|assistant|>}) are in the vocabulary
+\end{itemize}
+\end{successcheck}
+
+\begin{failuresign}
+\begin{itemize}[nosep]
+  \item Fertility $>$3.0 for any language --- vocabulary is too small or training data was unbalanced
+  \item One language dominates $>$60\% of vocabulary --- retrain with equal-proportion data
+  \item Characters from a target script are missing --- check your training data coverage
+  \item Round-trip encoding/decoding loses characters --- byte fallback may be disabled
+\end{itemize}
+\end{failuresign}
+
 % ============================================================
 % CHAPTER 4: PLACEHOLDER
 % ============================================================
@@ -922,7 +1063,39 @@ Tokenizer training is fast (minutes, not hours) and does not require a GPU. You 
 \section{Collecting and Preparing Training Data}
 \label{ch:data}
 
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept + Build}}
+\end{center}
+
 A language model is only as good as the text it learns from. This chapter covers where to find multilingual training data, how to clean it, how to balance it across languages, and the practical decisions that shaped our 4.48-billion-token corpus.
+
+\begin{warning}[title={Most Beginner Failures Start Here}]
+Data problems are the \#1 cause of failed training runs. Inverted labels, sorted datasets, data leakage, and low-quality sources all produce models that \emph{appear} to work but give meaningless results. If you skip one chapter's verification steps, do not skip this one's.
+\end{warning}
+
+\begin{buildnow}
+\textbf{Outcome:} A clean, tokenized, balanced corpus stored as binary files with manifests tracking every source.
+
+\textbf{Decisions required:}
+\begin{itemize}[nosep]
+  \item Which data sources for each language
+  \item Language balance proportions (e.g., 40/20/20/20)
+  \item Quality filtering thresholds
+\end{itemize}
+
+\textbf{Safe defaults:} Wikipedia + OSCAR per language, anchor language at 40\%, others equal. MinHash dedup, language-ID filtering.
+
+\textbf{Skip on first pass:} Perplexity-based filtering (\S4.4 quality section). Start with language-ID filtering only.
+\end{buildnow}
+
+The data pipeline has five numbered stages:
+\begin{enumerate}[nosep]
+  \item \textbf{Collect} --- download raw text from multiple sources per language.
+  \item \textbf{Clean} --- deduplicate, run language ID, apply quality filters.
+  \item \textbf{Tokenize} --- convert to token IDs using your custom tokenizer.
+  \item \textbf{Mix} --- combine language files to target proportions.
+  \item \textbf{Verify} --- spot-check decoded examples, confirm token counts and language balance.
+\end{enumerate}
 
 \subsection{How Much Data Do You Need?}
 
@@ -1125,6 +1298,25 @@ Here is the complete pipeline from raw sources to training-ready data:
 Invest in data quality \emph{before} you start training. Once pretraining begins, it is extremely expensive to restart because you discovered a data problem. We spent roughly one week on data collection and cleaning versus one day on actual pretraining. That ratio is typical and appropriate.
 \end{tip}
 
+\begin{successcheck}
+\begin{itemize}[nosep]
+  \item Token counts per language match your target proportions ($\pm$2\%)
+  \item Decoded spot-checks (100+ per language) show clean, natural text in the correct language
+  \item Manifest files record every source, its license, and processing steps
+  \item No duplicate documents remain after dedup
+  \item Binary files load correctly and produce valid token IDs
+\end{itemize}
+\end{successcheck}
+
+\begin{failuresign}
+\begin{itemize}[nosep]
+  \item One language has $<$10\% of expected tokens --- download or filtering failed silently
+  \item Decoded text contains HTML tags, URLs, or boilerplate --- cleaning filters are too permissive
+  \item Language-ID check shows $>$5\% mislabeled documents --- source quality is poor
+  \item File sizes are unexpectedly small (e.g., 4 KB instead of 400 MB) --- download or conversion failed
+\end{itemize}
+\end{failuresign}
+
 % ============================================================
 % CHAPTER 5: PLACEHOLDER
 % ============================================================
@@ -1132,7 +1324,26 @@ Invest in data quality \emph{before} you start training. Once pretraining begins
 \section{Proxy Experiments: Testing Before Committing}
 \label{ch:proxy}
 
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept + Build}}
+\end{center}
+
 Pretraining a 3B model costs real money and takes real time. If your training recipe is wrong---bad learning rate, wrong optimizer, broken schedule---you will not discover this until hours or days into the run, by which point you have wasted the entire investment. \textbf{Proxy experiments} solve this by testing your recipe at small scale first.
+
+\begin{buildnow}
+\textbf{Outcome:} A validated training recipe (optimizer, LR, schedule, weight decay) tested at 110M scale.
+
+\textbf{Decisions required:}
+\begin{itemize}[nosep]
+  \item Proxy model size (typically 25--30$\times$ smaller than full)
+  \item Which hyperparameters to sweep
+  \item How many experiments to run (20--40 minimum)
+\end{itemize}
+
+\textbf{Safe defaults:} 110M proxy for a 3B target. AdamW optimizer, cosine LR schedule, peak LR 3e-4, weight decay 0.1.
+
+\textbf{Skip on first pass:} Exotic optimizers (Muon, etc.). Start with AdamW---it never diverges.
+\end{buildnow}
 
 \subsection{The Idea}
 
@@ -1145,6 +1356,40 @@ Proxy experiments let you explore 30+ recipe variations in the time it takes to 
 \subsection{What We Tested}
 
 Our proxy experiments explored six dimensions of the training recipe:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{clp{6cm}}
+\toprule
+\textbf{Priority} & \textbf{Sweep Variable} & \textbf{Why This Order} \\
+\midrule
+1 & LR schedule shape & Determines the overall training trajectory \\
+2 & Optimizer (AdamW vs.\ exotic) & Must be stable before tuning other knobs \\
+3 & Peak learning rate & Largest effect on convergence speed \\
+4 & Weight decay & Regularization; moderate effect \\
+5 & Warmup duration & Minor effect if LR schedule is correct \\
+6 & Batch size & Usually hardware-constrained; tune last \\
+\bottomrule
+\end{tabular}
+\caption{Recommended sweep order. Test variables in this order; each row assumes prior rows are fixed.}
+\end{table}
+
+\begin{tip}[title={Your First 10 Proxy Experiments}]
+If you have time for only 10 experiments, run these:
+\begin{enumerate}[nosep]
+  \item Cosine schedule + AdamW + LR 1e-3 (baseline)
+  \item Cosine schedule + AdamW + LR 3e-4
+  \item Cosine schedule + AdamW + LR 5e-4
+  \item Cosine schedule + AdamW + LR 1e-4
+  \item Linear schedule + AdamW + LR 3e-4
+  \item Cosine + AdamW + LR 3e-4 + weight decay 0.05
+  \item Cosine + AdamW + LR 3e-4 + weight decay 0.2
+  \item Cosine + AdamW + LR 3e-4 + 500-step warmup
+  \item Cosine + AdamW + LR 3e-4 + 2000-step warmup
+  \item Best config from above, run 2$\times$ longer to check stability
+\end{enumerate}
+This covers the highest-impact variables. Expand from here if time allows.
+\end{tip}
 
 \subsubsection{1. Learning Rate Schedule}
 
@@ -1283,6 +1528,25 @@ Across 32 experiments, here are the key findings:
 Proxy experiments are also excellent for testing data pipeline changes. If you suspect your Arabic data has quality issues, run a proxy with and without Arabic and compare. This takes 5 minutes instead of discovering the problem 15 hours into a full run.
 \end{tip}
 
+\begin{successcheck}
+\begin{itemize}[nosep]
+  \item Your best configuration shows monotonically decreasing validation BPB
+  \item At least 20 experiments completed without divergence
+  \item A clear winner emerges (not a tie between very different configs)
+  \item All results are documented with configs and rationale
+  \item The winning recipe uses a ``boring'' optimizer (AdamW) that never diverged
+\end{itemize}
+\end{successcheck}
+
+\begin{failuresign}
+\begin{itemize}[nosep]
+  \item Multiple experiments diverge (loss explodes) --- learning rate is too high or optimizer is unstable
+  \item Validation BPB plateaus early --- learning rate may be too low or schedule decays too fast
+  \item Results vary wildly between runs with same config --- training is not deterministic; check random seeds
+  \item You ran $<$10 experiments --- you are guessing, not validating
+\end{itemize}
+\end{failuresign}
+
 
 % ============================================================
 % CHAPTER 6: PRETRAINING
@@ -1291,7 +1555,26 @@ Proxy experiments are also excellent for testing data pipeline changes. If you s
 \section{Pretraining: Teaching the Model to Read}
 \label{ch:pretraining}
 
+\begin{center}
+\colorbox{tipbg}{\textbf{Track: Build}}
+\end{center}
+
 Pretraining is where the model learns language. You feed it billions of tokens of raw text, and through the simple task of predicting the next token, it learns grammar, vocabulary, facts, and---crucially for our purposes---cross-lingual structure. This is the most expensive phase of the project and the one where mistakes are most costly.
+
+\begin{buildnow}
+\textbf{Outcome:} A pretrained model checkpoint with monotonically decreasing validation loss.
+
+\textbf{Decisions required:}
+\begin{itemize}[nosep]
+  \item GPU instance type and count
+  \item FSDP sharding strategy and mixed-precision settings
+  \item Checkpoint frequency and storage location
+\end{itemize}
+
+\textbf{Safe defaults:} Use exactly the recipe validated by proxy experiments. FSDP with bf16 compute / fp32 reduce. Checkpoints every 250 steps to S3.
+
+\textbf{Skip on first pass:} Advanced monitoring dashboards. Watch loss, BPB, and TPS in the terminal.
+\end{buildnow}
 
 \subsection{What Happens During Pretraining}
 
@@ -1475,6 +1758,56 @@ With FSDP, checkpointing is more complex than simply calling \texttt{torch.save(
 \quad\texttt{3b\_v1\_training.log}\hfill Raw training log\\
 \end{reporef}
 
+\subsubsection{Before-You-Launch Checklist}
+
+\begin{enumerate}[nosep]
+  \item[$\square$] Proxy recipe validated (optimizer, LR, schedule, weight decay)
+  \item[$\square$] Data integrity verified (correct token counts, language proportions)
+  \item[$\square$] Checkpoint save/load tested on the target instance type
+  \item[$\square$] S3 bucket accessible and writable from the training instance
+  \item[$\square$] GPU type and count match your plan (verify with \texttt{nvidia-smi})
+  \item[$\square$] Training speed validated in first 100 steps (expected TPS range known)
+  \item[$\square$] Monitoring set up (loss, BPB, TPS visible in logs)
+  \item[$\square$] Cost estimate reviewed (instance cost $\times$ estimated hours)
+\end{enumerate}
+
+\subsubsection{During-Training Checklist (Check Every 2--4 Hours)}
+
+\begin{enumerate}[nosep]
+  \item[$\square$] Training loss is still decreasing (no plateaus $>$500 steps)
+  \item[$\square$] Validation BPB improved at last checkpoint
+  \item[$\square$] TPS is within 10\% of initial measurement (no degradation)
+  \item[$\square$] Latest checkpoint uploaded to S3 successfully
+  \item[$\square$] No GPU errors or OOM messages in logs
+  \item[$\square$] Disk space sufficient for next checkpoint
+\end{enumerate}
+
+\subsubsection{Spot Instance Interrupt Recovery}
+
+If using spot instances (which we did), interrupts are inevitable. Here is the recovery procedure:
+
+\begin{enumerate}[nosep]
+  \item Verify your latest checkpoint exists on S3 (\texttt{aws s3 ls s3://bucket/checkpoints/})
+  \item Launch a new instance (same type, same region if possible)
+  \item Download the latest checkpoint from S3
+  \item Resume training with \texttt{--resume-from-checkpoint} flag
+  \item Verify that the first training step after resuming has loss close to the last logged value
+  \item Monitor for 50 steps to confirm training continues normally
+\end{enumerate}
+
+\begin{warning}
+If you resume from a checkpoint and loss is significantly higher than expected, the checkpoint may be corrupted (partial upload during interruption). Fall back to the previous checkpoint. This is why we save every 250 steps, not every 1,000.
+\end{warning}
+
+\subsubsection{When to Debug vs.\ When to Keep Running}
+
+\begin{itemize}[nosep]
+  \item \textbf{Keep running} if: loss decreased at last checkpoint, TPS is stable, no error messages
+  \item \textbf{Investigate} if: loss plateaued for $>$500 steps, TPS dropped by $>$20\%, any NaN/Inf in logs
+  \item \textbf{Stop immediately} if: loss is increasing for $>$200 consecutive steps, out-of-memory errors, wrong instance type discovered
+  \item \textbf{Save checkpoint and stop} if: you realize a data or config error---fix first, then resume from checkpoint
+\end{itemize}
+
 \subsection{Summary: Pretraining Checklist}
 
 \begin{enumerate}
@@ -1486,6 +1819,26 @@ With FSDP, checkpointing is more complex than simply calling \texttt{torch.save(
     \item \textbf{Completion:} Keep the best checkpoint (by validation loss) and the final checkpoint. You will use both.
 \end{enumerate}
 
+\begin{successcheck}
+\begin{itemize}[nosep]
+  \item Training loss decreases monotonically (no sustained plateaus or spikes)
+  \item Validation BPB improves at every checkpoint (or nearly every one)
+  \item TPS (tokens per second) is stable throughout the run
+  \item Multiple checkpoints saved to cloud storage and verified to load correctly
+  \item Final validation BPB is significantly better than the first checkpoint
+\end{itemize}
+\end{successcheck}
+
+\begin{failuresign}
+\begin{itemize}[nosep]
+  \item Loss spikes and does not recover within 100 steps --- learning rate may be too high
+  \item TPS drops suddenly --- a GPU may have failed or memory is leaking
+  \item Validation BPB stops improving but training loss keeps decreasing --- overfitting (unlikely with enough data, but possible)
+  \item Loss is NaN or Inf --- numerical instability; check mixed-precision settings
+  \item Run is 10$\times$ slower than expected --- wrong instance type (see Lesson~8)
+\end{itemize}
+\end{failuresign}
+
 
 % ============================================================
 % CHAPTER 7: SUPERVISED FINE-TUNING
@@ -1494,7 +1847,26 @@ With FSDP, checkpointing is more complex than simply calling \texttt{torch.save(
 \section{Supervised Fine-Tuning: Teaching the Model to Work}
 \label{ch:sft}
 
+\begin{center}
+\colorbox{tipbg}{\textbf{Track: Build}}
+\end{center}
+
 After pretraining, you have a model that can predict text fluently in four languages. But it cannot follow instructions, classify sentiment, or perform any specific task. It is like a well-read person who has never been asked a question. \textbf{Supervised fine-tuning (SFT)} bridges this gap.
+
+\begin{buildnow}
+\textbf{Outcome:} A fine-tuned model that can follow instructions and perform classification in all target languages.
+
+\textbf{Decisions required:}
+\begin{itemize}[nosep]
+  \item Which tasks to fine-tune for (sentiment, translation, etc.)
+  \item SFT data sources per language
+  \item Learning rate and training duration
+\end{itemize}
+
+\textbf{Safe defaults:} 2e-5 learning rate, 2--3 epochs, multilingual data in all target languages. Start from best pretrained checkpoint.
+
+\textbf{Skip on first pass:} The English-only control experiment. Run it later to measure cross-lingual transfer.
+\end{buildnow}
 
 \subsection{What SFT Does}
 
@@ -1555,6 +1927,21 @@ Each example is a sentence in one language and its translation in another:
 \end{lstlisting}
 
 Translation data comes from OPUS-100, covering all six language-pair directions that include English (EN$\leftrightarrow$HE, EN$\leftrightarrow$AR, EN$\leftrightarrow$FA). Each direction contributes 3,000 pairs.
+
+\subsubsection{SFT Pre-Flight Checklist}
+
+Before starting any SFT run, verify all four conditions:
+
+\begin{enumerate}[nosep]
+  \item[$\square$] \textbf{Labels verified:} Manually inspect 20+ examples per language. Do \texttt{ClassLabel} indices match the actual sentiment? (See Lesson~1)
+  \item[$\square$] \textbf{Shuffle verified:} Dataset is shuffled \emph{before} splitting into train/eval. Run \texttt{value\_counts()} to confirm both classes appear in both splits.
+  \item[$\square$] \textbf{Splits verified:} Zero overlap between train and eval examples. Check with exact string matching.
+  \item[$\square$] \textbf{Prompts checked:} Decode 10+ formatted examples end-to-end. Verify that special tokens (\texttt{<|user|>}, \texttt{<|assistant|>}) appear correctly and text is not truncated.
+\end{enumerate}
+
+\begin{warning}
+Skipping this checklist is how you get Lessons~1, 2, and 3 from Chapter~\ref{ch:lessons}. Each of those bugs produced results that \emph{looked correct} but were meaningless. The 10 minutes spent here will save you days.
+\end{warning}
 
 \subsection{The Importance of Data Quality}
 
@@ -1640,6 +2027,24 @@ SFT produces a new set of model weights (6.3 GB), saved alongside the base pretr
 SFT is cheap. On a single A10G GPU (about \$1/hour), our full SFT runs took about an hour each. This means you can iterate rapidly---fix a data bug, retrain, re-evaluate, all in an afternoon. Pretraining does not afford this luxury, which is why getting it right (through proxy experiments) matters so much.
 \end{tip}
 
+\begin{successcheck}
+\begin{itemize}[nosep]
+  \item Validation loss decreases and stabilizes (not increasing = not overfitting)
+  \item Multilingual SFT outperforms base model on all target languages
+  \item Generative output follows the instruction format (produces labels, not random text)
+  \item English-only SFT control shows minimal cross-lingual transfer (confirms the need for multilingual data)
+\end{itemize}
+\end{successcheck}
+
+\begin{failuresign}
+\begin{itemize}[nosep]
+  \item Model outputs random text instead of labels --- check prompt format and special tokens
+  \item Accuracy is near 100\% --- likely data leakage or a single-class evaluation set
+  \item One language performs much worse than others --- check label encoding for that language (see Lesson~1)
+  \item Validation loss increases after a few hundred steps --- learning rate is too high or data is too small
+\end{itemize}
+\end{failuresign}
+
 % ============================================================
 % CHAPTER 8: PLACEHOLDER
 % ============================================================
@@ -1647,7 +2052,26 @@ SFT is cheap. On a single A10G GPU (about \$1/hour), our full SFT runs took abou
 \section{Evaluation: Measuring What Your Model Learned}
 \label{ch:eval}
 
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept + Build}}
+\end{center}
+
 You have trained a model. It consumed 4.48 billion tokens during pretraining and 37,000 labeled examples during SFT. But how do you know it actually \emph{works}? Evaluation is the process of measuring model capabilities in a controlled, reproducible way. Done poorly, evaluation will tell you your model is brilliant when it is broken (as we learned firsthand). Done well, it gives you honest, actionable information.
+
+\begin{buildnow}
+\textbf{Outcome:} Quantitative results across multiple evaluation methods, for all model stages (base, EN-SFT, Multi-SFT).
+
+\textbf{Decisions required:}
+\begin{itemize}[nosep]
+  \item Which evaluation methods to use (logprob, generative, retrieval)
+  \item How to construct balanced evaluation sets per language
+  \item Whether to include external benchmarks (e.g., Belebele)
+\end{itemize}
+
+\textbf{Safe defaults:} All three evaluation methods. 200 examples per language for logprob, 50 for generative. Exactly 50/50 class balance.
+
+\textbf{Skip on first pass:} Cross-lingual retrieval evaluation. Start with logprob classification---it is the fastest and most informative.
+\end{buildnow}
 
 \subsection{Why Evaluation Is Harder Than It Looks}
 
@@ -1822,12 +2246,35 @@ Comparing against larger models is useful for context but not the primary goal. 
 Build your evaluation pipeline \emph{before} you start training, and run it on the base model first. The base model results establish your baseline and verify that the evaluation code works correctly. If your base model gets 95\% accuracy on a balanced binary task, something is wrong with your evaluation, not right with your model.
 \end{tip}
 
+\begin{successcheck}
+\begin{itemize}[nosep]
+  \item Base model results are near chance level (confirms evaluation is not leaking)
+  \item Multilingual SFT model outperforms base on all languages and methods
+  \item Results are consistent across evaluation methods (logprob and generative agree directionally)
+  \item Evaluation sets are exactly balanced (50/50 for binary tasks)
+  \item All results are saved as raw outputs, not just summary statistics
+\end{itemize}
+\end{successcheck}
+
+\begin{failuresign}
+\begin{itemize}[nosep]
+  \item Base model scores well above chance --- data leakage or evaluation bug
+  \item 100\% accuracy on any task --- single-class evaluation set or memorization
+  \item Logprob and generative results disagree strongly --- prompt format may be wrong for one method
+  \item Results vary wildly between runs --- evaluation set is too small (increase N)
+\end{itemize}
+\end{failuresign}
+
 % ============================================================
 % CHAPTER 9: PLACEHOLDER
 % ============================================================
 
 \section{Results: What SemiticGPT Can Do}
 \label{ch:results}
+
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept}}
+\end{center}
 
 This chapter presents our experimental results. We organize them around three questions, each addressed by a dedicated experiment.
 
@@ -1899,6 +2346,10 @@ Multi-SFT & \textbf{82} & \textbf{64} & \textbf{74} & \textbf{64} \\
 The central finding: at 3B scale with 4.48B pretraining tokens, \textbf{English-only SFT is insufficient for cross-lingual task transfer}. The model needs explicit examples in each target language to perform downstream tasks. Multilingual pretraining creates shared representations, but those representations cannot be activated for tasks without multilingual fine-tuning.
 \end{keyidea}
 
+\begin{tip}[title={Builder Takeaway}]
+Do not assume English-only SFT will transfer. Budget time and data for multilingual fine-tuning from the start. Even small amounts of native-language SFT data (a few thousand examples per language) produce large gains.
+\end{tip}
+
 \subsection{Experiment B: Cross-Lingual Transfer Analysis}
 
 Experiment A showed that multilingual SFT works. Experiment B asks \emph{why} English-only SFT does not, and what the pretrained model \emph{has} learned about cross-lingual structure.
@@ -1964,6 +2415,10 @@ An analogy: imagine you have a detailed multilingual map (representation alignme
 
 An interesting secondary finding: after multilingual SFT, average retrieval accuracy drops slightly (45.8\% $\rightarrow$ 43.3\%). Fine-tuning makes the model better at classification but slightly worse as a general-purpose cross-lingual encoder. This is a common phenomenon: optimizing for one capability can come at a small cost to another. The model's internal representations become more task-focused and slightly less general-purpose.
 
+\begin{tip}[title={Builder Takeaway}]
+Your pretrained model already learns cross-lingual structure---you do not need to engineer it explicitly. Linguistic family membership predicts transfer better than script similarity. When choosing languages, prioritize related language families over shared scripts.
+\end{tip}
+
 \subsection{Experiment C: Tokenizer Efficiency}
 
 Experiment C is purely about the tokenizer---no model training required. We compare our custom tokenizer against Llama-2 (English-centric) and HebrewGPT (Hebrew-centric), all with 32K vocabularies.
@@ -1978,6 +2433,10 @@ The detailed results were presented in Chapter~\ref{ch:tokenizer}. The headline 
 \end{itemize}
 
 In practical terms: for every Hebrew document, our model processes 3$\times$ more text in the same context window compared to using Llama-2's tokenizer. For Persian, it is 3.2$\times$ more. This is a massive efficiency gain that costs almost nothing on English.
+
+\begin{tip}[title={Builder Takeaway}]
+Never reuse an English-centric tokenizer for non-Latin languages. The 2--3 day investment in building a custom tokenizer pays for itself immediately: 3$\times$ more text per context window means 3$\times$ more efficient training and inference.
+\end{tip}
 
 \subsection{Belebele: Where the Model Fails}
 
@@ -2000,6 +2459,10 @@ Multi-SFT & 28.0 & 24.0 & 25.0 & 23.0 \\
 
 This is expected: Belebele requires reading a passage, understanding a question, and selecting the correct answer from four choices. This level of abstract reasoning typically requires models of 7B+ parameters with much larger pretraining corpora. We include these results because \textbf{reporting where your model fails is as important as reporting where it succeeds}. It tells practitioners what tasks are out of reach at this scale.
 
+\begin{tip}[title={Builder Takeaway}]
+Know your model's ceiling. At 3B parameters, expect strong classification and retrieval but near-chance reading comprehension. If you need reasoning capabilities, plan for 7B+ from the start---or scope your evaluation to tasks that match your scale.
+\end{tip}
+
 \subsection{Summary of Results}
 
 \begin{table}[H]
@@ -2020,6 +2483,10 @@ Scale limitations are real & 3B is insufficient for reading comprehension (Beleb
 \caption{Summary of experimental findings and their practical implications.}
 \end{table}
 
+\begin{tip}[title={Builder Takeaway}]
+The most actionable findings: (1) build a custom tokenizer---it is a 2-day investment with 3$\times$ efficiency gains, (2) include multilingual SFT data from day one---English-only does not transfer at 3B scale, (3) set expectations by scale---sentiment classification yes, reading comprehension no.
+\end{tip}
+
 
 % ============================================================
 % CHAPTER 10: WHAT WENT WRONG
@@ -2027,6 +2494,14 @@ Scale limitations are real & 3B is insufficient for reading comprehension (Beleb
 
 \section{What Went Wrong: Data Bugs, Failed Runs, and Hard Lessons}
 \label{ch:lessons}
+
+\begin{center}
+\colorbox{lightaccent}{\textbf{Track: Concept + Build}}
+\end{center}
+
+\begin{warning}[title={Read This Before Your First Training Run}]
+This chapter describes eight real failures that cost us days of compute and weeks of debugging. Every single one could have been prevented with a 10-minute verification check. If you are about to launch your first training run, read at least Lessons~1--3 (label inversion, sorting artifacts, data leakage) and the Verification Checklist at the end. These three bugs account for the majority of beginner failures.
+\end{warning}
 
 This may be the most valuable chapter in the guide. Every published paper shows polished results; very few show the failures that preceded them. Our path to working results included inverted labels, contaminated evaluation, sorting artifacts, crashed training runs, and wasted compute. Each mistake taught us something useful.
 
@@ -2152,7 +2627,49 @@ Here is the checklist we now run before every training job:
 \section{Practitioner's Checklist: Building Your Own Multilingual Model}
 \label{ch:checklist}
 
+\begin{center}
+\colorbox{tipbg}{\textbf{Track: Build}}
+\end{center}
+
 This final chapter distills the entire guide into a step-by-step recipe. If you are building a multilingual language model for your own language cluster, this is your roadmap. Each step references the relevant chapter for deeper explanation and the relevant repository artifact for code.
+
+\subsection{Smallest Viable Version}
+
+If this is your first model, start small. The table below shows three build scales---\textbf{start with Toy} to verify your pipeline end-to-end, then scale up.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+& \textbf{Toy} & \textbf{Practical} & \textbf{Full} \\
+\midrule
+Languages & 2 & 3--4 & 4--6 \\
+Parameters & 100--300M & 1--3B & 3--7B \\
+Training tokens & 50--200M & 1--5B & 5--20B \\
+GPUs & 1 & 1--4 & 4--8 \\
+Task & Sentiment only & Sentiment + translation & Multiple tasks \\
+Evaluation & Logprob only & Logprob + generative & Full suite \\
+Time (end-to-end) & 1--3 days & 1--2 weeks & 3--5 weeks \\
+Cost & \$10--50 & \$200--1,000 & \$1,000--5,000 \\
+\bottomrule
+\end{tabular}
+\caption{Three build scales. Start with Toy to validate your pipeline, then scale.}
+\end{table}
+
+\textbf{The Toy build:}
+\begin{itemize}[nosep]
+  \item \textbf{2 languages} --- your anchor language + English.
+  \item \textbf{100--300M parameters} --- trains in minutes on 1 GPU.
+  \item \textbf{50--200M tokens} --- enough to see learning curves.
+  \item \textbf{Sentiment classification only} --- the simplest end-to-end task.
+  \item \textbf{Logprob evaluation only} --- fast, deterministic, no generation needed.
+\end{itemize}
+
+The purpose of the Toy build is \textbf{not} to get good results. It is to verify that every component of your pipeline works: tokenizer $\rightarrow$ data loading $\rightarrow$ training loop $\rightarrow$ checkpointing $\rightarrow$ SFT $\rightarrow$ evaluation. If any step is broken, you will discover it in hours instead of days.
+
+\begin{tip}
+Our proxy experiments (Chapter~\ref{ch:proxy}) are effectively the Toy build. The 110M proxy used the same code, data, and tokenizer as the full 3B run. Start there.
+\end{tip}
 
 \subsection{Phase 1: Define Your Scope (1--2 days)}
 
