@@ -95,7 +95,7 @@
   \begin{blueabstract}
   {\small\scshape\color{accent}\textbf{Abstract}}\smallskip
   
-  {\small We present SemiticGPT, a 3.14-billion parameter decoder-only language model trained from scratch for Hebrew, Arabic, Persian (Farsi), and English---a script-diverse, low-resource language cluster centered on the Semitic family. The model is pretrained on 4.48 billion tokens using cloud spot instances at a total cost under \$1,500.
+  {\small We present SemiticGPT, a 3.14-billion parameter decoder-only language model trained from scratch for Hebrew, Arabic, Persian (Farsi), and English---a script-diverse, low-resource language cluster centered on the Semitic family. The model is pretrained on 4.48 billion tokens on a single 8$\times$H100 node (AWS p5en.48xlarge) in under 23 hours.
 
 Our central finding is that \textbf{in this setting, English-only SFT is insufficient for non-English downstream performance, while multilingual SFT yields substantial gains}. Across a three-stage evaluation (base $\rightarrow$ English-only SFT $\rightarrow$ multilingual SFT), English-only fine-tuning produces near-zero improvement on non-English sentiment tasks, while multilingual SFT yields: Hebrew 53\%$\rightarrow$84.5\%, Arabic 45\%$\rightarrow$60.5\%, Persian 60.5\%$\rightarrow$78.5\% (logprob classification on balanced evaluation sets).
 
@@ -128,7 +128,7 @@ Hebrew and Arabic share the Semitic triconsonantal root system, derivational mor
 
 Our primary contributions:
 \begin{enumerate}
-    \item A \textbf{reproducible, low-cost recipe} (\textless\$1,500) for training a 3B multilingual model from scratch for an under-resourced language cluster.
+    \item A \textbf{reproducible, efficient recipe} for training a 3B multilingual model from scratch on a single 8$\times$H100 node in under 23 hours.
     \item Evidence that \textbf{English-only SFT is insufficient} for non-English downstream performance at this scale, while multilingual SFT yields substantial gains.
     \item A custom tokenizer achieving \textbf{49--69\% fewer tokens} than Llama-2 for target languages, with detailed ablation against two baselines.
     \item A \textbf{practitioner's guide} with step-by-step recommendations and negative results for researchers targeting other language clusters.
@@ -223,7 +223,7 @@ Normalization & RMSNorm ($\epsilon$=1e-6) \\
 
 \subsection{Pretraining}
 
-Training uses AWS spot instances (L40S 48GB and H100 80GB). Configuration:
+Training uses an AWS p5en.48xlarge instance (8$\times$NVIDIA H100 80GB) with FSDP (Fully Sharded Data Parallelism). Configuration:
 
 \begin{itemize}
     \item \textbf{Optimizer}: AdamW ($\beta_1$=0.9, $\beta_2$=0.95)
@@ -234,7 +234,7 @@ Training uses AWS spot instances (L40S 48GB and H100 80GB). Configuration:
     \item \textbf{Precision}: bfloat16
 \end{itemize}
 
-Total cost: approximately \$1,456 using spot instances at 60--70\% discount.
+Total pretraining time: approximately 22.4 hours on 8$\times$H100.
 
 \subsection{Supervised Fine-Tuning (SFT)}
 \label{sec:sft}
@@ -511,7 +511,7 @@ FA & \textbf{5.72} & 1.78 & 1.93 & \textbf{+221\%} \\
 Key findings:
 \begin{enumerate}
     \item \textbf{No English penalty}: Our tokenizer matches Llama-2 on English (1.54 vs 1.51 tokens/word), a common concern when balancing non-Latin scripts.
-    \item \textbf{Massive efficiency for target languages}: Hebrew uses 66\% fewer tokens, Arabic 49\% fewer, Persian 69\% fewer than Llama-2. This directly translates to longer effective context windows and reduced training cost.
+    \item \textbf{Massive efficiency for target languages}: Hebrew uses 66\% fewer tokens, Arabic 49\% fewer, Persian 69\% fewer than Llama-2. This directly translates to longer effective context windows and reduced training time.
     \item \textbf{Specialization tradeoff}: HebrewGPT-1B slightly outperforms ours on Hebrew (1.26 vs 1.34) but fragments Arabic/Persian as badly as Llama-2. A multilingual tokenizer must balance all target languages.
 \end{enumerate}
 
@@ -572,24 +572,22 @@ During development, we discovered critical data bugs that invalidated earlier re
 
 \textbf{Lesson}: Automated data pipeline audits---checking label distributions, train/eval overlap, and sample diversity---should be mandatory before any training run. We now enforce 50/50 class balance and verify shuffle randomness in all evaluation sets.
 
-\subsection{Cost Analysis}
+\subsection{Compute Requirements}
 
 \begin{table}[H]
 \centering\small
 \begin{tabular}{lcr}
 \toprule
-\textbf{Component} & \textbf{GPU-hours} & \textbf{Cost} \\
+\textbf{Component} & \textbf{Hardware} & \textbf{Time} \\
 \midrule
-Proxy experiments (32 runs) & 16 & \$12 \\
-Pretraining (4.48B tokens) & 380 & \$1,380 \\
-SFT (36,980 samples) & 4 & \$14 \\
-Evaluation (all experiments) & 8 & \$30 \\
-\midrule
-\textbf{Total} & \textbf{408} & \textbf{$\sim$\$1,436} \\
+Proxy experiments (32 runs) & 1$\times$L40S & $\sim$16h \\
+Pretraining (4.48B tokens) & 8$\times$H100 & $\sim$22.4h \\
+SFT (36,980 samples) & 1$\times$A10G & $\sim$1h \\
+Evaluation (all experiments) & 1$\times$A10G + CPU & $\sim$3h \\
 \bottomrule
 \end{tabular}
-\caption{Cost breakdown. All compute on AWS spot instances (60--70\% discount).}
-\label{tab:cost}
+\caption{Compute requirements. Pretraining dominates; SFT and evaluation are negligible.}
+\label{tab:compute}
 \end{table}
 
 % ============================================================
@@ -616,7 +614,7 @@ Based on our experience, we provide recommendations for researchers building sim
 
 \begin{itemize}
     \item \textbf{Anchor overrepresentation} (30--40\% for primary language) appears beneficial but is not ablated in this work.
-    \item Use \textbf{spot instances with checkpointing} every 30 minutes for cost efficiency.
+    \item Use \textbf{spot instances with checkpointing} every 30 minutes to handle preemptions.
     \item \textbf{bfloat16}: We observed no degradation in our setup compared to float32 in preliminary experiments.
     \item Validate recipe at proxy scale (100--200M parameters) before full commitment.
 \end{itemize}
@@ -655,7 +653,7 @@ SFT data & All target languages required \\
 SFT source & Native-language $>$ translated \\
 Data quality & Audit labels, splits, balance \\
 Evaluation & Logprob $>$ generative for classification \\
-Compute & Cloud spot instances + checkpointing \\
+Compute & 8$\times$H100, $\sim$23h pretraining \\
 \bottomrule
 \end{tabular}
 \caption{Recipe summary for building multilingual models from scratch.}
@@ -679,7 +677,7 @@ Compute & Cloud spot instances + checkpointing \\
 % ============================================================
 \section{Conclusion}
 
-We present SemiticGPT, a 3.14B parameter multilingual model covering Hebrew, Arabic, Persian, and English, trained from scratch for under \$1,500. Our three experiments establish that:
+We present SemiticGPT, a 3.14B parameter multilingual model covering Hebrew, Arabic, Persian, and English, trained from scratch on a single 8$\times$H100 node in under 23 hours. Our three experiments establish that:
 
 \begin{enumerate}
     \item \textbf{Multilingual SFT is required in this setting}: English-only fine-tuning is insufficient for non-English downstream tasks at 3B scale. Explicit multilingual SFT data unlocks the cross-lingual representations built during pretraining.
