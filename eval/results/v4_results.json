@@ -1,0 +1,57 @@
+{
+  "version": "v4",
+  "training": {
+    "steps": 8000,
+    "best_val_loss": 1.9816065345491682,
+    "total_samples": 36980,
+    "breakdown": {
+      "sentiment": 18980,
+      "translation": 18000
+    },
+    "optimizer": "AdamW",
+    "lr": "2e-5",
+    "seq_len": 384,
+    "data_fixes": [
+      "hebrew_labels_corrected",
+      "arabic_balanced",
+      "no_data_leakage",
+      "real_opus100_translation"
+    ]
+  },
+  "baseline": {
+    "he": {
+      "logprob": 0.515,
+      "gen": 0.0
+    },
+    "ar": {
+      "logprob": 0.455,
+      "gen": 0.0
+    },
+    "fa": {
+      "logprob": 0.605,
+      "gen": 0.0
+    },
+    "en": {
+      "logprob": 0.525,
+      "gen": 0.0
+    }
+  },
+  "v4": {
+    "he": {
+      "logprob": 0.845,
+      "gen": 0.82
+    },
+    "ar": {
+      "logprob": 0.6,
+      "gen": 0.64
+    },
+    "fa": {
+      "logprob": 0.78,
+      "gen": 0.74
+    },
+    "en": {
+      "logprob": 0.71,
+      "gen": 0.62
+    }
+  }
+}

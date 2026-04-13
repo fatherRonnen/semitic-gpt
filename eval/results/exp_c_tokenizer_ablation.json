@@ -1,0 +1,203 @@
+{
+  "experiment": "C_tokenizer_ablation",
+  "timestamp": "2026-04-13 09:30:52 UTC",
+  "tokenizers": {
+    "Ours-32K": {
+      "vocab_size": 32000
+    },
+    "Llama-2": {
+      "vocab_size": 32000
+    },
+    "HebrewGPT": {
+      "vocab_size": 32000
+    }
+  },
+  "vocabulary_composition": {
+    "Ours-32K": {
+      "Arabic": {
+        "count": 14945,
+        "pct": 46.7
+      },
+      "Hebrew": {
+        "count": 8888,
+        "pct": 27.8
+      },
+      "Latin": {
+        "count": 7778,
+        "pct": 24.3
+      },
+      "Other": {
+        "count": 278,
+        "pct": 0.9
+      },
+      "Digit": {
+        "count": 110,
+        "pct": 0.3
+      },
+      "Special": {
+        "count": 1,
+        "pct": 0.0
+      }
+    },
+    "Llama-2": {
+      "Latin": {
+        "count": 25900,
+        "pct": 80.9
+      },
+      "Other": {
+        "count": 5848,
+        "pct": 18.3
+      },
+      "Digit": {
+        "count": 133,
+        "pct": 0.4
+      },
+      "Arabic": {
+        "count": 54,
+        "pct": 0.2
+      },
+      "Hebrew": {
+        "count": 36,
+        "pct": 0.1
+      },
+      "Special": {
+        "count": 16,
+        "pct": 0.1
+      },
+      "Space": {
+        "count": 13,
+        "pct": 0.0
+      }
+    },
+    "HebrewGPT": {
+      "Hebrew": {
+        "count": 23101,
+        "pct": 72.2
+      },
+      "Other": {
+        "count": 6399,
+        "pct": 20.0
+      },
+      "Latin": {
+        "count": 2238,
+        "pct": 7.0
+      },
+      "Arabic": {
+        "count": 137,
+        "pct": 0.4
+      },
+      "Digit": {
+        "count": 124,
+        "pct": 0.4
+      },
+      "Special": {
+        "count": 1,
+        "pct": 0.0
+      }
+    }
+  },
+  "fertility": {
+    "en": {
+      "Ours-32K": {
+        "fertility": 1.544,
+        "bytes_per_token": 3.71,
+        "total_tokens": 2785,
+        "total_bytes": 10322
+      },
+      "Llama-2": {
+        "fertility": 1.51,
+        "bytes_per_token": 3.79,
+        "total_tokens": 2724,
+        "total_bytes": 10322
+      },
+      "HebrewGPT": {
+        "fertility": 2.419,
+        "bytes_per_token": 2.37,
+        "total_tokens": 4364,
+        "total_bytes": 10322
+      }
+    },
+    "he": {
+      "Ours-32K": {
+        "fertility": 1.343,
+        "bytes_per_token": 5.12,
+        "total_tokens": 8866,
+        "total_bytes": 45378
+      },
+      "Llama-2": {
+        "fertility": 3.909,
+        "bytes_per_token": 1.76,
+        "total_tokens": 25806,
+        "total_bytes": 45378
+      },
+      "HebrewGPT": {
+        "fertility": 1.255,
+        "bytes_per_token": 5.48,
+        "total_tokens": 8283,
+        "total_bytes": 45378
+      }
+    },
+    "ar": {
+      "Ours-32K": {
+        "fertility": 2.222,
+        "bytes_per_token": 3.48,
+        "total_tokens": 7776,
+        "total_bytes": 27023
+      },
+      "Llama-2": {
+        "fertility": 4.363,
+        "bytes_per_token": 1.77,
+        "total_tokens": 15266,
+        "total_bytes": 27023
+      },
+      "HebrewGPT": {
+        "fertility": 4.154,
+        "bytes_per_token": 1.86,
+        "total_tokens": 14535,
+        "total_bytes": 27023
+      }
+    },
+    "fa": {
+      "Ours-32K": {
+        "fertility": 1.52,
+        "bytes_per_token": 5.72,
+        "total_tokens": 5302,
+        "total_bytes": 30327
+      },
+      "Llama-2": {
+        "fertility": 4.876,
+        "bytes_per_token": 1.78,
+        "total_tokens": 17014,
+        "total_bytes": 30327
+      },
+      "HebrewGPT": {
+        "fertility": 4.508,
+        "bytes_per_token": 1.93,
+        "total_tokens": 15727,
+        "total_bytes": 30327
+      }
+    }
+  },
+  "efficiency": {
+    "en": {
+      "Ours-32K": 0.2698,
+      "Llama-2": 0.2639,
+      "HebrewGPT": 0.4228
+    },
+    "he": {
+      "Ours-32K": 0.1954,
+      "Llama-2": 0.5687,
+      "HebrewGPT": 0.1825
+    },
+    "ar": {
+      "Ours-32K": 0.2878,
+      "Llama-2": 0.5649,
+      "HebrewGPT": 0.5379
+    },
+    "fa": {
+      "Ours-32K": 0.1748,
+      "Llama-2": 0.561,
+      "HebrewGPT": 0.5186
+    }
+  }
+}
