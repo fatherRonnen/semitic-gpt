@@ -95,7 +95,7 @@
   \begin{blueabstract}
   {\small\scshape\color{accent}\textbf{Abstract}}\smallskip
   
-  {\small We present SemiticGPT, a 3.14-billion parameter decoder-only language model trained from scratch for Hebrew, Arabic, Persian (Farsi), and English---a script-diverse, low-resource language cluster centered on the Semitic family. The model is pretrained on 4.48 billion tokens on a single 8$\times$H100 node (AWS p5en.48xlarge) in under 23 hours.
+  {\small We present SemiticGPT, a 3.14-billion parameter decoder-only language model trained from scratch for Hebrew, Arabic, Persian (Farsi), and English---a script-diverse, low-resource language cluster centered on the Semitic family. The model is pretrained on 4.48 billion tokens on a single H100 node (AWS p5en.48xlarge) in under 23 hours.
 
 Our central finding is that \textbf{in this setting, English-only SFT is insufficient for non-English downstream performance, while multilingual SFT yields substantial gains}. Across a three-stage evaluation (base $\rightarrow$ English-only SFT $\rightarrow$ multilingual SFT), English-only fine-tuning produces near-zero improvement on non-English sentiment tasks, while multilingual SFT yields: Hebrew 53\%$\rightarrow$84.5\%, Arabic 45\%$\rightarrow$60.5\%, Persian 60.5\%$\rightarrow$78.5\% (logprob classification on balanced evaluation sets).
 
@@ -128,7 +128,7 @@ Hebrew and Arabic share the Semitic triconsonantal root system, derivational mor
 
 Our primary contributions:
 \begin{enumerate}
-    \item A \textbf{reproducible, efficient recipe} for training a 3B multilingual model from scratch on a single 8$\times$H100 node in under 23 hours.
+    \item A \textbf{reproducible, efficient recipe} for training a 3B multilingual model from scratch on a single H100 node in under 23 hours.
     \item Evidence that \textbf{English-only SFT is insufficient} for non-English downstream performance at this scale, while multilingual SFT yields substantial gains.
     \item A custom tokenizer achieving \textbf{49--69\% fewer tokens} than Llama-2 for target languages, with detailed ablation against two baselines.
     \item A \textbf{practitioner's guide} with step-by-step recommendations and negative results for researchers targeting other language clusters.
@@ -223,7 +223,7 @@ Normalization & RMSNorm ($\epsilon$=1e-6) \\
 
 \subsection{Pretraining}
 
-Training uses an AWS p5en.48xlarge instance (8$\times$NVIDIA H100 80GB) with FSDP (Fully Sharded Data Parallelism). Configuration:
+Training uses a single AWS p5en.48xlarge node (8$\times$NVIDIA H100 80GB) with FSDP (Fully Sharded Data Parallelism). Configuration:
 
 \begin{itemize}
     \item \textbf{Optimizer}: AdamW ($\beta_1$=0.9, $\beta_2$=0.95)
@@ -234,7 +234,7 @@ Training uses an AWS p5en.48xlarge instance (8$\times$NVIDIA H100 80GB) with FSD
     \item \textbf{Precision}: bfloat16
 \end{itemize}
 
-Total pretraining time: approximately 22.4 hours on 8$\times$H100.
+Total pretraining time: approximately 22.4 hours on a single H100 node.
 
 \subsection{Supervised Fine-Tuning (SFT)}
 \label{sec:sft}
@@ -581,7 +581,7 @@ During development, we discovered critical data bugs that invalidated earlier re
 \textbf{Component} & \textbf{Hardware} & \textbf{Time} \\
 \midrule
 Proxy experiments (32 runs) & 1$\times$L40S & $\sim$16h \\
-Pretraining (4.48B tokens) & 8$\times$H100 & $\sim$22.4h \\
+Pretraining (4.48B tokens) & 1$\times$ p5en.48xlarge & $\sim$22.4h \\
 SFT (36,980 samples) & 1$\times$A10G & $\sim$1h \\
 Evaluation (all experiments) & 1$\times$A10G + CPU & $\sim$3h \\
 \bottomrule
@@ -653,7 +653,7 @@ SFT data & All target languages required \\
 SFT source & Native-language $>$ translated \\
 Data quality & Audit labels, splits, balance \\
 Evaluation & Logprob $>$ generative for classification \\
-Compute & 8$\times$H100, $\sim$23h pretraining \\
+Compute & Single H100 node, $\sim$23h pretraining \\
 \bottomrule
 \end{tabular}
 \caption{Recipe summary for building multilingual models from scratch.}
@@ -677,7 +677,7 @@ Compute & 8$\times$H100, $\sim$23h pretraining \\
 % ============================================================
 \section{Conclusion}
 
-We present SemiticGPT, a 3.14B parameter multilingual model covering Hebrew, Arabic, Persian, and English, trained from scratch on a single 8$\times$H100 node in under 23 hours. Our three experiments establish that:
+We present SemiticGPT, a 3.14B parameter multilingual model covering Hebrew, Arabic, Persian, and English, trained from scratch on a single H100 node in under 23 hours. Our three experiments establish that:
 
 \begin{enumerate}
     \item \textbf{Multilingual SFT is required in this setting}: English-only fine-tuning is insufficient for non-English downstream tasks at 3B scale. Explicit multilingual SFT data unlocks the cross-lingual representations built during pretraining.
